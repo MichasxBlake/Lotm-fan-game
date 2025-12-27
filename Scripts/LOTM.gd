@@ -6,6 +6,8 @@ extends Control
 @onready var tingen_button: Button = $"Main Window/Background/Działanie/Locations/ColorRect/Menu_of_locations/Loen/ColorRect/ScrollContainer/VBoxContainer/tingen"
 @onready var backlund_button: Button = $"Main Window/Background/Działanie/Locations/ColorRect/Menu_of_locations/Loen/ColorRect/ScrollContainer/VBoxContainer/backlund"
 @onready var trier_button: Button = $"Main Window/Background/Działanie/Locations/ColorRect/Menu_of_locations/Loen/ColorRect/ScrollContainer/VBoxContainer/trier"
+@onready var you_button: Button = $"Main Window/Background/HBoxContainer/VBoxContainer/ColorRect/VBoxContainer/You/You_Button"
+
 
 
 #windows
@@ -17,6 +19,7 @@ extends Control
 #others
 @onready var loen: VBoxContainer = $"Main Window/Background/Działanie/Locations/ColorRect/Menu_of_locations/Loen"
 @onready var intis_but: VBoxContainer = $"Main Window/Background/Działanie/Locations/ColorRect/Menu_of_locations/intis_but"
+@onready var you_box: HBoxContainer = $"Main Window/Background/HBoxContainer/VBoxContainer/ColorRect/VBoxContainer/You/You_box"
 
 #my variable
 @onready var what_okno: int = 0
@@ -31,6 +34,8 @@ func _ready() -> void:
 	tingen_button.button_down.connect(tingen_show)
 	backlund_button.button_down.connect(backlund_show)
 	trier_button.button_down.connect(trier_show)
+	#items
+	you_button.button_down.connect(show_you)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -114,6 +119,17 @@ func which_but(temp_but) -> void:
 		loen.hide()
 	if temp_but == 1:
 		intis_but.hide()
+
+
+
+#pokazywanie itemków
+func show_you() -> void:
+	if !you_button.button_pressed:
+		you_box.hide()
+		you_button.text = "> You"
+	elif you_button.button_pressed:
+		you_box.show()
+		you_button.text = "V You"
 
 		
 	

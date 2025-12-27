@@ -345,6 +345,53 @@ offset_left = -1302.0
 grow_horizontal = 0
 grow_vertical = 2
 
+[node name="Spirituality" type="HBoxContainer" parent="Main Window/Background/Działanie"]
+layout_mode = 0
+offset_left = 1581.0
+offset_right = 1821.0
+offset_bottom = 23.0
+theme_override_constants/separation = 67
+alignment = 1
+
+[node name="Label" type="Label" parent="Main Window/Background/Działanie/Spirituality"]
+layout_mode = 2
+text = "Spirituality: "
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Main Window/Background/Działanie/Spirituality"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Main Window/Background/Działanie/Spirituality/HBoxContainer"]
+layout_mode = 2
+text = "10"
+
+[node name="Label2" type="Label" parent="Main Window/Background/Działanie/Spirituality/HBoxContainer"]
+layout_mode = 2
+text = "/100"
+
+[node name="Madness" type="HBoxContainer" parent="Main Window/Background/Działanie"]
+layout_mode = 0
+offset_left = 1581.0
+offset_top = 27.0
+offset_right = 1821.0
+offset_bottom = 50.0
+theme_override_constants/separation = 84
+alignment = 1
+
+[node name="Label" type="Label" parent="Main Window/Background/Działanie/Madness"]
+layout_mode = 2
+text = "Madness: "
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Main Window/Background/Działanie/Madness"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Main Window/Background/Działanie/Madness/HBoxContainer"]
+layout_mode = 2
+text = "10"
+
+[node name="Label2" type="Label" parent="Main Window/Background/Działanie/Madness/HBoxContainer"]
+layout_mode = 2
+text = "/100"
+
 [node name="HBoxContainer" type="HBoxContainer" parent="Main Window/Background"]
 layout_mode = 1
 anchors_preset = 6
@@ -374,6 +421,76 @@ anchors_preset = 10
 anchor_right = 1.0
 offset_bottom = 738.0
 grow_horizontal = 2
+
+[node name="You" type="VBoxContainer" parent="Main Window/Background/HBoxContainer/VBoxContainer/ColorRect/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="You_Button" type="Button" parent="Main Window/Background/HBoxContainer/VBoxContainer/ColorRect/VBoxContainer/You"]
+layout_mode = 2
+size_flags_horizontal = 3
+toggle_mode = true
+text = "V You"
+alignment = 0
+
+[node name="You_box" type="HBoxContainer" parent="Main Window/Background/HBoxContainer/VBoxContainer/ColorRect/VBoxContainer/You"]
+layout_mode = 2
+
+[node name="You_text" type="VBoxContainer" parent="Main Window/Background/HBoxContainer/VBoxContainer/ColorRect/VBoxContainer/You/You_box"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Spirituality" type="Label" parent="Main Window/Background/HBoxContainer/VBoxContainer/ColorRect/VBoxContainer/You/You_box/You_text"]
+layout_mode = 2
+text = "Spirituality: "
+
+[node name="Madness" type="Label" parent="Main Window/Background/HBoxContainer/VBoxContainer/ColorRect/VBoxContainer/You/You_box/You_text"]
+layout_mode = 2
+text = "Madness: "
+
+[node name="Label" type="Label" parent="Main Window/Background/HBoxContainer/VBoxContainer/ColorRect/VBoxContainer/You/You_box/You_text"]
+layout_mode = 2
+text = "something"
+
+[node name="You_Data" type="VBoxContainer" parent="Main Window/Background/HBoxContainer/VBoxContainer/ColorRect/VBoxContainer/You/You_box"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Main Window/Background/HBoxContainer/VBoxContainer/ColorRect/VBoxContainer/You/You_box/You_Data"]
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="Label" type="Label" parent="Main Window/Background/HBoxContainer/VBoxContainer/ColorRect/VBoxContainer/You/You_box/You_Data/HBoxContainer"]
+layout_mode = 2
+text = "100"
+
+[node name="Label2" type="Label" parent="Main Window/Background/HBoxContainer/VBoxContainer/ColorRect/VBoxContainer/You/You_box/You_Data/HBoxContainer"]
+layout_mode = 2
+text = "/1000"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Main Window/Background/HBoxContainer/VBoxContainer/ColorRect/VBoxContainer/You/You_box/You_Data"]
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="Label" type="Label" parent="Main Window/Background/HBoxContainer/VBoxContainer/ColorRect/VBoxContainer/You/You_box/You_Data/HBoxContainer2"]
+layout_mode = 2
+text = "23"
+
+[node name="Label2" type="Label" parent="Main Window/Background/HBoxContainer/VBoxContainer/ColorRect/VBoxContainer/You/You_box/You_Data/HBoxContainer2"]
+layout_mode = 2
+text = "/1000"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="Main Window/Background/HBoxContainer/VBoxContainer/ColorRect/VBoxContainer/You/You_box/You_Data"]
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="Label" type="Label" parent="Main Window/Background/HBoxContainer/VBoxContainer/ColorRect/VBoxContainer/You/You_box/You_Data/HBoxContainer3"]
+layout_mode = 2
+text = "12"
+
+[node name="Label2" type="Label" parent="Main Window/Background/HBoxContainer/VBoxContainer/ColorRect/VBoxContainer/You/You_box/You_Data/HBoxContainer3"]
+layout_mode = 2
+text = "/1000"
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="Main Window/Background/HBoxContainer/VBoxContainer/ColorRect"]
 layout_mode = 1
