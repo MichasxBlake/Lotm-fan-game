@@ -1,0 +1,390 @@
+[gd_scene load_steps=8 format=3 uid="uid://dptn8t2yllqyk"]
+
+[ext_resource type="Script" uid="uid://b8ra3h3ewiuoq" path="res://Scripts/LOTM.gd" id="1_i6g32"]
+[ext_resource type="Theme" uid="uid://bnlijgvut1fio" path="res://Themes/buttons_menu.tres" id="2_1l0tm"]
+[ext_resource type="ButtonGroup" uid="uid://u8l18yyt0soj" path="res://Button_groups/Menu.tres" id="3_v158k"]
+[ext_resource type="Theme" uid="uid://cq5myxeikv044" path="res://Themes/Locations.tres" id="4_h4fw4"]
+[ext_resource type="ButtonGroup" uid="uid://b5iey3whphkmn" path="res://Button_groups/Locations.tres" id="5_ldgsr"]
+[ext_resource type="Theme" uid="uid://dkgiatqq5hesh" path="res://Themes/Locations_cities.tres" id="6_o5yvi"]
+[ext_resource type="ButtonGroup" uid="uid://dkh17fewvyec3" path="res://Button_groups/location_cities.tres" id="7_1l0tm"]
+
+[node name="Game" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_i6g32")
+
+[node name="Main Window" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="ColorRect" parent="Main Window"]
+layout_mode = 2
+color = Color(0.24705882, 0.11372549, 0.16862746, 1)
+
+[node name="Menu" type="VBoxContainer" parent="Main Window/Background"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -957.5
+offset_right = 957.5
+offset_bottom = 73.0
+grow_horizontal = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="Control" type="Control" parent="Main Window/Background/Menu"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Main Window/Background/Menu"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="Button" type="Button" parent="Main Window/Background/Menu/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_1l0tm")
+toggle_mode = true
+button_group = ExtResource("3_v158k")
+text = "Menu"
+
+[node name="Button2" type="Button" parent="Main Window/Background/Menu/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_1l0tm")
+toggle_mode = true
+button_group = ExtResource("3_v158k")
+text = "Menu"
+
+[node name="Button3" type="Button" parent="Main Window/Background/Menu/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_1l0tm")
+toggle_mode = true
+button_group = ExtResource("3_v158k")
+text = "Menu"
+
+[node name="Button4" type="Button" parent="Main Window/Background/Menu/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_1l0tm")
+toggle_mode = true
+button_group = ExtResource("3_v158k")
+text = "Menu"
+
+[node name="Button5" type="Button" parent="Main Window/Background/Menu/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_1l0tm")
+toggle_mode = true
+button_group = ExtResource("3_v158k")
+text = "Menu"
+
+[node name="Działanie" type="Control" parent="Main Window/Background"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -958.0
+offset_top = -974.0
+offset_right = 698.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Locations" type="HBoxContainer" parent="Main Window/Background/Działanie"]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_top = -26.0
+offset_right = 352.0
+grow_vertical = 2
+alignment = 1
+
+[node name="Control" type="Control" parent="Main Window/Background/Działanie/Locations"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ColorRect" type="ColorRect" parent="Main Window/Background/Działanie/Locations"]
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(0.20400871, 0.08893366, 0.13568288, 1)
+
+[node name="Menu_of_locations" type="VBoxContainer" parent="Main Window/Background/Działanie/Locations/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 27.0
+offset_right = -22.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="Control" type="Control" parent="Main Window/Background/Działanie/Locations/ColorRect/Menu_of_locations"]
+layout_mode = 2
+
+[node name="Control3" type="Control" parent="Main Window/Background/Działanie/Locations/ColorRect/Menu_of_locations"]
+layout_mode = 2
+
+[node name="Control4" type="Control" parent="Main Window/Background/Działanie/Locations/ColorRect/Menu_of_locations"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Main Window/Background/Działanie/Locations/ColorRect/Menu_of_locations"]
+texture_filter = 1
+layout_mode = 2
+text = "Lokacje"
+horizontal_alignment = 1
+
+[node name="Control6" type="Control" parent="Main Window/Background/Działanie/Locations/ColorRect/Menu_of_locations"]
+layout_mode = 2
+
+[node name="Control7" type="Control" parent="Main Window/Background/Działanie/Locations/ColorRect/Menu_of_locations"]
+layout_mode = 2
+
+[node name="HSeparator" type="HSeparator" parent="Main Window/Background/Działanie/Locations/ColorRect/Menu_of_locations"]
+layout_mode = 2
+
+[node name="Loen Kingdom" type="Button" parent="Main Window/Background/Działanie/Locations/ColorRect/Menu_of_locations"]
+layout_mode = 2
+theme = ExtResource("4_h4fw4")
+toggle_mode = true
+button_pressed = true
+button_group = ExtResource("5_ldgsr")
+text = "Loen kingdom"
+
+[node name="Loen" type="VBoxContainer" parent="Main Window/Background/Działanie/Locations/ColorRect/Menu_of_locations"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="Main Window/Background/Działanie/Locations/ColorRect/Menu_of_locations/Loen"]
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(0.1592056, 0.06465201, 0.10358583, 1)
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Main Window/Background/Działanie/Locations/ColorRect/Menu_of_locations/Loen/ColorRect"]
+layout_mode = 0
+offset_top = 4.0
+offset_right = 125.0
+offset_bottom = 100.0
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Main Window/Background/Działanie/Locations/ColorRect/Menu_of_locations/Loen/ColorRect/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 8
+
+[node name="tingen" type="Button" parent="Main Window/Background/Działanie/Locations/ColorRect/Menu_of_locations/Loen/ColorRect/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("6_o5yvi")
+toggle_mode = true
+button_pressed = true
+button_group = ExtResource("7_1l0tm")
+text = "Tingen"
+
+[node name="backlund" type="Button" parent="Main Window/Background/Działanie/Locations/ColorRect/Menu_of_locations/Loen/ColorRect/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("6_o5yvi")
+toggle_mode = true
+button_group = ExtResource("7_1l0tm")
+text = "Backlund"
+
+[node name="trier" type="Button" parent="Main Window/Background/Działanie/Locations/ColorRect/Menu_of_locations/Loen/ColorRect/ScrollContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+
+[node name="HSeparator2" type="HSeparator" parent="Main Window/Background/Działanie/Locations/ColorRect/Menu_of_locations"]
+layout_mode = 2
+
+[node name="Intis" type="Button" parent="Main Window/Background/Działanie/Locations/ColorRect/Menu_of_locations"]
+layout_mode = 2
+theme = ExtResource("4_h4fw4")
+toggle_mode = true
+button_group = ExtResource("5_ldgsr")
+text = "Intis Rebulic"
+
+[node name="intis_but" type="VBoxContainer" parent="Main Window/Background/Działanie/Locations/ColorRect/Menu_of_locations"]
+visible = false
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Main Window/Background/Działanie/Locations/ColorRect/Menu_of_locations/intis_but"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Main Window/Background/Działanie/Locations/ColorRect/Menu_of_locations/intis_but/ScrollContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Button" type="Button" parent="Main Window/Background/Działanie/Locations/ColorRect/Menu_of_locations/intis_but/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+text = "Text"
+
+[node name="Button2" type="Button" parent="Main Window/Background/Działanie/Locations/ColorRect/Menu_of_locations/intis_but/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+text = "Text"
+
+[node name="Button3" type="Button" parent="Main Window/Background/Działanie/Locations/ColorRect/Menu_of_locations/intis_but/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+text = "Text"
+
+[node name="Button4" type="Button" parent="Main Window/Background/Działanie/Locations/ColorRect/Menu_of_locations/intis_but/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+text = "Text"
+
+[node name="HSeparator3" type="HSeparator" parent="Main Window/Background/Działanie/Locations/ColorRect/Menu_of_locations"]
+layout_mode = 2
+
+[node name="Intis2" type="Button" parent="Main Window/Background/Działanie/Locations/ColorRect/Menu_of_locations"]
+layout_mode = 2
+theme = ExtResource("4_h4fw4")
+toggle_mode = true
+button_group = ExtResource("5_ldgsr")
+text = "Intis Rebulic"
+
+[node name="Tingen" type="MarginContainer" parent="Main Window/Background/Działanie"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1302.0
+offset_right = -73.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Main Window/Background/Działanie/Tingen"]
+layout_mode = 2
+text = "Okno numer 0"
+
+[node name="Backlund" type="MarginContainer" parent="Main Window/Background/Działanie"]
+visible = false
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1302.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Main Window/Background/Działanie/Backlund"]
+layout_mode = 2
+text = "Okno numer 1"
+
+[node name="Okno3" type="MarginContainer" parent="Main Window/Background/Działanie"]
+visible = false
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1302.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Main Window/Background/Działanie/Okno3"]
+layout_mode = 2
+text = "Okno numer 2"
+
+[node name="Okno4" type="MarginContainer" parent="Main Window/Background/Działanie"]
+visible = false
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1302.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Main Window/Background/Działanie/Okno4"]
+layout_mode = 2
+text = "Okno numer 3"
+
+[node name="Okno5" type="MarginContainer" parent="Main Window/Background/Działanie"]
+visible = false
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1302.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="Okno6" type="MarginContainer" parent="Main Window/Background/Działanie"]
+visible = false
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1302.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="Okno7" type="MarginContainer" parent="Main Window/Background/Działanie"]
+visible = false
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1302.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Main Window/Background"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -337.0
+offset_top = -469.0
+offset_bottom = 538.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Main Window/Background/HBoxContainer"]
+custom_minimum_size = Vector2(240, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ColorRect" type="ColorRect" parent="Main Window/Background/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(0.20392157, 0.09019608, 0.13725491, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Main Window/Background/HBoxContainer/VBoxContainer/ColorRect"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 738.0
+grow_horizontal = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Main Window/Background/HBoxContainer/VBoxContainer/ColorRect"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -274.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Control" type="Control" parent="Main Window/Background/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
