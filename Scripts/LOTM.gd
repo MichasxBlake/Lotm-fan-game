@@ -25,6 +25,7 @@ extends Control
 @onready var what_okno: int = 0
 @onready var what_but: int = 0
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	#państwa
@@ -123,7 +124,13 @@ func which_but(temp_but) -> void:
 
 
 #pokazywanie itemków
-func show_you() -> void:
+func show_you(button_name : String):
+	if get(button_name).button_pressed:
+		print("XD")
+
+
+
+func xd() -> void:
 	if !you_button.button_pressed:
 		you_box.hide()
 		you_button.text = "> You"
