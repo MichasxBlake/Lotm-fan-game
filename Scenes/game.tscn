@@ -99,8 +99,8 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -958.0
-offset_top = -974.0
-offset_right = 698.0
+offset_top = -1015.0
+offset_right = 623.0
 grow_horizontal = 2
 grow_vertical = 0
 
@@ -108,8 +108,7 @@ grow_vertical = 0
 layout_mode = 1
 anchors_preset = 9
 anchor_bottom = 1.0
-offset_top = -26.0
-offset_right = 352.0
+offset_right = 355.0
 grow_vertical = 2
 alignment = 1
 
@@ -259,18 +258,109 @@ text = "Intis Rebulic"
 
 [node name="Tingen" type="MarginContainer" parent="Main Window/Background/Działanie"]
 layout_mode = 1
-anchors_preset = 11
-anchor_left = 1.0
-anchor_right = 1.0
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -1302.0
-offset_right = -73.0
-grow_horizontal = 0
+offset_left = -435.5
+offset_right = 790.5
+grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="Main Window/Background/Działanie/Tingen"]
+[node name="ColorRect" type="ColorRect" parent="Main Window/Background/Działanie/Tingen"]
 layout_mode = 2
-text = "Okno numer 0"
+color = Color(0.27082172, 0.13016593, 0.18938941, 1)
+
+[node name="House" type="VBoxContainer" parent="Main Window/Background/Działanie/Tingen/ColorRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.50570965
+anchor_top = 0.008866995
+anchor_right = 0.49673736
+anchor_bottom = 0.012807881
+offset_left = -610.0
+offset_right = 611.0
+offset_bottom = 134.0
+grow_horizontal = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect" type="ColorRect" parent="Main Window/Background/Działanie/Tingen/ColorRect/House"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.5
+color = Color(0.34382322, 0.171653, 0.24414572, 1)
+
+[node name="Label" type="Label" parent="Main Window/Background/Działanie/Tingen/ColorRect/House/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Siemka"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect2" type="ColorRect" parent="Main Window/Background/Działanie/Tingen/ColorRect/House"]
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(0.3107225, 0.15284173, 0.21931782, 1)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Main Window/Background/Działanie/Tingen/ColorRect/House/ColorRect2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Main Street" type="VBoxContainer" parent="Main Window/Background/Działanie/Tingen/ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -603.0
+offset_top = -349.5
+offset_right = 607.0
+offset_bottom = -213.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 0
+
+[node name="ColorRect" type="ColorRect" parent="Main Window/Background/Działanie/Tingen/ColorRect/Main Street"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.5
+color = Color(0.34509805, 0.17254902, 0.24313726, 1)
+
+[node name="Label" type="Label" parent="Main Window/Background/Działanie/Tingen/ColorRect/Main Street/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Siemka"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect2" type="ColorRect" parent="Main Window/Background/Działanie/Tingen/ColorRect/Main Street"]
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(0.30980393, 0.15294118, 0.21960784, 1)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Main Window/Background/Działanie/Tingen/ColorRect/Main Street/ColorRect2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Backlund" type="MarginContainer" parent="Main Window/Background/Działanie"]
 visible = false
