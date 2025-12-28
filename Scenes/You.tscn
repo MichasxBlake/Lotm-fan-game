@@ -1,0 +1,86 @@
+[gd_scene load_steps=2 format=3 uid="uid://b3ngkp8lvjgo1"]
+
+[ext_resource type="Script" uid="uid://dcuju2kuv3xcu" path="res://Scripts/items_data.gd" id="1_vc67c"]
+
+[node name="You" type="VBoxContainer" node_paths=PackedStringArray("activate", "list", "vbox_size")]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1632.0
+offset_bottom = -960.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_vc67c")
+activate = NodePath("You_Button")
+list = NodePath("You_box")
+text_name = "You"
+vbox_size = NodePath(".")
+
+[node name="You_Button" type="Button" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+toggle_mode = true
+text = "V You"
+alignment = 0
+
+[node name="You_box" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="You_text" type="VBoxContainer" parent="You_box"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Spirituality" type="Label" parent="You_box/You_text"]
+layout_mode = 2
+text = "Spirituality: "
+
+[node name="Madness" type="Label" parent="You_box/You_text"]
+layout_mode = 2
+text = "Madness: "
+
+[node name="Label" type="Label" parent="You_box/You_text"]
+layout_mode = 2
+text = "something"
+
+[node name="You_Data" type="VBoxContainer" parent="You_box"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="You_box/You_Data"]
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="Label" type="Label" parent="You_box/You_Data/HBoxContainer"]
+layout_mode = 2
+text = "100"
+
+[node name="Label2" type="Label" parent="You_box/You_Data/HBoxContainer"]
+layout_mode = 2
+text = "/1000"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="You_box/You_Data"]
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="Label" type="Label" parent="You_box/You_Data/HBoxContainer2"]
+layout_mode = 2
+text = "23"
+
+[node name="Label2" type="Label" parent="You_box/You_Data/HBoxContainer2"]
+layout_mode = 2
+text = "/1000"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="You_box/You_Data"]
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="Label" type="Label" parent="You_box/You_Data/HBoxContainer3"]
+layout_mode = 2
+text = "12"
+
+[node name="Label2" type="Label" parent="You_box/You_Data/HBoxContainer3"]
+layout_mode = 2
+text = "/1000"
