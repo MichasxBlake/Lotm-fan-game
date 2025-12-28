@@ -6,7 +6,10 @@ extends Control
 @onready var tingen_button: Button = $"Main Window/Background/Działanie/Locations/ColorRect/Menu_of_locations/Loen/ColorRect/ScrollContainer/VBoxContainer/tingen"
 @onready var backlund_button: Button = $"Main Window/Background/Działanie/Locations/ColorRect/Menu_of_locations/Loen/ColorRect/ScrollContainer/VBoxContainer/backlund"
 @onready var trier_button: Button = $"Main Window/Background/Działanie/Locations/ColorRect/Menu_of_locations/Loen/ColorRect/ScrollContainer/VBoxContainer/trier"
-@onready var you_button: Button = $"Main Window/Background/HBoxContainer/VBoxContainer/ColorRect/VBoxContainer/You/You_Button"
+@onready var you_button: Button = $"Main Window/Background/HBoxContainer/VBoxContainer/ColorRect/Items/VBoxContainer/You/You_Button"
+@onready var show_logs: Button = $"Main Window/Background/HBoxContainer/VBoxContainer/ColorRect/Log_box/ColorRect/show_logs"
+
+
 
 
 
@@ -19,7 +22,10 @@ extends Control
 #others
 @onready var loen: VBoxContainer = $"Main Window/Background/Działanie/Locations/ColorRect/Menu_of_locations/Loen"
 @onready var intis_but: VBoxContainer = $"Main Window/Background/Działanie/Locations/ColorRect/Menu_of_locations/intis_but"
-@onready var you_box: HBoxContainer = $"Main Window/Background/HBoxContainer/VBoxContainer/ColorRect/VBoxContainer/You/You_box"
+@onready var you_box: HBoxContainer = $"Main Window/Background/HBoxContainer/VBoxContainer/ColorRect/Items/VBoxContainer/You/You_box"
+@onready var scroll_container: ScrollContainer = $"Main Window/Background/HBoxContainer/VBoxContainer/ColorRect/Log_box/ColorRect/ScrollContainer"
+@onready var items_window: ColorRect = $"Main Window/Background/HBoxContainer/VBoxContainer/ColorRect/Items"
+
 
 #my variable
 @onready var what_okno: int = 0
@@ -37,6 +43,12 @@ func _ready() -> void:
 	trier_button.button_down.connect(trier_show)
 	#items
 	you_button.button_down.connect(show_you)
+	
+	
+	
+	#Logs
+	scroll_container.set_deferred("scroll_vertical", scroll_container.get_v_scroll_bar().max_value)
+	show_logs.button_down.connect(logs_show)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -124,19 +136,22 @@ func which_but(temp_but) -> void:
 
 
 #pokazywanie itemków
-func show_you(button_name : String):
-	if get(button_name).button_pressed:
-		print("XD")
-
-
-
-func xd() -> void:
+func show_you() -> void:
 	if !you_button.button_pressed:
 		you_box.hide()
 		you_button.text = "> You"
 	elif you_button.button_pressed:
 		you_box.show()
 		you_button.text = "V You"
+		
+#Logi
+func logs_show() -> void:
+	if !show_logs.button_pressed:
+		items_window.hide()
+		show_logs.text = "v"
+	elif show_logs.button_pressed:
+		items_window.show()
+		show_logs.text = "^"
 
 		
 	
