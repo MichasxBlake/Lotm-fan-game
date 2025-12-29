@@ -15,6 +15,11 @@ run/main_scene="uid://tqxw2u0pr2uo"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+GlobalData="*res://Scripts/Global_data.gd"
+SaveLoad="*res://Scripts/SaveLoad.gd"
+
 [display]
 
 window/size/viewport_width=1920
@@ -22,6 +27,10 @@ window/size/viewport_height=1080
 window/size/mode=3
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
+
+[gui]
+
+theme/default_font_subpixel_positioning=0
 
 [input]
 

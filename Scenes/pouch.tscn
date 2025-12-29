@@ -1,8 +1,28 @@
-[gd_scene load_steps=2 format=3 uid="uid://du6ck6qui4go5"]
+[gd_scene load_steps=3 format=3 uid="uid://du6ck6qui4go5"]
 
 [ext_resource type="Script" uid="uid://dcuju2kuv3xcu" path="res://Scripts/items_data.gd" id="1_15k0m"]
 
-[node name="You" type="VBoxContainer" node_paths=PackedStringArray("activate", "list", "vbox_size")]
+[sub_resource type="GDScript" id="GDScript_15k0m"]
+script/source = "extends HBoxContainer
+
+@onready var pound: Label = $VBoxContainer/Pound/Label2
+@onready var soli: Label = $VBoxContainer/Soli/Label2
+@onready var pence: Label = $VBoxContainer/Pence/Label2
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pound.text = str(GlobalData.pounds)
+	soli.text = str(GlobalData.soli)
+	pence.text = str(GlobalData.pence)
+"
+
+[node name="Pouch" type="VBoxContainer" node_paths=PackedStringArray("activate", "list", "vbox_size")]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -13,12 +33,12 @@ grow_vertical = 2
 size_flags_horizontal = 2
 size_flags_vertical = 2
 script = ExtResource("1_15k0m")
-activate = NodePath("You_Button")
-list = NodePath("You_box")
+activate = NodePath("Pouch_Button")
+list = NodePath("Pouch_box")
 text_name = "Pouch"
 vbox_size = NodePath(".")
 
-[node name="You_Button" type="Button" parent="."]
+[node name="Pouch_Button" type="Button" parent="."]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 0
@@ -26,61 +46,64 @@ toggle_mode = true
 text = "V Pouch"
 alignment = 0
 
-[node name="You_box" type="HBoxContainer" parent="."]
+[node name="Pouch_box" type="HBoxContainer" parent="."]
 layout_mode = 2
+script = SubResource("GDScript_15k0m")
 
-[node name="You_text" type="VBoxContainer" parent="You_box"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="Spirituality" type="Label" parent="You_box/You_text"]
-layout_mode = 2
-text = "Spirituality: "
-
-[node name="Madness" type="Label" parent="You_box/You_text"]
-layout_mode = 2
-text = "Madness: "
-
-[node name="Label" type="Label" parent="You_box/You_text"]
-layout_mode = 2
-text = "something"
-
-[node name="You_Data" type="VBoxContainer" parent="You_box"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Pouch_box"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="HBoxContainer" type="HBoxContainer" parent="You_box/You_Data"]
+[node name="Pound" type="HBoxContainer" parent="Pouch_box/VBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 8
+size_flags_vertical = 3
+alignment = 1
 
-[node name="Label" type="Label" parent="You_box/You_Data/HBoxContainer"]
+[node name="Label" type="Label" parent="Pouch_box/VBoxContainer/Pound"]
+layout_mode = 2
+text = "Pound:"
+
+[node name="Control" type="Control" parent="Pouch_box/VBoxContainer/Pound"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 10.0
+
+[node name="Label2" type="Label" parent="Pouch_box/VBoxContainer/Pound"]
 layout_mode = 2
 text = "100"
 
-[node name="Label2" type="Label" parent="You_box/You_Data/HBoxContainer"]
+[node name="Soli" type="HBoxContainer" parent="Pouch_box/VBoxContainer"]
 layout_mode = 2
-text = "/1000"
+size_flags_vertical = 3
+alignment = 1
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="You_box/You_Data"]
+[node name="Label" type="Label" parent="Pouch_box/VBoxContainer/Soli"]
 layout_mode = 2
-size_flags_horizontal = 8
+text = "Soli:"
 
-[node name="Label" type="Label" parent="You_box/You_Data/HBoxContainer2"]
+[node name="Control" type="Control" parent="Pouch_box/VBoxContainer/Soli"]
 layout_mode = 2
-text = "23"
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 10.0
 
-[node name="Label2" type="Label" parent="You_box/You_Data/HBoxContainer2"]
+[node name="Label2" type="Label" parent="Pouch_box/VBoxContainer/Soli"]
 layout_mode = 2
-text = "/1000"
+text = "100"
 
-[node name="HBoxContainer3" type="HBoxContainer" parent="You_box/You_Data"]
+[node name="Pence" type="HBoxContainer" parent="Pouch_box/VBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 8
+size_flags_vertical = 3
+alignment = 1
 
-[node name="Label" type="Label" parent="You_box/You_Data/HBoxContainer3"]
+[node name="Label" type="Label" parent="Pouch_box/VBoxContainer/Pence"]
 layout_mode = 2
-text = "12"
+text = "Pence:"
 
-[node name="Label2" type="Label" parent="You_box/You_Data/HBoxContainer3"]
+[node name="Control" type="Control" parent="Pouch_box/VBoxContainer/Pence"]
 layout_mode = 2
-text = "/1000"
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 10.0
+
+[node name="Label2" type="Label" parent="Pouch_box/VBoxContainer/Pence"]
+layout_mode = 2
+text = "100"

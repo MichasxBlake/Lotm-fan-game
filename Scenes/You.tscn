@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://b3ngkp8lvjgo1"]
+[gd_scene load_steps=3 format=3 uid="uid://b3ngkp8lvjgo1"]
 
 [ext_resource type="Script" uid="uid://dcuju2kuv3xcu" path="res://Scripts/items_data.gd" id="1_vc67c"]
+[ext_resource type="Script" uid="uid://cet2excd260t3" path="res://Scenes/you.gd" id="2_bxon2"]
 
 [node name="You" type="VBoxContainer" node_paths=PackedStringArray("activate", "list", "vbox_size")]
 anchors_preset = 15
@@ -28,59 +29,96 @@ alignment = 0
 
 [node name="You_box" type="HBoxContainer" parent="."]
 layout_mode = 2
+script = ExtResource("2_bxon2")
 
-[node name="You_text" type="VBoxContainer" parent="You_box"]
+[node name="VBoxContainer" type="VBoxContainer" parent="You_box"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Spirituality" type="Label" parent="You_box/You_text"]
+[node name="Desire_Passion" type="HBoxContainer" parent="You_box/VBoxContainer"]
 layout_mode = 2
-text = "Spirituality: "
+size_flags_vertical = 3
+alignment = 1
 
-[node name="Madness" type="Label" parent="You_box/You_text"]
+[node name="Label" type="Label" parent="You_box/VBoxContainer/Desire_Passion"]
 layout_mode = 2
-text = "Madness: "
+text = "Desire/Passion:"
 
-[node name="Label" type="Label" parent="You_box/You_text"]
-layout_mode = 2
-text = "something"
-
-[node name="You_Data" type="VBoxContainer" parent="You_box"]
+[node name="Control" type="Control" parent="You_box/VBoxContainer/Desire_Passion"]
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_stretch_ratio = 10.0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="You_box/You_Data"]
-layout_mode = 2
-size_flags_horizontal = 8
-
-[node name="Label" type="Label" parent="You_box/You_Data/HBoxContainer"]
+[node name="Label2" type="Label" parent="You_box/VBoxContainer/Desire_Passion"]
 layout_mode = 2
 text = "100"
 
-[node name="Label2" type="Label" parent="You_box/You_Data/HBoxContainer"]
+[node name="Label3" type="Label" parent="You_box/VBoxContainer/Desire_Passion"]
 layout_mode = 2
 text = "/1000"
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="You_box/You_Data"]
+[node name="Spirituality" type="HBoxContainer" parent="You_box/VBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 8
+size_flags_vertical = 3
+alignment = 1
 
-[node name="Label" type="Label" parent="You_box/You_Data/HBoxContainer2"]
+[node name="Label" type="Label" parent="You_box/VBoxContainer/Spirituality"]
 layout_mode = 2
-text = "23"
+text = "Spirituality:"
 
-[node name="Label2" type="Label" parent="You_box/You_Data/HBoxContainer2"]
+[node name="Control" type="Control" parent="You_box/VBoxContainer/Spirituality"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 10.0
+
+[node name="Label2" type="Label" parent="You_box/VBoxContainer/Spirituality"]
+layout_mode = 2
+text = "100"
+
+[node name="Label3" type="Label" parent="You_box/VBoxContainer/Spirituality"]
 layout_mode = 2
 text = "/1000"
 
-[node name="HBoxContainer3" type="HBoxContainer" parent="You_box/You_Data"]
+[node name="Madness" type="HBoxContainer" parent="You_box/VBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 8
+size_flags_vertical = 3
+alignment = 1
 
-[node name="Label" type="Label" parent="You_box/You_Data/HBoxContainer3"]
+[node name="Label" type="Label" parent="You_box/VBoxContainer/Madness"]
 layout_mode = 2
-text = "12"
+text = "Madness:"
 
-[node name="Label2" type="Label" parent="You_box/You_Data/HBoxContainer3"]
+[node name="Control" type="Control" parent="You_box/VBoxContainer/Madness"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 10.0
+
+[node name="Label2" type="Label" parent="You_box/VBoxContainer/Madness"]
+layout_mode = 2
+text = "100"
+
+[node name="Label3" type="Label" parent="You_box/VBoxContainer/Madness"]
+layout_mode = 2
+text = "/1000"
+
+[node name="Mind_power" type="HBoxContainer" parent="You_box/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+
+[node name="Label" type="Label" parent="You_box/VBoxContainer/Mind_power"]
+layout_mode = 2
+text = "Mind Power:"
+
+[node name="Control" type="Control" parent="You_box/VBoxContainer/Mind_power"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 10.0
+
+[node name="Label2" type="Label" parent="You_box/VBoxContainer/Mind_power"]
+layout_mode = 2
+text = "100"
+
+[node name="Label3" type="Label" parent="You_box/VBoxContainer/Mind_power"]
 layout_mode = 2
 text = "/1000"

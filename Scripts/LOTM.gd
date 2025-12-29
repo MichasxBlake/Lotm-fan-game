@@ -1,11 +1,11 @@
 extends Control
 
 #buttons
-@onready var loen_kingdom: Button = $"Main Window/Background/Działanie/Locations/ColorRect/Menu_of_locations/Loen Kingdom"
-@onready var intis: Button = $"Main Window/Background/Działanie/Locations/ColorRect/Menu_of_locations/Intis"
-@onready var tingen_button: Button = $"Main Window/Background/Działanie/Locations/ColorRect/Menu_of_locations/Loen/ColorRect/ScrollContainer/VBoxContainer/tingen"
-@onready var backlund_button: Button = $"Main Window/Background/Działanie/Locations/ColorRect/Menu_of_locations/Loen/ColorRect/ScrollContainer/VBoxContainer/backlund"
-@onready var trier_button: Button = $"Main Window/Background/Działanie/Locations/ColorRect/Menu_of_locations/Loen/ColorRect/ScrollContainer/VBoxContainer/trier"
+@onready var loen_kingdom: Button = $"Main Window/Background/Your Journey/Locations/ColorRect/Menu_of_locations/Loen Kingdom"
+@onready var intis: Button = $"Main Window/Background/Your Journey/Locations/ColorRect/Menu_of_locations/Intis"
+@onready var tingen_button: Button = $"Main Window/Background/Your Journey/Locations/ColorRect/Menu_of_locations/Loen/ColorRect/ScrollContainer/VBoxContainer/tingen"
+@onready var backlund_button: Button = $"Main Window/Background/Your Journey/Locations/ColorRect/Menu_of_locations/Loen/ColorRect/ScrollContainer/VBoxContainer/backlund"
+@onready var trier_button: Button = $"Main Window/Background/Your Journey/Locations/ColorRect/Menu_of_locations/Loen/ColorRect/ScrollContainer/VBoxContainer/trier"
 @onready var show_logs: Button = $"Main Window/Background/HBoxContainer/VBoxContainer/ColorRect/Log_box/ColorRect/show_logs"
 
 
@@ -17,12 +17,16 @@ extends Control
 @onready var backlund: MarginContainer = $"Main Window/Background/Działanie/Backlund"
 @onready var okno_3: MarginContainer = $"Main Window/Background/Działanie/Okno3"
 @onready var okno_4: MarginContainer = $"Main Window/Background/Działanie/Okno4"
+@onready var settings: Control = $"Main Window/Background/Settings"
+@onready var your_journey: Control = $"Main Window/Background/Your Journey"
 
 #others
 @onready var loen: VBoxContainer = $"Main Window/Background/Działanie/Locations/ColorRect/Menu_of_locations/Loen"
 @onready var intis_but: VBoxContainer = $"Main Window/Background/Działanie/Locations/ColorRect/Menu_of_locations/intis_but"
 @onready var scroll_container: ScrollContainer = $"Main Window/Background/HBoxContainer/VBoxContainer/ColorRect/Log_box/ColorRect/ScrollContainer"
 @onready var items_window: ColorRect = $"Main Window/Background/HBoxContainer/VBoxContainer/ColorRect/Items"
+@onready var progress_bar: ProgressBar = $"Main Window/Background/Działanie/Tingen/ColorRect/House/ColorRect2/ScrollContainer/Control/ProgressBar"
+@export var menu_group : ButtonGroup
 
 
 #my variable
@@ -32,6 +36,12 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	
+	#menu
+	for i in menu_group.get_buttons():
+		i.connect("pressed",show_menu)
+
+	
 	#państwa
 	loen_kingdom.button_down.connect(loen_show)
 	intis.button_down.connect(intis_show)
@@ -50,11 +60,29 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
-	
+	if GlobalData.pence>100:
+		GlobalData.soli +=1
+		GlobalData.pence -=100
+	if GlobalData.soli>100:
+		GlobalData.pounds +=1
+		GlobalData.soli -=100
+
 func _input(event) -> void:
 	if event.is_action_pressed("Escape"):
 		get_tree().change_scene_to_file("res://Scenes/control.tscn")
+
+#pokazywanie menu
+func show_menu():
+	var name = menu_group.get_pressed_button().name
+	if name == "Your Journey":
+		your_journey.show()
+		settings.hide()
+	elif name == "Settings":
+		your_journey.hide()
+		settings.show()
+		
+
+		
 		
 	
 	
