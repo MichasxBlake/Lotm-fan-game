@@ -20,4 +20,3 @@ func show_text() -> void:
 		print_debug(vbox_size.size)
 		list.show()
 		activate.text = "V " + text_name
-		vbox_size.set_size(Vector2(239,113))

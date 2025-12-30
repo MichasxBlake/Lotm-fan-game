@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://dptn8t2yllqyk"]
+[gd_scene load_steps=21 format=3 uid="uid://dptn8t2yllqyk"]
 
 [ext_resource type="Script" uid="uid://b8ra3h3ewiuoq" path="res://Scripts/LOTM.gd" id="1_i6g32"]
 [ext_resource type="Theme" uid="uid://bnlijgvut1fio" path="res://Themes/buttons_menu.tres" id="2_1l0tm"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://b3ngkp8lvjgo1" path="res://Scenes/You.tscn" id="8_h4fw4"]
 [ext_resource type="FontFile" uid="uid://cxod2pl2cccwb" path="res://diffusion/woff2/diffusion-regular.woff2" id="8_ldgsr"]
 [ext_resource type="PackedScene" uid="uid://du6ck6qui4go5" path="res://Scenes/pouch.tscn" id="8_v158k"]
+[ext_resource type="Script" uid="uid://ihxr02abkf2n" path="res://Scripts/SaveLoad.gd" id="11_o5yvi"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ldgsr"]
 
@@ -520,68 +521,22 @@ grow_vertical = 2
 size_flags_vertical = 3
 theme_override_constants/separation = 0
 
-[node name="Spirituality" type="HBoxContainer" parent="Main Window/Background/Your Journey"]
-layout_mode = 0
-offset_left = 1581.0
-offset_right = 1821.0
-offset_bottom = 23.0
-theme_override_constants/separation = 67
-alignment = 1
-
-[node name="Label" type="Label" parent="Main Window/Background/Your Journey/Spirituality"]
-layout_mode = 2
-text = "Spirituality: "
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Main Window/Background/Your Journey/Spirituality"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="Main Window/Background/Your Journey/Spirituality/HBoxContainer"]
-layout_mode = 2
-text = "10"
-
-[node name="Label2" type="Label" parent="Main Window/Background/Your Journey/Spirituality/HBoxContainer"]
-layout_mode = 2
-text = "/100"
-
-[node name="Madness" type="HBoxContainer" parent="Main Window/Background/Your Journey"]
-layout_mode = 0
-offset_left = 1581.0
-offset_top = 27.0
-offset_right = 1821.0
-offset_bottom = 50.0
-theme_override_constants/separation = 84
-alignment = 1
-
-[node name="Label" type="Label" parent="Main Window/Background/Your Journey/Madness"]
-layout_mode = 2
-text = "Madness: "
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Main Window/Background/Your Journey/Madness"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="Main Window/Background/Your Journey/Madness/HBoxContainer"]
-layout_mode = 2
-text = "10"
-
-[node name="Label2" type="Label" parent="Main Window/Background/Your Journey/Madness/HBoxContainer"]
-layout_mode = 2
-text = "/100"
-
 [node name="HBoxContainer" type="HBoxContainer" parent="Main Window/Background"]
 layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
+anchors_preset = 8
+anchor_left = 0.5
 anchor_top = 0.5
-anchor_right = 1.0
+anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -337.0
+offset_left = 623.0
 offset_top = -469.0
-offset_bottom = 538.0
-grow_horizontal = 0
+offset_right = 956.0
+offset_bottom = 540.0
+grow_horizontal = 2
 grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Main Window/Background/HBoxContainer"]
-custom_minimum_size = Vector2(240, 0)
+custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 
@@ -591,7 +546,6 @@ size_flags_vertical = 3
 color = Color(0.20392157, 0.09019608, 0.13725491, 1)
 
 [node name="Log_box" type="VBoxContainer" parent="Main Window/Background/HBoxContainer/VBoxContainer/ColorRect"]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -610,15 +564,35 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = -6.0
+offset_right = 4.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Label" type="Label" parent="Main Window/Background/HBoxContainer/VBoxContainer/ColorRect/Log_box/ColorRect/ScrollContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_vertical = 8
+size_flags_vertical = 10
 text = "sad
 ads
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 aas
 da
 
@@ -684,7 +658,7 @@ text = "^"
 [node name="Items" type="ColorRect" parent="Main Window/Background/HBoxContainer/VBoxContainer/ColorRect"]
 layout_mode = 0
 offset_top = -6.0
-offset_right = 240.0
+offset_right = 304.0
 offset_bottom = 738.0
 color = Color(0.19473092, 0.08432609, 0.1323282, 1)
 
@@ -697,14 +671,16 @@ anchor_bottom = 1.0
 offset_bottom = -184.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 0
 
 [node name="You" parent="Main Window/Background/HBoxContainer/VBoxContainer/ColorRect/Items/VBoxContainer" instance=ExtResource("8_h4fw4")]
 layout_mode = 2
+size_flags_vertical = 1
 
 [node name="Pouch" parent="Main Window/Background/HBoxContainer/VBoxContainer/ColorRect/Items/VBoxContainer" instance=ExtResource("8_v158k")]
 layout_mode = 2
 size_flags_horizontal = 1
-size_flags_vertical = 3
+size_flags_vertical = 1
 
 [node name="Control" type="Control" parent="Main Window/Background/HBoxContainer/VBoxContainer/ColorRect/Items/VBoxContainer"]
 layout_mode = 2
@@ -769,3 +745,15 @@ offset_top = -47.0
 offset_right = 198.0
 offset_bottom = -3.0
 text = "Size"
+
+[node name="Node" type="Node" parent="."]
+script = ExtResource("11_o5yvi")
+
+[node name="Button" type="Button" parent="Node"]
+offset_left = 779.50635
+offset_top = 572.4631
+offset_right = 981.0
+offset_bottom = 646.0
+text = "spriti"
+
+[connection signal="button_down" from="Node/Button" to="." method="_on_button_button_down"]

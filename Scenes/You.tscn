@@ -1,14 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://b3ngkp8lvjgo1"]
+[gd_scene load_steps=4 format=3 uid="uid://b3ngkp8lvjgo1"]
 
 [ext_resource type="Script" uid="uid://dcuju2kuv3xcu" path="res://Scripts/items_data.gd" id="1_vc67c"]
 [ext_resource type="Script" uid="uid://cet2excd260t3" path="res://Scenes/you.gd" id="2_bxon2"]
+[ext_resource type="Theme" uid="uid://lji2qil8mkcf" path="res://Themes/Items.tres" id="3_ubvwo"]
 
 [node name="You" type="VBoxContainer" node_paths=PackedStringArray("activate", "list", "vbox_size")]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = 3.0
 offset_right = -1632.0
-offset_bottom = -960.0
+offset_bottom = -937.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
@@ -23,6 +25,7 @@ vbox_size = NodePath(".")
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 0
+theme_override_font_sizes/font_size = 23
 toggle_mode = true
 text = "V You"
 alignment = 0
@@ -42,7 +45,8 @@ alignment = 1
 
 [node name="Label" type="Label" parent="You_box/VBoxContainer/Desire_Passion"]
 layout_mode = 2
-text = "Desire/Passion:"
+theme = ExtResource("3_ubvwo")
+text = "Passion:"
 
 [node name="Control" type="Control" parent="You_box/VBoxContainer/Desire_Passion"]
 layout_mode = 2
@@ -51,10 +55,12 @@ size_flags_stretch_ratio = 10.0
 
 [node name="Label2" type="Label" parent="You_box/VBoxContainer/Desire_Passion"]
 layout_mode = 2
+theme = ExtResource("3_ubvwo")
 text = "100"
 
 [node name="Label3" type="Label" parent="You_box/VBoxContainer/Desire_Passion"]
 layout_mode = 2
+theme = ExtResource("3_ubvwo")
 text = "/1000"
 
 [node name="Spirituality" type="HBoxContainer" parent="You_box/VBoxContainer"]
@@ -64,6 +70,7 @@ alignment = 1
 
 [node name="Label" type="Label" parent="You_box/VBoxContainer/Spirituality"]
 layout_mode = 2
+theme = ExtResource("3_ubvwo")
 text = "Spirituality:"
 
 [node name="Control" type="Control" parent="You_box/VBoxContainer/Spirituality"]
@@ -73,10 +80,12 @@ size_flags_stretch_ratio = 10.0
 
 [node name="Label2" type="Label" parent="You_box/VBoxContainer/Spirituality"]
 layout_mode = 2
+theme = ExtResource("3_ubvwo")
 text = "100"
 
 [node name="Label3" type="Label" parent="You_box/VBoxContainer/Spirituality"]
 layout_mode = 2
+theme = ExtResource("3_ubvwo")
 text = "/1000"
 
 [node name="Madness" type="HBoxContainer" parent="You_box/VBoxContainer"]
@@ -86,6 +95,7 @@ alignment = 1
 
 [node name="Label" type="Label" parent="You_box/VBoxContainer/Madness"]
 layout_mode = 2
+theme = ExtResource("3_ubvwo")
 text = "Madness:"
 
 [node name="Control" type="Control" parent="You_box/VBoxContainer/Madness"]
@@ -95,10 +105,12 @@ size_flags_stretch_ratio = 10.0
 
 [node name="Label2" type="Label" parent="You_box/VBoxContainer/Madness"]
 layout_mode = 2
+theme = ExtResource("3_ubvwo")
 text = "100"
 
 [node name="Label3" type="Label" parent="You_box/VBoxContainer/Madness"]
 layout_mode = 2
+theme = ExtResource("3_ubvwo")
 text = "/1000"
 
 [node name="Mind_power" type="HBoxContainer" parent="You_box/VBoxContainer"]
@@ -108,6 +120,7 @@ alignment = 1
 
 [node name="Label" type="Label" parent="You_box/VBoxContainer/Mind_power"]
 layout_mode = 2
+theme = ExtResource("3_ubvwo")
 text = "Mind Power:"
 
 [node name="Control" type="Control" parent="You_box/VBoxContainer/Mind_power"]
@@ -117,8 +130,10 @@ size_flags_stretch_ratio = 10.0
 
 [node name="Label2" type="Label" parent="You_box/VBoxContainer/Mind_power"]
 layout_mode = 2
+theme = ExtResource("3_ubvwo")
 text = "100"
 
 [node name="Label3" type="Label" parent="You_box/VBoxContainer/Mind_power"]
 layout_mode = 2
+theme = ExtResource("3_ubvwo")
 text = "/1000"

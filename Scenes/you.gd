@@ -19,7 +19,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	spirituality.text = str(GlobalData.spirituality)
-	spirituality_max.text = "/ "+str(GlobalData._spirituality_max)
+	spirituality_max.text = "/ "+str(GlobalData.spirituality_max)
 	madness.text = str(GlobalData.madness)
 	madness_max.text = "/ "+str(GlobalData.madness_max)
 	mind_power.text = str(GlobalData.mind_power)

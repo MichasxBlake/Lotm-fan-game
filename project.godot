@@ -18,19 +18,18 @@ config/icon="res://icon.svg"
 [autoload]
 
 GlobalData="*res://Scripts/Global_data.gd"
-SaveLoad="*res://Scripts/SaveLoad.gd"
 
 [display]
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
-window/size/mode=3
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
 [gui]
 
 theme/default_font_subpixel_positioning=0
+theme/custom_font="uid://c712hc85rvljk"
 
 [input]
 

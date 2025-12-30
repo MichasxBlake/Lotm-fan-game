@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://du6ck6qui4go5"]
+[gd_scene load_steps=4 format=3 uid="uid://du6ck6qui4go5"]
 
 [ext_resource type="Script" uid="uid://dcuju2kuv3xcu" path="res://Scripts/items_data.gd" id="1_15k0m"]
+[ext_resource type="Theme" uid="uid://lji2qil8mkcf" path="res://Themes/Items.tres" id="2_t74fa"]
 
 [sub_resource type="GDScript" id="GDScript_15k0m"]
 script/source = "extends HBoxContainer
@@ -42,6 +43,7 @@ vbox_size = NodePath(".")
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 0
+theme_override_font_sizes/font_size = 23
 toggle_mode = true
 text = "V Pouch"
 alignment = 0
@@ -61,6 +63,7 @@ alignment = 1
 
 [node name="Label" type="Label" parent="Pouch_box/VBoxContainer/Pound"]
 layout_mode = 2
+theme = ExtResource("2_t74fa")
 text = "Pound:"
 
 [node name="Control" type="Control" parent="Pouch_box/VBoxContainer/Pound"]
@@ -70,6 +73,7 @@ size_flags_stretch_ratio = 10.0
 
 [node name="Label2" type="Label" parent="Pouch_box/VBoxContainer/Pound"]
 layout_mode = 2
+theme = ExtResource("2_t74fa")
 text = "100"
 
 [node name="Soli" type="HBoxContainer" parent="Pouch_box/VBoxContainer"]
@@ -79,6 +83,7 @@ alignment = 1
 
 [node name="Label" type="Label" parent="Pouch_box/VBoxContainer/Soli"]
 layout_mode = 2
+theme = ExtResource("2_t74fa")
 text = "Soli:"
 
 [node name="Control" type="Control" parent="Pouch_box/VBoxContainer/Soli"]
@@ -88,6 +93,7 @@ size_flags_stretch_ratio = 10.0
 
 [node name="Label2" type="Label" parent="Pouch_box/VBoxContainer/Soli"]
 layout_mode = 2
+theme = ExtResource("2_t74fa")
 text = "100"
 
 [node name="Pence" type="HBoxContainer" parent="Pouch_box/VBoxContainer"]
@@ -97,6 +103,7 @@ alignment = 1
 
 [node name="Label" type="Label" parent="Pouch_box/VBoxContainer/Pence"]
 layout_mode = 2
+theme = ExtResource("2_t74fa")
 text = "Pence:"
 
 [node name="Control" type="Control" parent="Pouch_box/VBoxContainer/Pence"]
@@ -106,4 +113,5 @@ size_flags_stretch_ratio = 10.0
 
 [node name="Label2" type="Label" parent="Pouch_box/VBoxContainer/Pence"]
 layout_mode = 2
+theme = ExtResource("2_t74fa")
 text = "100"

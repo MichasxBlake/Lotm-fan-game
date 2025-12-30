@@ -41,6 +41,7 @@ func _ready() -> void:
 	for i in menu_group.get_buttons():
 		i.connect("pressed",show_menu)
 
+
 	
 	#państwa
 	loen_kingdom.button_down.connect(loen_show)
@@ -49,7 +50,6 @@ func _ready() -> void:
 	tingen_button.button_down.connect(tingen_show)
 	backlund_button.button_down.connect(backlund_show)
 	trier_button.button_down.connect(trier_show)
-	
 	
 	
 	
@@ -168,6 +168,6 @@ func logs_show() -> void:
 		items_window.show()
 		show_logs.text = "^"
 
-		
-	
-	
+
+func _on_button_button_down() -> void:
+	GlobalData.spirituality += 10 # Replace with function body.

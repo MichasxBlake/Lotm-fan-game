@@ -1,4 +1,15 @@
 extends Resource
-class_name SaveDataResource
+class_name SavedGame
 
-@export var madness: int = 20
+#money
+@export var pounds : int
+@export var soli : int
+@export var pence : int
+
+#you
+@export var madness : int
+@export var madness_max  : int
+@export var spirituality : int
+@export var spirituality_max : int
+@export var mind_power : int
+@export var mind_power_max : int

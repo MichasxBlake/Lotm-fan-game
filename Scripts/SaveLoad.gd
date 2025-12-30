@@ -1,17 +1,23 @@
 extends Node
-
-const save_location = "user://simple_save.tres"
-
-var SaveFileData: SaveDataResource = SaveDataResource.new()
+class_name SaveLoader
 
 func _ready() -> void:
-	_load()
+	Load()
 
-func _save():
-	ResourceSaver.save(SaveFileData, save_location)
-func _load():
-	if FileAccess.file_exists(save_location):
-		print_debug("Okay")
-		SaveFileData = ResourceLoader.load(save_location).duplicate(true)
-	else:
-		print_debug("XD")
+func Save():
+	var saved_game:SavedGame = SavedGame.new()
+	
+	saved_game.madness = GlobalData.madness
+	saved_game.madness_max = GlobalData.madness_max
+	saved_game.spirituality = GlobalData.spirituality
+	
+	ResourceSaver.save(saved_game,"user://savegame.tres")
+
+
+
+func Load(): # błąd gdy to wykonuje się jako pierwsze to crash jest gierki
+	var saved_game:SavedGame = load("user://savegame.tres") as SavedGame
+	
+	GlobalData.madness = saved_game.madness
+	GlobalData.madness_max = saved_game.madness_max
+	GlobalData.spirituality = saved_game.spirituality
