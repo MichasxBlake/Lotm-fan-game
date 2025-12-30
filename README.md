@@ -10,3 +10,5 @@ TODO:
 	* better gui (I hate it)
 	* Change whole code with new knowlage of classes
 	* new items class = potions: potion name + ingredience only if you hover on it, on dislpay it shows number of ingredience and max needed
+	* let player edit how long it take to save data in game
+	* dark ritual = diegestion reset, to do this player need to concoct new potion from beginning or concoct potion with element of other beyonder with others sequences
