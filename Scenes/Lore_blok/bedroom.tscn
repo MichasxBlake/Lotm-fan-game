@@ -1,0 +1,55 @@
+[gd_scene load_steps=3 format=3 uid="uid://vnuc48ty6yen"]
+
+[ext_resource type="Script" uid="uid://cjdutsc3ces21" path="res://Scenes/Lore_blok/bedroom.gd" id="1_n2yyt"]
+[ext_resource type="PackedScene" uid="uid://7pdjmlajgxjw" path="res://Scenes/Lore_blok/lore_1.tscn" id="2_n2yyt"]
+
+[node name="ColorRect" type="ColorRect"]
+offset_right = 504.0
+offset_bottom = 72.0
+size_flags_horizontal = 3
+color = Color(0.2592937, 0.2592937, 0.2592937, 1)
+script = ExtResource("1_n2yyt")
+text = "Bedroom"
+
+[node name="Bedroom" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="Bedroom"]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+alignment = 0
+autowrap_mode = 1
+
+[node name="Label" type="Label" parent="Bedroom/Button"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.2189331
+offset_top = 73.68031
+offset_right = 44.736984
+offset_bottom = 29.608536
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -1.5707964
+theme_override_font_sizes/font_size = 12
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="Bedroom"]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+
+[node name="Lore1" parent="Bedroom" instance=ExtResource("2_n2yyt")]
+layout_mode = 2
+
+[node name="Control2" type="Control" parent="Bedroom"]
+layout_mode = 2
+
+[node name="Lore2" parent="Bedroom" instance=ExtResource("2_n2yyt")]
+layout_mode = 2

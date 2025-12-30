@@ -13,8 +13,8 @@ extends Control
 
 
 #windows
-@onready var tingen: MarginContainer = $"Main Window/Background/Działanie/Tingen"
-@onready var backlund: MarginContainer = $"Main Window/Background/Działanie/Backlund"
+@onready var tingen: MarginContainer = $"Main Window/Background/Your Journey/Tingen"
+@onready var backlund: MarginContainer = $"Main Window/Background/Your Journey/Backlund"
 @onready var okno_3: MarginContainer = $"Main Window/Background/Działanie/Okno3"
 @onready var okno_4: MarginContainer = $"Main Window/Background/Działanie/Okno4"
 @onready var settings: Control = $"Main Window/Background/Settings"
