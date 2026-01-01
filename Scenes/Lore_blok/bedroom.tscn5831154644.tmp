@@ -16,7 +16,7 @@ color_rect = NodePath(".")
 bedroom = NodePath("Bedroom")
 
 [node name="Button" type="Button" parent="."]
-custom_minimum_size = Vector2(30, 80)
+custom_minimum_size = Vector2(30, 0)
 layout_mode = 0
 offset_right = 30.0
 offset_bottom = 72.0

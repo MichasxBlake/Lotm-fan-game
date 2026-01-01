@@ -5,6 +5,7 @@ class_name Lore_blocks
 @export var time_to_done : int
 @export var max : String
 @export var current : int
+@export var number : int
 @onready var label: Label = $Button/Label
 @onready var label_2: Label = $Button/Label2
 @onready var label_3: Label = $Button/HBoxContainer/Label3
@@ -12,6 +13,7 @@ class_name Lore_blocks
 @onready var lore_1: Lore_blocks = $"."
 @onready var timer: Timer = $Timer
 var do = false
+
 
 
 
@@ -33,6 +35,12 @@ func _process(delta: float) -> void:
 
 
 func _on_button_button_down() -> void:
-	do = true
-	timer.start()
-	get_tree().call_group("Lore_events","abc", 20)
+	var new = lore_1.get_instance_id()
+	if button_type == "Loop":
+		do = true
+		timer.start()
+		get_tree().call_group("Lore_events","loop", number,new)
+	elif button_type == "Action":
+		get_tree().call_group("Lore_events","action", number,new,int(max),current)
+		current +=1
+	GlobalData.spirituality += 1

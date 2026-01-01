@@ -8,10 +8,10 @@
 [ext_resource type="Theme" uid="uid://dkgiatqq5hesh" path="res://Themes/Locations_cities.tres" id="6_o5yvi"]
 [ext_resource type="ButtonGroup" uid="uid://dkh17fewvyec3" path="res://Button_groups/location_cities.tres" id="7_1l0tm"]
 [ext_resource type="PackedScene" uid="uid://b3ngkp8lvjgo1" path="res://Scenes/You.tscn" id="8_h4fw4"]
-[ext_resource type="PackedScene" uid="uid://7pdjmlajgxjw" path="res://Scenes/Lore_blok/lore_1.tscn" id="8_o5yvi"]
 [ext_resource type="PackedScene" uid="uid://du6ck6qui4go5" path="res://Scenes/pouch.tscn" id="8_v158k"]
 [ext_resource type="PackedScene" uid="uid://vnuc48ty6yen" path="res://Scenes/Lore_blok/bedroom.tscn" id="9_rku1e"]
 [ext_resource type="Script" uid="uid://ihxr02abkf2n" path="res://Scripts/SaveLoad.gd" id="11_o5yvi"]
+[ext_resource type="Script" uid="uid://ducpbhhd6c0xl" path="res://Scenes/settings.gd" id="11_rfjv2"]
 [ext_resource type="Script" uid="uid://rnij3xqaomw8" path="res://Scripts/lore_function.gd" id="13_rfjv2"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1l0tm"]
@@ -321,7 +321,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-metadata/_edit_use_anchors_ = true
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Main Window/Background/Your Journey/Tingen/ColorRect/House/ColorRect2/ScrollContainer"]
 layout_mode = 2
@@ -333,15 +332,25 @@ theme_override_constants/separation = 10
 custom_minimum_size = Vector2(7, 0)
 layout_mode = 2
 
-[node name="Lore1" parent="Main Window/Background/Your Journey/Tingen/ColorRect/House/ColorRect2/ScrollContainer/HBoxContainer" instance=ExtResource("8_o5yvi")]
-visible = false
-layout_mode = 2
-
 [node name="ColorRect" parent="Main Window/Background/Your Journey/Tingen/ColorRect/House/ColorRect2/ScrollContainer/HBoxContainer" instance=ExtResource("9_rku1e")]
-custom_minimum_size = Vector2(430, 70)
 layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 4
+size_flags_horizontal = 1
+size_flags_vertical = 6
+
+[node name="ColorRect2" parent="Main Window/Background/Your Journey/Tingen/ColorRect/House/ColorRect2/ScrollContainer/HBoxContainer" instance=ExtResource("9_rku1e")]
+layout_mode = 2
+size_flags_horizontal = 1
+size_flags_vertical = 6
+
+[node name="ColorRect3" parent="Main Window/Background/Your Journey/Tingen/ColorRect/House/ColorRect2/ScrollContainer/HBoxContainer" instance=ExtResource("9_rku1e")]
+layout_mode = 2
+size_flags_horizontal = 1
+size_flags_vertical = 6
+
+[node name="ColorRect5" parent="Main Window/Background/Your Journey/Tingen/ColorRect/House/ColorRect2/ScrollContainer/HBoxContainer" instance=ExtResource("9_rku1e")]
+layout_mode = 2
+size_flags_horizontal = 1
+size_flags_vertical = 6
 
 [node name="Backlund" type="MarginContainer" parent="Main Window/Background/Your Journey"]
 visible = false
@@ -600,6 +609,7 @@ offset_top = 64.0
 offset_right = -339.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("11_rfjv2")
 
 [node name="ColorRect" type="ColorRect" parent="Main Window/Background/Settings"]
 layout_mode = 1
@@ -645,8 +655,70 @@ offset_right = 198.0
 offset_bottom = -3.0
 text = "Size"
 
+[node name="OptionButton2" type="OptionButton" parent="Main Window/Background/Settings/ColorRect/VBoxContainer"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+selected = 2
+item_count = 4
+popup/item_0/text = "every 30 sec"
+popup/item_0/id = 3
+popup/item_1/text = "every 1 minute"
+popup/item_1/id = 0
+popup/item_2/text = "every 5 minute"
+popup/item_2/id = 1
+popup/item_3/text = "every 10 minutes"
+popup/item_3/id = 2
+
+[node name="Label" type="Label" parent="Main Window/Background/Settings/ColorRect/VBoxContainer/OptionButton2"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = -47.0
+offset_right = 198.0
+offset_bottom = -3.0
+text = "How often do you
+ want game to save"
+
+[node name="load_game" type="Button" parent="Main Window/Background/Settings/ColorRect/VBoxContainer"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+text = "Load last save"
+
+[node name="stop_save_info" type="Button" parent="Main Window/Background/Settings/ColorRect/VBoxContainer"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+text = "Hide save info"
+
+[node name="Timer" type="Timer" parent="Main Window/Background/Settings"]
+wait_time = 300.0
+autostart = true
+
 [node name="Node" type="Node" parent="."]
 script = ExtResource("11_o5yvi")
 
 [node name="Node" type="Node" parent="Node" groups=["Lore_events"]]
 script = ExtResource("13_rfjv2")
+
+[node name="Save_info" type="Label" parent="."]
+visible = false
+layout_mode = 1
+offset_right = 309.0
+offset_bottom = 58.0
+text = "Game saved"
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Timer" type="Timer" parent="Save_info"]
+wait_time = 6.0
+one_shot = true
+
+[connection signal="item_selected" from="Main Window/Background/Settings/ColorRect/VBoxContainer/OptionButton2" to="Main Window/Background/Settings" method="_on_option_button_2_item_selected"]
+[connection signal="button_down" from="Main Window/Background/Settings/ColorRect/VBoxContainer/load_game" to="Main Window/Background/Settings" method="_on_button_button_down"]
+[connection signal="button_down" from="Main Window/Background/Settings/ColorRect/VBoxContainer/stop_save_info" to="Main Window/Background/Settings" method="_on_stop_save_info_button_down"]
+[connection signal="timeout" from="Main Window/Background/Settings/Timer" to="Main Window/Background/Settings" method="_on_timer_timeout"]
+[connection signal="timeout" from="Save_info/Timer" to="Main Window/Background/Settings" method="_on_timer_timeout2"]
