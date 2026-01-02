@@ -1,8 +1,25 @@
-[gd_scene load_steps=4 format=3 uid="uid://b3ngkp8lvjgo1"]
+[gd_scene load_steps=6 format=3 uid="uid://b3ngkp8lvjgo1"]
 
 [ext_resource type="Script" uid="uid://dcuju2kuv3xcu" path="res://Scripts/items_data.gd" id="1_vc67c"]
 [ext_resource type="Script" uid="uid://cet2excd260t3" path="res://Scenes/you.gd" id="2_bxon2"]
 [ext_resource type="Theme" uid="uid://lji2qil8mkcf" path="res://Themes/Items.tres" id="3_ubvwo"]
+[ext_resource type="Script" uid="uid://cohkdlr57gq25" path="res://Scenes/hover_info.gd" id="4_n2sp2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0p6u2"]
+bg_color = Color(0.30980393, 0.30980393, 0.30980393, 0.9411765)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.003519166, 0.0035191693, 0.0035191625, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+expand_margin_left = 24.0
+expand_margin_top = 12.0
+expand_margin_right = 24.0
+expand_margin_bottom = 12.0
 
 [node name="You" type="VBoxContainer" node_paths=PackedStringArray("activate", "list", "vbox_size")]
 anchors_preset = 15
@@ -45,13 +62,9 @@ alignment = 1
 
 [node name="Label" type="Label" parent="You_box/VBoxContainer/Desire_Passion"]
 layout_mode = 2
+size_flags_horizontal = 3
 theme = ExtResource("3_ubvwo")
 text = "Passion:"
-
-[node name="Control" type="Control" parent="You_box/VBoxContainer/Desire_Passion"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_stretch_ratio = 10.0
 
 [node name="Label2" type="Label" parent="You_box/VBoxContainer/Desire_Passion"]
 layout_mode = 2
@@ -70,13 +83,9 @@ alignment = 1
 
 [node name="Label" type="Label" parent="You_box/VBoxContainer/Spirituality"]
 layout_mode = 2
+size_flags_horizontal = 3
 theme = ExtResource("3_ubvwo")
 text = "Spirituality:"
-
-[node name="Control" type="Control" parent="You_box/VBoxContainer/Spirituality"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_stretch_ratio = 10.0
 
 [node name="Label2" type="Label" parent="You_box/VBoxContainer/Spirituality"]
 layout_mode = 2
@@ -95,13 +104,9 @@ alignment = 1
 
 [node name="Label" type="Label" parent="You_box/VBoxContainer/Madness"]
 layout_mode = 2
+size_flags_horizontal = 3
 theme = ExtResource("3_ubvwo")
 text = "Madness:"
-
-[node name="Control" type="Control" parent="You_box/VBoxContainer/Madness"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_stretch_ratio = 10.0
 
 [node name="Label2" type="Label" parent="You_box/VBoxContainer/Madness"]
 layout_mode = 2
@@ -120,13 +125,9 @@ alignment = 1
 
 [node name="Label" type="Label" parent="You_box/VBoxContainer/Mind_power"]
 layout_mode = 2
+size_flags_horizontal = 3
 theme = ExtResource("3_ubvwo")
 text = "Mind Power:"
-
-[node name="Control" type="Control" parent="You_box/VBoxContainer/Mind_power"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_stretch_ratio = 10.0
 
 [node name="Label2" type="Label" parent="You_box/VBoxContainer/Mind_power"]
 layout_mode = 2
@@ -137,3 +138,108 @@ text = "100"
 layout_mode = 2
 theme = ExtResource("3_ubvwo")
 text = "/1000"
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="PanelContainer2" type="PanelContainer" parent="Control"]
+layout_mode = 0
+offset_left = -87.0
+offset_top = -583.0
+offset_right = 105.0
+offset_bottom = -439.0
+size_flags_horizontal = 4
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_0p6u2")
+script = ExtResource("4_n2sp2")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/PanelContainer2"]
+layout_mode = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "[b]Spirituality[/b]
+
+It's you, your whole soul. Without it you are just a pure vessel of flesh and blood. It's your power in mistycism.
+"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="PanelContainer5" type="PanelContainer" parent="Control"]
+layout_mode = 0
+offset_left = -753.0
+offset_top = -631.0
+offset_right = -561.0
+offset_bottom = -487.0
+size_flags_horizontal = 4
+size_flags_vertical = 0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_0p6u2")
+script = ExtResource("4_n2sp2")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/PanelContainer5"]
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+mouse_filter = 2
+bbcode_enabled = true
+text = "[b]Passion[/b]
+
+It's a destiny. It's your fate. It's your passion to go futher in your story."
+fit_content = true
+horizontal_alignment = 1
+
+[node name="PanelContainer3" type="PanelContainer" parent="Control"]
+layout_mode = 0
+offset_left = 495.0
+offset_top = -629.0
+offset_right = 687.0
+offset_bottom = -485.0
+size_flags_horizontal = 8
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_0p6u2")
+script = ExtResource("4_n2sp2")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/PanelContainer3"]
+layout_mode = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "[b]Madness[/b]
+
+Crazy? I Was Crazy Once. They Locked Me In A Room. A Rubber Room. A Rubber Room With Rats. And Rats Make Me Crazy
+"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="PanelContainer4" type="PanelContainer" parent="Control"]
+layout_mode = 0
+offset_left = 1118.0
+offset_top = 246.0
+offset_right = 1310.0
+offset_bottom = 373.0
+size_flags_vertical = 8
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_0p6u2")
+script = ExtResource("4_n2sp2")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/PanelContainer4"]
+layout_mode = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "[b]Mind Power[/b]
+
+No matter how strong you are, with weak mind, you will be destroy in this world.
+"
+fit_content = true
+horizontal_alignment = 1
+
+[connection signal="mouse_entered" from="You_box/VBoxContainer/Desire_Passion" to="Control/PanelContainer5" method="toggle" binds= [true]]
+[connection signal="mouse_exited" from="You_box/VBoxContainer/Desire_Passion" to="Control/PanelContainer5" method="toggle" binds= [false]]
+[connection signal="mouse_entered" from="You_box/VBoxContainer/Spirituality" to="Control/PanelContainer2" method="toggle" binds= [true]]
+[connection signal="mouse_exited" from="You_box/VBoxContainer/Spirituality" to="Control/PanelContainer2" method="toggle" binds= [false]]
+[connection signal="mouse_entered" from="You_box/VBoxContainer/Madness" to="Control/PanelContainer3" method="toggle" binds= [true]]
+[connection signal="mouse_exited" from="You_box/VBoxContainer/Madness" to="Control/PanelContainer3" method="toggle" binds= [false]]
+[connection signal="mouse_entered" from="You_box/VBoxContainer/Mind_power" to="Control/PanelContainer4" method="toggle" binds= [true]]
+[connection signal="mouse_exited" from="You_box/VBoxContainer/Mind_power" to="Control/PanelContainer4" method="toggle" binds= [false]]

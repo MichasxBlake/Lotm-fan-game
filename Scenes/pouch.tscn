@@ -63,13 +63,9 @@ alignment = 1
 
 [node name="Label" type="Label" parent="Pouch_box/VBoxContainer/Pound"]
 layout_mode = 2
+size_flags_horizontal = 3
 theme = ExtResource("2_t74fa")
 text = "Pound:"
-
-[node name="Control" type="Control" parent="Pouch_box/VBoxContainer/Pound"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_stretch_ratio = 10.0
 
 [node name="Label2" type="Label" parent="Pouch_box/VBoxContainer/Pound"]
 layout_mode = 2
@@ -83,13 +79,9 @@ alignment = 1
 
 [node name="Label" type="Label" parent="Pouch_box/VBoxContainer/Soli"]
 layout_mode = 2
+size_flags_horizontal = 3
 theme = ExtResource("2_t74fa")
 text = "Soli:"
-
-[node name="Control" type="Control" parent="Pouch_box/VBoxContainer/Soli"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_stretch_ratio = 10.0
 
 [node name="Label2" type="Label" parent="Pouch_box/VBoxContainer/Soli"]
 layout_mode = 2
@@ -103,13 +95,9 @@ alignment = 1
 
 [node name="Label" type="Label" parent="Pouch_box/VBoxContainer/Pence"]
 layout_mode = 2
+size_flags_horizontal = 3
 theme = ExtResource("2_t74fa")
 text = "Pence:"
-
-[node name="Control" type="Control" parent="Pouch_box/VBoxContainer/Pence"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_stretch_ratio = 10.0
 
 [node name="Label2" type="Label" parent="Pouch_box/VBoxContainer/Pence"]
 layout_mode = 2

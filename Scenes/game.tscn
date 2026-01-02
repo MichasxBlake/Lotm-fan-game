@@ -582,6 +582,7 @@ grow_vertical = 2
 theme_override_constants/separation = 0
 
 [node name="You" parent="Main Window/Background/HBoxContainer/VBoxContainer/ColorRect/Items/VBoxContainer" instance=ExtResource("8_h4fw4")]
+z_index = 2
 layout_mode = 2
 size_flags_vertical = 1
 

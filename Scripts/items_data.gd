@@ -20,3 +20,7 @@ func show_text() -> void:
 		print_debug(vbox_size.size)
 		list.show()
 		activate.text = "V " + text_name
+
+
+func _on_desire_passion_mouse_entered() -> void:
+	pass

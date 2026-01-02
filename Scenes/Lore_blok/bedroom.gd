@@ -32,5 +32,5 @@ func _on_button_button_down() -> void:
 		clicked = true
 	elif clicked == true:
 		bedroom.show()
-		color_rect.custom_minimum_size = Vector2(current_size.x-58,80)
+		color_rect.custom_minimum_size = Vector2(current_size.x-61,80)
 		clicked = false

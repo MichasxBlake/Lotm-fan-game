@@ -24,3 +24,4 @@ func _process(delta: float) -> void:
 	madness_max.text = "/ "+str(GlobalData.madness_max)
 	mind_power.text = str(GlobalData.mind_power)
 	mind_power_max.text = "/ "+str(GlobalData.mind_power_max)
+	
