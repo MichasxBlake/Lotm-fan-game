@@ -1,8 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://7pdjmlajgxjw"]
+[gd_scene load_steps=11 format=3 uid="uid://d1ir2yvomnlmb"]
 
-[ext_resource type="Script" uid="uid://bflwxfvh1q2mu" path="res://Scripts/Lore_blocks.gd" id="1_k7ua7"]
-[ext_resource type="FontFile" uid="uid://cxod2pl2cccwb" path="res://diffusion/woff2/diffusion-regular.woff2" id="2_mj4k1"]
-[ext_resource type="ButtonGroup" uid="uid://dqe8gdnjjiw" path="res://Button_groups/lore_buttons_loop.tres" id="3_mj4k1"]
+[ext_resource type="Script" uid="uid://bflwxfvh1q2mu" path="res://Scripts/Lore_blocks.gd" id="1_tss4b"]
+[ext_resource type="FontFile" uid="uid://cxod2pl2cccwb" path="res://diffusion/woff2/diffusion-regular.woff2" id="2_xx6wv"]
+[ext_resource type="ButtonGroup" uid="uid://dqe8gdnjjiw" path="res://Button_groups/lore_buttons_loop.tres" id="3_xx6wv"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wbsvp"]
 
@@ -27,7 +27,7 @@ theme_override_styles/background = SubResource("StyleBoxFlat_wbsvp")
 theme_override_styles/fill = SubResource("StyleBoxFlat_482t8")
 max_value = 4.0
 show_percentage = false
-script = ExtResource("1_k7ua7")
+script = ExtResource("1_tss4b")
 button_type = "Loop"
 time_to_done = 4
 max = "5"
@@ -41,15 +41,15 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("2_mj4k1")
+theme_override_fonts/font = ExtResource("2_xx6wv")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_oo6t7")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_p04ld")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_axmg0")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_hbva3")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_nlmhm")
 toggle_mode = true
-button_group = ExtResource("3_mj4k1")
-text = "Speak with Priest"
+button_group = ExtResource("3_xx6wv")
+text = "Go to bed now"
 
 [node name="Label" type="Label" parent="Button"]
 layout_mode = 1

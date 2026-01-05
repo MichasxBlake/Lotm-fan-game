@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://vnuc48ty6yen"]
+[gd_scene load_steps=4 format=3 uid="uid://vnuc48ty6yen"]
 
 [ext_resource type="Script" uid="uid://cjdutsc3ces21" path="res://Scenes/Lore_blok/bedroom.gd" id="1_n2yyt"]
 [ext_resource type="PackedScene" uid="uid://7pdjmlajgxjw" path="res://Scenes/Lore_blok/lore_1.tscn" id="2_n2yyt"]
+[ext_resource type="PackedScene" uid="uid://d1ir2yvomnlmb" path="res://Scenes/Lore_blok/lore_2.tscn" id="3_8jb8j"]
 
 [node name="ColorRect" type="ColorRect" node_paths=PackedStringArray("label", "color_rect", "bedroom")]
 offset_right = 504.0
@@ -57,6 +58,9 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="Lore2" parent="Bedroom" instance=ExtResource("2_n2yyt")]
+layout_mode = 2
+
+[node name="Lore3" parent="Bedroom" instance=ExtResource("3_8jb8j")]
 layout_mode = 2
 
 [connection signal="button_down" from="Button" to="." method="_on_button_button_down"]

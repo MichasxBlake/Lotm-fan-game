@@ -22,8 +22,9 @@ func _ready() -> void:
 	lore_1.value = 0
 	label.text = button_type
 	label_2.text = str(time_to_done)
-	label_4.text = "/" + max
-	label_3.text = str(current)
+	if button_type != "0":
+		label_4.text = "/" + max
+		label_3.text = str(current)
 	timer.wait_time = time_to_done
 	lore_1.max_value = time_to_done
 	
@@ -34,13 +35,21 @@ func _process(delta: float) -> void:
 		do = false
 
 
-func _on_button_button_down() -> void:
+func _on_timer_timeout() -> void:
 	var new = lore_1.get_instance_id()
-	if button_type == "Loop":
-		do = true
+	get_tree().call_group("Lore_events","loop", number,new)
+
+
+func _on_button_toggled(toggled_on: bool) -> void:
+	if toggled_on:
+		var new = lore_1.get_instance_id()
+		if button_type == "Loop":
+			timer.paused = false
+			do = true
+			timer.start()
+		elif button_type == "Action":
+			get_tree().call_group("Lore_events","action", number,new,int(max),current)
+			current +=1
+	else:
 		timer.start()
-		get_tree().call_group("Lore_events","loop", number,new)
-	elif button_type == "Action":
-		get_tree().call_group("Lore_events","action", number,new,int(max),current)
-		current +=1
-	GlobalData.spirituality += 1
+		timer.paused = true
