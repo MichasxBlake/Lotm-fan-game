@@ -3,7 +3,7 @@ class_name Lore_blocks
 
 @export var button_type : String
 @export var time_to_done : int
-@export var max : String
+@export var current_max : String
 @export var current : int
 @export var number : int
 @onready var label: Label = $Button/Label
@@ -12,6 +12,10 @@ class_name Lore_blocks
 @onready var label_4: Label = $Button/HBoxContainer/Label4
 @onready var lore_1: Lore_blocks = $"."
 @onready var timer: Timer = $Timer
+@onready var button: Button = $Button
+@onready var rich_text_label: RichTextLabel = $CanvasLayer/PanelContainer2/RichTextLabel
+@onready var panel_container_2: PanelContainer = $CanvasLayer/PanelContainer2
+
 var do = false
 
 
@@ -23,8 +27,7 @@ func _ready() -> void:
 	label.text = button_type
 	label_2.text = str(time_to_done)
 	if button_type != "0":
-		label_4.text = "/" + max
-		label_3.text = str(current)
+		label_4.text = "/" + current_max
 	timer.wait_time = time_to_done
 	lore_1.max_value = time_to_done
 	
@@ -33,6 +36,7 @@ func _process(delta: float) -> void:
 		lore_1.value = timer.wait_time - timer.time_left
 	if timer.time_left == 0:
 		do = false
+	label_3.text = str(current)
 
 
 func _on_timer_timeout() -> void:
@@ -48,8 +52,14 @@ func _on_button_toggled(toggled_on: bool) -> void:
 			do = true
 			timer.start()
 		elif button_type == "Action":
-			get_tree().call_group("Lore_events","action", number,new,int(max),current)
+			if current == int(current_max):
+				get_tree().call_group("Lore_events","action", number,new,int(current_max),current)
+			else:
+				panel_container_2.get_child(current-1).hide()
+				panel_container_2.get_child(current).show()
+				GlobalData.madness +=1
 			current +=1
+			button.button_pressed = false
 	else:
 		timer.start()
 		timer.paused = true

@@ -16,13 +16,15 @@ func toggle(on: bool):
 		tween_opacity(1.0)
 	else:
 		modulate.a = 1.0
-		await tween_opacity(0.0).finished
-		hide()
+		if get_tree() != null:
+			await tween_opacity(0.0).finished
+			hide()
 func tween_opacity(to: float):
 	if opacity_tween: opacity_tween.kill()
-	opacity_tween = get_tree().create_tween()
-	opacity_tween.tween_property(self, 'modulate:a',to,0.3)
-	return opacity_tween
+	if get_tree() != null:
+		opacity_tween = get_tree().create_tween()
+		opacity_tween.tween_property(self, 'modulate:a',to,0.3)
+		return opacity_tween
 
 
 func _on_spirituality_mouse_exited() -> void:

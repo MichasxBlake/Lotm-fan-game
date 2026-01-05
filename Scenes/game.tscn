@@ -333,6 +333,7 @@ custom_minimum_size = Vector2(7, 0)
 layout_mode = 2
 
 [node name="ColorRect" parent="Main Window/Background/Your Journey/Tingen/ColorRect/House/ColorRect2/ScrollContainer/HBoxContainer" instance=ExtResource("9_rku1e")]
+show_behind_parent = true
 layout_mode = 2
 size_flags_horizontal = 1
 size_flags_vertical = 6

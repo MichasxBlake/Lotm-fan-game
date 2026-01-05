@@ -6,6 +6,8 @@ var soli = 0
 var pence = 0
 
 #you
+var passion = 0
+var passion_max = 100
 var madness = 0
 var madness_max = 101
 var spirituality = 1

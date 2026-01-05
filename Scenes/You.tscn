@@ -191,6 +191,19 @@ It's a destiny. It's your fate. It's your passion to go futher in your story."
 fit_content = true
 horizontal_alignment = 1
 
+[node name="RichTextLabel2" type="RichTextLabel" parent="Control/PanelContainer5"]
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+mouse_filter = 2
+bbcode_enabled = true
+text = "[b]Desire[/b]
+
+The only thing that can stop your desire to grow is madness"
+fit_content = true
+horizontal_alignment = 1
+
 [node name="PanelContainer3" type="PanelContainer" parent="Control"]
 layout_mode = 0
 offset_left = 495.0

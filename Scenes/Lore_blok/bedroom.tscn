@@ -57,10 +57,7 @@ layout_mode = 2
 [node name="Lore1" parent="Bedroom" instance=ExtResource("2_n2yyt")]
 layout_mode = 2
 
-[node name="Lore2" parent="Bedroom" instance=ExtResource("2_n2yyt")]
-layout_mode = 2
-
-[node name="Lore3" parent="Bedroom" instance=ExtResource("3_8jb8j")]
+[node name="Lore2" parent="Bedroom" instance=ExtResource("3_8jb8j")]
 layout_mode = 2
 
 [connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
