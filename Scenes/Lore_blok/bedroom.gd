@@ -34,3 +34,6 @@ func _on_button_button_down() -> void:
 		bedroom.show()
 		color_rect.custom_minimum_size = Vector2(current_size.x-61,80)
 		clicked = false
+
+func show_new_lore(inside_number : int):
+	bedroom.get_child(inside_number+1).show()

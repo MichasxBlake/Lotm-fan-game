@@ -6,6 +6,8 @@ class_name Lore_blocks
 @export var current_max : String
 @export var current : int
 @export var number : int
+@export var inside_number : int
+@export var place : String
 @onready var label: Label = $Button/Label
 @onready var label_2: Label = $Button/Label2
 @onready var label_3: Label = $Button/HBoxContainer/Label3
@@ -26,7 +28,7 @@ func _ready() -> void:
 	lore_1.value = 0
 	label.text = button_type
 	label_2.text = str(time_to_done)
-	if button_type != "0":
+	if current_max != "0":
 		label_4.text = "/" + current_max
 	timer.wait_time = time_to_done
 	lore_1.max_value = time_to_done
@@ -36,7 +38,8 @@ func _process(delta: float) -> void:
 		lore_1.value = timer.wait_time - timer.time_left
 	if timer.time_left == 0:
 		do = false
-	label_3.text = str(current)
+	if current_max != "0":
+		label_3.text = str(current)
 
 
 func _on_timer_timeout() -> void:
@@ -53,7 +56,7 @@ func _on_button_toggled(toggled_on: bool) -> void:
 			timer.start()
 		elif button_type == "Action":
 			if current == int(current_max):
-				get_tree().call_group("Lore_events","action", number,new,int(current_max),current)
+				get_tree().call_group("Lore_events","action", number,new,int(current_max),current, inside_number, place)
 			else:
 				panel_container_2.get_child(current-1).hide()
 				panel_container_2.get_child(current).show()
