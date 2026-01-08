@@ -28,7 +28,7 @@ func _process(delta: float) -> void:
 	mind_power.text = str(GlobalData.mind_power)
 	mind_power_max.text = "/ "+str(GlobalData.mind_power_max)
 	desire.text = str(GlobalData.passion)
-	desire_max.text = str(GlobalData.passion)
+	desire_max.text = "/ "+str(GlobalData.passion_max)
 	if GlobalData.madness > 50:
 		depas_name.text = "Desire:"
 		rich_text_label_2.show()

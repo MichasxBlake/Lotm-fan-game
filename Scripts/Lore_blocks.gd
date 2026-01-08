@@ -54,13 +54,19 @@ func _on_button_toggled(toggled_on: bool) -> void:
 			timer.paused = false
 			do = true
 			timer.start()
+# Fragment funkcji _on_button_toggled [cite: 8]
 		elif button_type == "Action":
-			if current == int(current_max):
-				get_tree().call_group("Lore_events","action", number,new,int(current_max),current, inside_number, place)
+			if current >= int(current_max):
+				var new_id = get_instance_id()
+				# Wywołujemy grupę, która obsługuje logikę [cite: 8]
+				get_tree().call_group("Lore_events", "action", number, new_id, int(current_max), current, inside_number, place)
 			else:
-				panel_container_2.get_child(current-1).hide()
-				panel_container_2.get_child(current).show()
-				GlobalData.madness +=1
+				# Logika przełączania opisów (RichTextLabels) [cite: 8]
+				if panel_container_2.get_child_count() > current:
+					panel_container_2.get_child(current-1).hide()
+					panel_container_2.get_child(current).show()
+				GlobalData.madness += 1
+   
 			current +=1
 			button.button_pressed = false
 	else:

@@ -30,6 +30,7 @@ window/stretch/aspect="expand"
 
 Lore_events=""
 Lore_function=""
+lore_blocks=""
 
 [gui]
 

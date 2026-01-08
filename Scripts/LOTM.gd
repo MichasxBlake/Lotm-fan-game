@@ -167,7 +167,3 @@ func logs_show() -> void:
 	elif show_logs.button_pressed:
 		items_window.show()
 		show_logs.text = "^"
-
-
-func _on_button_button_down() -> void:
-	GlobalData.spirituality += 10 # Replace with function body.

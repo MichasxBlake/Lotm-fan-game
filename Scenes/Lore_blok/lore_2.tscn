@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://d1ir2yvomnlmb"]
+[gd_scene load_steps=13 format=3 uid="uid://d1ir2yvomnlmb"]
 
 [ext_resource type="Script" uid="uid://bflwxfvh1q2mu" path="res://Scripts/Lore_blocks.gd" id="1_tss4b"]
 [ext_resource type="FontFile" uid="uid://cxod2pl2cccwb" path="res://diffusion/woff2/diffusion-regular.woff2" id="2_xx6wv"]
-[ext_resource type="ButtonGroup" uid="uid://dqe8gdnjjiw" path="res://Button_groups/lore_buttons_loop.tres" id="3_xx6wv"]
+[ext_resource type="Script" uid="uid://cohkdlr57gq25" path="res://Scenes/hover_info.gd" id="3_xx6wv"]
+[ext_resource type="ButtonGroup" uid="uid://dqe8gdnjjiw" path="res://Button_groups/lore_buttons_loop.tres" id="3_yv8o7"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wbsvp"]
 
@@ -19,6 +20,22 @@ bg_color = Color(0.6, 0.041999996, 0.041999996, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nlmhm"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oo6t7"]
+bg_color = Color(0.30980393, 0.30980393, 0.30980393, 0.9411765)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.003519166, 0.0035191693, 0.0035191625, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+expand_margin_left = 24.0
+expand_margin_top = 12.0
+expand_margin_right = 24.0
+expand_margin_bottom = 12.0
+
 [node name="Lore1" type="ProgressBar"]
 custom_minimum_size = Vector2(180, 60)
 size_flags_horizontal = 0
@@ -30,8 +47,8 @@ show_percentage = false
 script = ExtResource("1_tss4b")
 button_type = "Loop"
 time_to_done = 4
-current_max = "0"
-number = 1
+current_max = "5"
+current = 1
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 1
@@ -47,8 +64,8 @@ theme_override_styles/hover = SubResource("StyleBoxEmpty_axmg0")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_hbva3")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_nlmhm")
 toggle_mode = true
-button_group = ExtResource("3_xx6wv")
-text = "Go to bed"
+button_group = ExtResource("3_yv8o7")
+text = "Speak with Priest"
 
 [node name="Label" type="Label" parent="Button"]
 layout_mode = 1
@@ -95,8 +112,72 @@ horizontal_alignment = 2
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PanelContainer2" type="PanelContainer" parent="CanvasLayer"]
+offset_left = -87.0
+offset_top = -583.0
+offset_right = 105.0
+offset_bottom = -439.0
+size_flags_horizontal = 4
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_oo6t7")
+script = ExtResource("3_xx6wv")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/PanelContainer2"]
+layout_mode = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "[b]Spirituality[/b]
+
+It's you, your whole soul. Without it you are just a pure vessel of flesh and blood. It's your power in mistycism.
+"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="CanvasLayer/PanelContainer2"]
+visible = false
+layout_mode = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "tata"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="CanvasLayer/PanelContainer2"]
+visible = false
+layout_mode = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "mam 
+
+
+xddd"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="CanvasLayer/PanelContainer2"]
+visible = false
+layout_mode = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "syn curja"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="RichTextLabel5" type="RichTextLabel" parent="CanvasLayer/PanelContainer2"]
+visible = false
+layout_mode = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "srbcsahsafafsafasfsfa"
+fit_content = true
+horizontal_alignment = 1
+
 [node name="Timer" type="Timer" parent="."]
 wait_time = 4.0
 
+[connection signal="mouse_entered" from="Button" to="CanvasLayer/PanelContainer2" method="toggle" binds= [true]]
+[connection signal="mouse_exited" from="Button" to="CanvasLayer/PanelContainer2" method="toggle" binds= [false]]
 [connection signal="toggled" from="Button" to="." method="_on_button_toggled"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

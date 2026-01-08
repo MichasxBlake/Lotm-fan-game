@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dptn8t2yllqyk"]
+[gd_scene load_steps=18 format=3 uid="uid://dptn8t2yllqyk"]
 
 [ext_resource type="Script" uid="uid://b8ra3h3ewiuoq" path="res://Scripts/LOTM.gd" id="1_i6g32"]
 [ext_resource type="Theme" uid="uid://bnlijgvut1fio" path="res://Themes/buttons_menu.tres" id="2_1l0tm"]
@@ -9,7 +9,9 @@
 [ext_resource type="ButtonGroup" uid="uid://dkh17fewvyec3" path="res://Button_groups/location_cities.tres" id="7_1l0tm"]
 [ext_resource type="PackedScene" uid="uid://b3ngkp8lvjgo1" path="res://Scenes/You.tscn" id="8_h4fw4"]
 [ext_resource type="PackedScene" uid="uid://du6ck6qui4go5" path="res://Scenes/pouch.tscn" id="8_v158k"]
+[ext_resource type="PackedScene" uid="uid://rthgehyc1raj" path="res://Scenes/Lore_blok/toilet.tscn" id="9_1phco"]
 [ext_resource type="PackedScene" uid="uid://vnuc48ty6yen" path="res://Scenes/Lore_blok/bedroom.tscn" id="9_rku1e"]
+[ext_resource type="PackedScene" uid="uid://ck2do45ydmrgi" path="res://Scenes/Lore_blok/Chruch.tscn" id="10_nb51f"]
 [ext_resource type="Script" uid="uid://ihxr02abkf2n" path="res://Scripts/SaveLoad.gd" id="11_o5yvi"]
 [ext_resource type="Script" uid="uid://ducpbhhd6c0xl" path="res://Scenes/settings.gd" id="11_rfjv2"]
 [ext_resource type="Script" uid="uid://rnij3xqaomw8" path="res://Scripts/lore_function.gd" id="13_rfjv2"]
@@ -276,11 +278,11 @@ offset_right = 790.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ColorRect" type="ColorRect" parent="Main Window/Background/Your Journey/Tingen"]
+[node name="Tingen" type="ColorRect" parent="Main Window/Background/Your Journey/Tingen"]
 layout_mode = 2
 color = Color(0.27082172, 0.13016593, 0.18938941, 1)
 
-[node name="House" type="VBoxContainer" parent="Main Window/Background/Your Journey/Tingen/ColorRect"]
+[node name="House" type="VBoxContainer" parent="Main Window/Background/Your Journey/Tingen/Tingen"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.008156607
@@ -292,13 +294,13 @@ size_flags_vertical = 3
 theme_override_constants/separation = 0
 metadata/_edit_use_anchors_ = true
 
-[node name="ColorRect" type="ColorRect" parent="Main Window/Background/Your Journey/Tingen/ColorRect/House"]
+[node name="ColorRect" type="ColorRect" parent="Main Window/Background/Your Journey/Tingen/Tingen/House"]
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.5
 color = Color(0.34382322, 0.171653, 0.24414572, 1)
 
-[node name="Label" type="Label" parent="Main Window/Background/Your Journey/Tingen/ColorRect/House/ColorRect"]
+[node name="Label" type="Label" parent="Main Window/Background/Your Journey/Tingen/Tingen/House/ColorRect"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -309,12 +311,12 @@ text = "House"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ColorRect2" type="ColorRect" parent="Main Window/Background/Your Journey/Tingen/ColorRect/House"]
+[node name="ColorRect2" type="ColorRect" parent="Main Window/Background/Your Journey/Tingen/Tingen/House"]
 layout_mode = 2
 size_flags_vertical = 3
 color = Color(0.3107225, 0.15284173, 0.21931782, 1)
 
-[node name="ScrollContainer" type="ScrollContainer" parent="Main Window/Background/Your Journey/Tingen/ColorRect/House/ColorRect2"]
+[node name="ScrollContainer" type="ScrollContainer" parent="Main Window/Background/Your Journey/Tingen/Tingen/House/ColorRect2"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -322,37 +324,82 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="House" type="HBoxContainer" parent="Main Window/Background/Your Journey/Tingen/ColorRect/House/ColorRect2/ScrollContainer"]
+[node name="House" type="HBoxContainer" parent="Main Window/Background/Your Journey/Tingen/Tingen/House/ColorRect2/ScrollContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_constants/separation = 10
 
-[node name="Control" type="Control" parent="Main Window/Background/Your Journey/Tingen/ColorRect/House/ColorRect2/ScrollContainer/House"]
+[node name="Control" type="Control" parent="Main Window/Background/Your Journey/Tingen/Tingen/House/ColorRect2/ScrollContainer/House"]
 custom_minimum_size = Vector2(7, 0)
 layout_mode = 2
 
-[node name="Bedroom" parent="Main Window/Background/Your Journey/Tingen/ColorRect/House/ColorRect2/ScrollContainer/House" groups=["Lore_events"] instance=ExtResource("9_rku1e")]
+[node name="Bedroom" parent="Main Window/Background/Your Journey/Tingen/Tingen/House/ColorRect2/ScrollContainer/House" instance=ExtResource("9_rku1e")]
 show_behind_parent = true
 layout_mode = 2
-size_flags_horizontal = 1
 size_flags_vertical = 6
 
-[node name="ColorRect2" parent="Main Window/Background/Your Journey/Tingen/ColorRect/House/ColorRect2/ScrollContainer/House" instance=ExtResource("9_rku1e")]
+[node name="Toilet" parent="Main Window/Background/Your Journey/Tingen/Tingen/House/ColorRect2/ScrollContainer/House" instance=ExtResource("9_1phco")]
 layout_mode = 2
-size_flags_horizontal = 1
-size_flags_vertical = 6
+size_flags_vertical = 4
 
-[node name="ColorRect3" parent="Main Window/Background/Your Journey/Tingen/ColorRect/House/ColorRect2/ScrollContainer/House" instance=ExtResource("9_rku1e")]
-layout_mode = 2
-size_flags_horizontal = 1
-size_flags_vertical = 6
+[node name="Street" type="VBoxContainer" parent="Main Window/Background/Your Journey/Tingen/Tingen"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.008156607
+anchor_top = 0.18423645
+anchor_right = 0.9910277
+anchor_bottom = 0.3546798
+grow_horizontal = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 0
+metadata/_edit_use_anchors_ = true
 
-[node name="ColorRect5" parent="Main Window/Background/Your Journey/Tingen/ColorRect/House/ColorRect2/ScrollContainer/House" instance=ExtResource("9_rku1e")]
+[node name="ColorRect" type="ColorRect" parent="Main Window/Background/Your Journey/Tingen/Tingen/Street"]
 layout_mode = 2
-size_flags_horizontal = 1
-size_flags_vertical = 6
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.5
+color = Color(0.34382322, 0.171653, 0.24414572, 1)
+
+[node name="Label" type="Label" parent="Main Window/Background/Your Journey/Tingen/Tingen/Street/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Main Street"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect2" type="ColorRect" parent="Main Window/Background/Your Journey/Tingen/Tingen/Street"]
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(0.3107225, 0.15284173, 0.21931782, 1)
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Main Window/Background/Your Journey/Tingen/Tingen/Street/ColorRect2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Street" type="HBoxContainer" parent="Main Window/Background/Your Journey/Tingen/Tingen/Street/ColorRect2/ScrollContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 10
+
+[node name="Control" type="Control" parent="Main Window/Background/Your Journey/Tingen/Tingen/Street/ColorRect2/ScrollContainer/Street"]
+custom_minimum_size = Vector2(7, 0)
+layout_mode = 2
+
+[node name="Toilet" parent="Main Window/Background/Your Journey/Tingen/Tingen/Street/ColorRect2/ScrollContainer/Street" instance=ExtResource("10_nb51f")]
+layout_mode = 2
+size_flags_vertical = 4
 
 [node name="Backlund" type="MarginContainer" parent="Main Window/Background/Your Journey"]
 visible = false
