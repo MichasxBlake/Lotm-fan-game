@@ -8,6 +8,9 @@ class_name Lore_blocks
 @export var number : int
 @export var inside_number : int
 @export var place : String
+@export var money_type : String
+@export var cost : int
+@export var increase : float
 @onready var label: Label = $Button/Label
 @onready var label_2: Label = $Button/Label2
 @onready var label_3: Label = $Button/HBoxContainer/Label3
@@ -15,10 +18,11 @@ class_name Lore_blocks
 @onready var lore_1: Lore_blocks = $"."
 @onready var timer: Timer = $Timer
 @onready var button: Button = $Button
-@onready var rich_text_label: RichTextLabel = $CanvasLayer/PanelContainer2/RichTextLabel
 @onready var panel_container_2: PanelContainer = $CanvasLayer/PanelContainer2
+@onready var button_cost: Label = $Button/Label3
 
 var do = false
+var buying = false
 
 
 
@@ -32,6 +36,9 @@ func _ready() -> void:
 		label_4.text = "/" + current_max
 	timer.wait_time = time_to_done
 	lore_1.max_value = time_to_done
+	GlobalData.value_changed.connect(can_buy)
+	if money_type and cost:
+		button_cost.text = money_type + ": "+ str(cost)
 	
 func _process(delta: float) -> void:
 	if do:
@@ -56,19 +63,35 @@ func _on_button_toggled(toggled_on: bool) -> void:
 			timer.start()
 # Fragment funkcji _on_button_toggled [cite: 8]
 		elif button_type == "Action":
-			if current >= int(current_max):
-				var new_id = get_instance_id()
-				# Wywołujemy grupę, która obsługuje logikę [cite: 8]
-				get_tree().call_group("Lore_events", "action", number, new_id, int(current_max), current, inside_number, place)
-			else:
-				# Logika przełączania opisów (RichTextLabels) [cite: 8]
-				if panel_container_2.get_child_count() > current:
-					panel_container_2.get_child(current-1).hide()
-					panel_container_2.get_child(current).show()
-				GlobalData.madness += 1
-   
-			current +=1
-			button.button_pressed = false
+			if money_type == "Passion" and GlobalData.passion >= cost:
+				GlobalData.passion -= cost
+				cost *= increase
+				buying = true
+			button_cost.text = money_type + ": "+ str(cost)
+			if buying:
+				if current >= int(current_max):
+					var new_id = get_instance_id()
+					# Wywołujemy grupę, która obsługuje logikę [cite: 8]
+					get_tree().call_group("Lore_events", "action", number, new_id, int(current_max), current, inside_number, place)
+				else:
+					if panel_container_2.get_child_count() > current:
+						panel_container_2.get_child(current-1).hide()
+						panel_container_2.get_child(current).show()
+
+				current +=1
+				button.button_pressed = false
+				buying = false
 	else:
 		timer.start()
 		timer.paused = true
+		
+func can_buy():
+	if button_type == "Action":
+		if money_type == "Passion":
+			if GlobalData.passion >= cost:
+				button.disabled = false
+			else:
+				button.disabled = true
+	else:
+		button.disabled = false
+	

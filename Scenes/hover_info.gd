@@ -11,6 +11,7 @@ func _input(event: InputEvent) -> void:
 		
 func toggle(on: bool):
 	if on:
+		
 		show()
 		modulate.a = 0.0
 		tween_opacity(1.0)
@@ -25,7 +26,3 @@ func tween_opacity(to: float):
 		opacity_tween = get_tree().create_tween()
 		opacity_tween.tween_property(self, 'modulate:a',to,0.3)
 		return opacity_tween
-
-
-func _on_spirituality_mouse_exited() -> void:
-	pass # Replace with function body.

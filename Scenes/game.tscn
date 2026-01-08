@@ -401,6 +401,13 @@ layout_mode = 2
 layout_mode = 2
 size_flags_vertical = 4
 
+[node name="Button" type="Button" parent="Main Window/Background/Your Journey/Tingen/Tingen"]
+layout_mode = 0
+offset_left = 356.0
+offset_top = 551.0
+offset_right = 635.55396
+offset_bottom = 713.1649
+
 [node name="Backlund" type="MarginContainer" parent="Main Window/Background/Your Journey"]
 visible = false
 layout_mode = 1
@@ -767,6 +774,7 @@ vertical_alignment = 2
 wait_time = 6.0
 one_shot = true
 
+[connection signal="button_down" from="Main Window/Background/Your Journey/Tingen/Tingen/Button" to="." method="_on_button_button_down"]
 [connection signal="item_selected" from="Main Window/Background/Settings/ColorRect/VBoxContainer/OptionButton2" to="Main Window/Background/Settings" method="_on_option_button_2_item_selected"]
 [connection signal="button_down" from="Main Window/Background/Settings/ColorRect/VBoxContainer/load_game" to="Main Window/Background/Settings" method="_on_button_button_down"]
 [connection signal="button_down" from="Main Window/Background/Settings/ColorRect/VBoxContainer/stop_save_info" to="Main Window/Background/Settings" method="_on_stop_save_info_button_down"]

@@ -66,6 +66,8 @@ layout_mode = 2
 current_max = "3"
 number = 1
 inside_number = 2
+cost = 20
+increase = 1.5
 
 [node name="2" parent="ColorRect/HBoxContainer/Toilet" instance=ExtResource("3_t7ul5")]
 visible = false
