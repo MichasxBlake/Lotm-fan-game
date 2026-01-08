@@ -1,7 +1,7 @@
 extends Control
 
 @onready var how_often_save = 0
-@onready var saving = preload("res://Scripts/SaveLoad.gd").new()
+@onready var saving = get_node("../../../Node")
 @onready var timer: Timer = $Timer
 @onready var save_info: Label = $"../../../Save_info"
 @onready var info: Timer = $"../../../Save_info/Timer"
@@ -50,3 +50,7 @@ func _on_stop_save_info_button_down() -> void:
 		stop_save_info.text = "Hide save info"
 		pressed = false
 		
+
+
+func aaaa() -> void:
+	saving.Save()

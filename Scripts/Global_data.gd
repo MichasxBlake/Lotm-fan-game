@@ -49,3 +49,5 @@ func _process(delta: float) -> void:
 		spirituality = spirituality_max
 	if mind_power > mind_power_max:
 		mind_power = mind_power_max
+
+var lore_states = {} # Format: {"NazwaBloku": {"visible": true, "current": 5}}

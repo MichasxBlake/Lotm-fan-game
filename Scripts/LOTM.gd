@@ -40,8 +40,6 @@ func _ready() -> void:
 	#menu
 	for i in menu_group.get_buttons():
 		i.connect("pressed",show_menu)
-
-
 	
 	#państwa
 	loen_kingdom.button_down.connect(loen_show)

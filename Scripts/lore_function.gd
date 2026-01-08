@@ -18,9 +18,7 @@ func action(number, button, max_val, current, inside_number, place):
 		command.show_new_lore(inside_number)
 	if place == "Street":
 		var place_find = get_node("../../%Street")
-		print(place_find)
 		var command = place_find.get_child(number+1)
-		print(command)
 		command.show_new_lore(inside_number)
 
 	

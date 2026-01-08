@@ -39,6 +39,16 @@ func _ready() -> void:
 	GlobalData.value_changed.connect(can_buy)
 	if money_type and cost:
 		button_cost.text = money_type + ": "+ str(cost)
+	await get_tree().process_frame
+	if place == "House" and number == 0:
+		if GlobalData.lore_states.has(self.name):
+			var saved_data = GlobalData.lore_states[self.name]
+			
+			# Przywracamy widoczność
+			self.visible = saved_data["visible"]
+			
+			# Przywracamy postęp (opłacenie)
+			self.current = saved_data["current"]
 	
 func _process(delta: float) -> void:
 	if do:

@@ -324,7 +324,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="House" type="HBoxContainer" parent="Main Window/Background/Your Journey/Tingen/Tingen/House/ColorRect2/ScrollContainer"]
+[node name="House" type="HBoxContainer" parent="Main Window/Background/Your Journey/Tingen/Tingen/House/ColorRect2/ScrollContainer" groups=["HouseGroup"]]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
@@ -755,6 +755,13 @@ text = "Hide save info"
 wait_time = 300.0
 autostart = true
 
+[node name="Button" type="Button" parent="Main Window/Background/Settings"]
+layout_mode = 0
+offset_left = 321.0
+offset_top = 229.0
+offset_right = 656.0
+offset_bottom = 387.0
+
 [node name="Node" type="Node" parent="."]
 script = ExtResource("11_o5yvi")
 
@@ -779,4 +786,5 @@ one_shot = true
 [connection signal="button_down" from="Main Window/Background/Settings/ColorRect/VBoxContainer/load_game" to="Main Window/Background/Settings" method="_on_button_button_down"]
 [connection signal="button_down" from="Main Window/Background/Settings/ColorRect/VBoxContainer/stop_save_info" to="Main Window/Background/Settings" method="_on_stop_save_info_button_down"]
 [connection signal="timeout" from="Main Window/Background/Settings/Timer" to="Main Window/Background/Settings" method="_on_timer_timeout"]
+[connection signal="button_down" from="Main Window/Background/Settings/Button" to="Main Window/Background/Settings" method="aaaa"]
 [connection signal="timeout" from="Save_info/Timer" to="Main Window/Background/Settings" method="_on_timer_timeout2"]

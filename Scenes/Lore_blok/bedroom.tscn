@@ -53,6 +53,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Bedroom" type="HBoxContainer" parent="ColorRect/HBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 10
@@ -68,5 +69,6 @@ inside_number = 2
 [node name="2" parent="ColorRect/HBoxContainer/Bedroom" instance=ExtResource("3_8jb8j")]
 visible = false
 layout_mode = 2
+place = "House"
 
 [connection signal="button_down" from="Button" to="." method="_on_button_button_down"]

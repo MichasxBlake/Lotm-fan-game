@@ -7,9 +7,12 @@ class_name SavedGame
 @export var pence : int
 
 #you
+@export var passion : int
+@export var passion_max  : int
 @export var madness : int
 @export var madness_max  : int
 @export var spirituality : int
 @export var spirituality_max : int
 @export var mind_power : int
 @export var mind_power_max : int
+@export var lore_states : Dictionary
