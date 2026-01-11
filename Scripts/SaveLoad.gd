@@ -2,9 +2,9 @@ extends Node
 class_name SaveLoader
 
 func _ready() -> void:
-	print(GlobalData.lore_states)
+	#print(GlobalData.lore_states)
 	Load()
-	print(GlobalData.lore_states)
+	#print(GlobalData.lore_states)
 
 func Save():
 	var saved_game:SavedGame = SavedGame.new()

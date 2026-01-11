@@ -9,6 +9,7 @@ extends Control
 @onready var show_logs: Button = $"Main Window/Background/HBoxContainer/VBoxContainer/ColorRect/Log_box/ColorRect/show_logs"
 
 
+@onready var logs_text: Label = $"Main Window/Background/HBoxContainer/VBoxContainer/ColorRect/Log_box/ColorRect/ScrollContainer/Label"
 
 
 
@@ -49,6 +50,8 @@ func _ready() -> void:
 	backlund_button.button_down.connect(backlund_show)
 	trier_button.button_down.connect(trier_show)
 	
+	GlobalData.log_udpate.connect(change_logs)
+	
 	
 	
 	#Logs
@@ -88,7 +91,7 @@ func show_menu():
 func loen_show() -> void:
 	var temp_but = what_but
 	what_but = 0
-	loen.show()
+	#loen.show()
 	if temp_but == what_but :
 		pass
 	else:
@@ -97,7 +100,6 @@ func loen_show() -> void:
 func intis_show() -> void:
 	var temp_but = what_but
 	what_but = 1
-	intis_but.show()
 	if temp_but == what_but :
 		pass
 	else:
@@ -169,3 +171,7 @@ func logs_show() -> void:
 
 func _on_button_button_down() -> void:
 	GlobalData.passion +=1
+	GlobalData.logs += "abcdefght\n"
+	
+func change_logs():
+	logs_text.text = GlobalData.logs

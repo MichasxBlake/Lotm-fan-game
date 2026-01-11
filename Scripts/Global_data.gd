@@ -2,6 +2,7 @@ extends Node
 #sygnały
 
 signal value_changed
+signal log_udpate
 
 
 #money
@@ -23,31 +24,44 @@ var passion : int = 0:
 	set(v):
 		passion = v
 		value_changed.emit()
+		max_passion()
 var passion_max = 100
 var madness : int =0:
 	set(v):
 		madness = v
 		value_changed.emit()
+		max_madness()
 var madness_max = 101
 var spirituality : int = 0:
 	set(v):
 		spirituality = v
 		value_changed.emit()
+		max_spirituality()
 var spirituality_max = 40
 var mind_power : int = 0:
 	set(v):
 		mind_power = v
 		value_changed.emit()
+		max_mind_power()
 var mind_power_max = 10
 
-func _process(delta: float) -> void:
+var logs : String = "":
+	set(t):
+		logs = t
+		log_udpate.emit()
+
+func max_passion():
 	if passion > passion_max:
 		passion = passion_max
+func max_madness():
 	if madness > madness_max:
 		madness = madness_max
+func max_spirituality():
 	if spirituality > spirituality_max:
 		spirituality = spirituality_max
+func max_mind_power():
 	if mind_power > mind_power_max:
 		mind_power = mind_power_max
-
+		
+		
 var lore_states = {} # Format: {"NazwaBloku": {"visible": true, "current": 5}}
