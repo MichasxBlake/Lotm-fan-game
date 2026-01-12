@@ -3,7 +3,8 @@ class_name SaveLoader
 
 func _ready() -> void:
 	#print(GlobalData.lore_states)
-	Load()
+	if ResourceLoader.exists("user://savegame.tres"):
+		Load()
 	#print(GlobalData.lore_states)
 
 func Save():

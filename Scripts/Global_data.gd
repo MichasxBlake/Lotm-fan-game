@@ -26,7 +26,7 @@ var passion : int = 0:
 		value_changed.emit()
 		max_passion()
 var passion_max = 100
-var madness : int =0:
+var madness : int = 5:
 	set(v):
 		madness = v
 		value_changed.emit()

@@ -585,7 +585,6 @@ toggle_mode = true
 text = "^"
 
 [node name="Items" type="ColorRect" parent="Main Window/Background/HBoxContainer/VBoxContainer/ColorRect"]
-visible = false
 layout_mode = 0
 offset_top = -6.0
 offset_right = 304.0
