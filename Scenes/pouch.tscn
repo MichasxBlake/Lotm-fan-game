@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://du6ck6qui4go5"]
+[gd_scene load_steps=6 format=3 uid="uid://du6ck6qui4go5"]
 
 [ext_resource type="Script" uid="uid://dcuju2kuv3xcu" path="res://Scripts/items_data.gd" id="1_15k0m"]
 [ext_resource type="Theme" uid="uid://lji2qil8mkcf" path="res://Themes/Items.tres" id="2_t74fa"]
+[ext_resource type="Script" uid="uid://cohkdlr57gq25" path="res://Scenes/hover_info.gd" id="3_qnlfi"]
 
 [sub_resource type="GDScript" id="GDScript_15k0m"]
 script/source = "extends HBoxContainer
@@ -22,6 +23,22 @@ func _process(delta: float) -> void:
 	soli.text = str(GlobalData.soli)
 	pence.text = str(GlobalData.pence)
 "
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tamkv"]
+bg_color = Color(0.30980393, 0.30980393, 0.30980393, 0.9411765)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.003519166, 0.0035191693, 0.0035191625, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+expand_margin_left = 24.0
+expand_margin_top = 12.0
+expand_margin_right = 24.0
+expand_margin_bottom = 12.0
 
 [node name="Pouch" type="VBoxContainer" node_paths=PackedStringArray("activate", "list", "vbox_size")]
 anchors_preset = 15
@@ -103,3 +120,88 @@ text = "Pence:"
 layout_mode = 2
 theme = ExtResource("2_t74fa")
 text = "100"
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="PanelContainer2" type="PanelContainer" parent="Control"]
+layout_mode = 0
+offset_left = -87.0
+offset_top = -583.0
+offset_right = 121.0
+offset_bottom = -450.0
+size_flags_horizontal = 4
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_tamkv")
+script = ExtResource("3_qnlfi")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/PanelContainer2"]
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+mouse_filter = 2
+bbcode_enabled = true
+text = "[b]Pound[/b]
+
+The highest currency value in Loen Kingdom, You need 20 soli to get 1 pound"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="PanelContainer5" type="PanelContainer" parent="Control"]
+layout_mode = 0
+offset_left = -753.0
+offset_top = -631.0
+offset_right = -561.0
+offset_bottom = -487.0
+size_flags_horizontal = 4
+size_flags_vertical = 0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_tamkv")
+script = ExtResource("3_qnlfi")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/PanelContainer5"]
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+mouse_filter = 2
+bbcode_enabled = true
+text = "[b]Soli[/b]
+
+It's most user currency by middle class. 1 Soli is equal to 12 pence"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="PanelContainer3" type="PanelContainer" parent="Control"]
+layout_mode = 0
+offset_left = 495.0
+offset_top = -629.0
+offset_right = 687.0
+offset_bottom = -485.0
+size_flags_horizontal = 8
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_tamkv")
+script = ExtResource("3_qnlfi")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/PanelContainer3"]
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+mouse_filter = 2
+bbcode_enabled = true
+text = "[b]Pence[/b]
+
+Currency used by lower class.  Bread for commoner cost  from 1 to 3 pence"
+fit_content = true
+horizontal_alignment = 1
+
+[connection signal="mouse_entered" from="Pouch_box/VBoxContainer/Pound" to="Control/PanelContainer2" method="toggle" binds= [true]]
+[connection signal="mouse_exited" from="Pouch_box/VBoxContainer/Pound" to="Control/PanelContainer2" method="toggle" binds= [false]]
+[connection signal="mouse_entered" from="Pouch_box/VBoxContainer/Soli" to="Control/PanelContainer5" method="toggle" binds= [true]]
+[connection signal="mouse_exited" from="Pouch_box/VBoxContainer/Soli" to="Control/PanelContainer5" method="toggle" binds= [false]]
+[connection signal="mouse_entered" from="Pouch_box/VBoxContainer/Pence" to="Control/PanelContainer3" method="toggle" binds= [true]]
+[connection signal="mouse_exited" from="Pouch_box/VBoxContainer/Pence" to="Control/PanelContainer3" method="toggle" binds= [false]]

@@ -160,8 +160,18 @@ func logs_show() -> void:
 
 
 func _on_button_button_down() -> void:
-	GlobalData.passion +=1
-	GlobalData.logs += "abcdefght\n"
+	GlobalData.pence +=1
+	GlobalData.logs += "\nabcdefght\nffffff"
 	
 func change_logs():
-	logs_text.text = GlobalData.logs
+	var lista = GlobalData.logs.split("\n")
+	if lista.size() >= 60:
+		lista.remove_at(lista.size()-1)
+		GlobalData.logs = "\n".join(lista)
+		logs_text.text = GlobalData.logs
+	else:
+		GlobalData.logs = "\n".join(lista)
+		logs_text.text = GlobalData.logs
+
+	
+	

@@ -10,6 +10,7 @@ var tween : Tween
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	activate.button_down.connect(show_text)
+	GlobalData.value_changed.connect(money)
 	
 func show_text() -> void:
 	if tween:
@@ -23,6 +24,10 @@ func show_text() -> void:
 		list.show()
 		activate.text = "V " + text_name
 
-
-func _on_desire_passion_mouse_entered() -> void:
-	pass
+func money():
+	if GlobalData.pence >= 12:
+		GlobalData.pence -= 12
+		GlobalData.soli +=1
+	if GlobalData.soli >= 20:
+		GlobalData.soli -=20
+		GlobalData.pounds +=1
