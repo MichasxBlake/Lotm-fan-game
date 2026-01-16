@@ -48,6 +48,10 @@ var mind_power_max = 10
 var logs : String = "":
 	set(t):
 		logs = t
+		var number = logs.split("\n")
+		if number.size() >= 62:
+			number.remove_at(0)
+			logs = "\n".join(number)
 		log_udpate.emit()
 
 func max_passion():

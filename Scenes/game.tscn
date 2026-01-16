@@ -493,7 +493,7 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -6.0
+offset_top = 3.0
 offset_right = 4.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -502,71 +502,6 @@ grow_vertical = 2
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 10
-text = "sad
-ads
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-aas
-da
-
-
-
-
-
-
-
-dsa
-da
-sda
-sd
-ds
-a
-dsa
-ds
-sa
-dads
-adsad
-asd
-ads
-adds
-asda
-d
-sa
-dsa
-asd
-adsa
-a
-sda
-asd
-aasd
-ads
-a
-asd
-aasd
-adsa
-
-dsad
-dsa
-dsa
-asd
-a
-A YO NO WAY IT WORKED"
 clip_text = true
 
 [node name="show_logs" type="Button" parent="Main Window/Background/HBoxContainer/VBoxContainer/ColorRect/Log_box/ColorRect"]
@@ -578,6 +513,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -17.0
 offset_top = -31.0
+offset_right = 6.0
 grow_horizontal = 0
 grow_vertical = 0
 theme = SubResource("Theme_v158k")

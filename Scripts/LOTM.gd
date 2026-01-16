@@ -33,6 +33,7 @@ extends Control
 #my variable
 @onready var what_okno: int = 0
 @onready var what_but: int = 0
+@onready var test: int = 0
 
 
 # Called when the node enters the scene tree for the first time.
@@ -161,17 +162,13 @@ func logs_show() -> void:
 
 func _on_button_button_down() -> void:
 	GlobalData.pence +=1
-	GlobalData.logs += "\nabcdefght\nffffff"
+	GlobalData.logs += "\n"+str(test)
+	test +=1
 	
 func change_logs():
-	var lista = GlobalData.logs.split("\n")
-	if lista.size() >= 60:
-		lista.remove_at(lista.size()-1)
-		GlobalData.logs = "\n".join(lista)
-		logs_text.text = GlobalData.logs
-	else:
-		GlobalData.logs = "\n".join(lista)
-		logs_text.text = GlobalData.logs
+	logs_text.text = GlobalData.logs
+	scroll_container.set_deferred("scroll_vertical", scroll_container.get_v_scroll_bar().max_value)
+
 
 	
 	
