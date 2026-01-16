@@ -13,11 +13,6 @@ func _ready() -> void:
 	button_2.button_down.connect(exit)
 	#get_viewport().size = DisplayServer.screen_get_size()  -> make bugs
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
 func test() -> void:
 	get_tree().change_scene_to_packed(main_game)
 	

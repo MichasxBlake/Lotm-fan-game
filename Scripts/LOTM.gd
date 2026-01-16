@@ -58,16 +58,6 @@ func _ready() -> void:
 	scroll_container.set_deferred("scroll_vertical", scroll_container.get_v_scroll_bar().max_value)
 	show_logs.button_down.connect(logs_show)
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	if GlobalData.pence>100:
-		GlobalData.soli +=1
-		GlobalData.pence -=100
-	if GlobalData.soli>100:
-		GlobalData.pounds +=1
-		GlobalData.soli -=100
-
 func _input(event) -> void:
 	if event.is_action_pressed("Escape"):
 		get_tree().change_scene_to_file("res://Scenes/control.tscn")

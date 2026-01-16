@@ -16,11 +16,11 @@ extends HBoxContainer
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	GlobalData.value_changed.connect(changing)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func changing():
 	spirituality.text = str(GlobalData.spirituality)
 	spirituality_max.text = "/ "+str(GlobalData.spirituality_max)
 	madness.text = str(GlobalData.madness)
