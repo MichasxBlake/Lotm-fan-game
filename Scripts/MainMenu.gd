@@ -4,7 +4,7 @@ extends Control
 @onready var button: Button = $MarginContainer/ColorRect/HBoxContainer/VBoxContainer/Button
 @onready var button_2: Button = $MarginContainer/ColorRect/HBoxContainer/VBoxContainer/Button2
 @onready var main_game = preload("res://Scenes/game.tscn")
-@onready var save : SaveLoader = SaveLoader.new()
+#@onready var save : SaveLoader = SaveLoader.new()
 
 
 # Called when the node enters the scene tree for the first time.
@@ -18,5 +18,5 @@ func test() -> void:
 	
 	
 func exit() -> void:
-	save.Save()
+	#save.Save()
 	get_tree().quit()

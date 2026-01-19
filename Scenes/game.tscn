@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://dptn8t2yllqyk"]
+[gd_scene load_steps=19 format=3 uid="uid://dptn8t2yllqyk"]
 
 [ext_resource type="Script" uid="uid://b8ra3h3ewiuoq" path="res://Scripts/LOTM.gd" id="1_i6g32"]
 [ext_resource type="Theme" uid="uid://bnlijgvut1fio" path="res://Themes/buttons_menu.tres" id="2_1l0tm"]
@@ -15,6 +15,8 @@
 [ext_resource type="Script" uid="uid://ihxr02abkf2n" path="res://Scripts/SaveLoad.gd" id="11_o5yvi"]
 [ext_resource type="Script" uid="uid://ducpbhhd6c0xl" path="res://Scenes/settings.gd" id="11_rfjv2"]
 [ext_resource type="Script" uid="uid://rnij3xqaomw8" path="res://Scripts/lore_function.gd" id="13_rfjv2"]
+
+[sub_resource type="Theme" id="Theme_nb51f"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1l0tm"]
 
@@ -43,29 +45,32 @@ grow_vertical = 2
 layout_mode = 2
 color = Color(0.24705882, 0.11372549, 0.16862746, 1)
 
-[node name="Menu" type="VBoxContainer" parent="Main Window/Background"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Main Window/Background"]
 layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -957.5
-offset_right = 957.5
-offset_bottom = 80.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Menu" type="VBoxContainer" parent="Main Window/Background/VBoxContainer"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+size_flags_vertical = 0
 theme_override_constants/separation = 10
 alignment = 1
 
-[node name="Control" type="Control" parent="Main Window/Background/Menu"]
+[node name="Control" type="Control" parent="Main Window/Background/VBoxContainer/Menu"]
 layout_mode = 2
 size_flags_horizontal = 4
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Main Window/Background/Menu"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Main Window/Background/VBoxContainer/Menu"]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_constants/separation = 20
 alignment = 1
 
-[node name="Your Journey" type="Button" parent="Main Window/Background/Menu/HBoxContainer"]
+[node name="Your Journey" type="Button" parent="Main Window/Background/VBoxContainer/Menu/HBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_1l0tm")
 toggle_mode = true
@@ -73,7 +78,7 @@ button_pressed = true
 button_group = ExtResource("3_v158k")
 text = "Your Journey"
 
-[node name="Button2" type="Button" parent="Main Window/Background/Menu/HBoxContainer"]
+[node name="Button2" type="Button" parent="Main Window/Background/VBoxContainer/Menu/HBoxContainer"]
 visible = false
 layout_mode = 2
 theme = ExtResource("2_1l0tm")
@@ -81,7 +86,7 @@ toggle_mode = true
 button_group = ExtResource("3_v158k")
 text = "Menu"
 
-[node name="Button3" type="Button" parent="Main Window/Background/Menu/HBoxContainer"]
+[node name="Button3" type="Button" parent="Main Window/Background/VBoxContainer/Menu/HBoxContainer"]
 visible = false
 layout_mode = 2
 theme = ExtResource("2_1l0tm")
@@ -89,7 +94,7 @@ toggle_mode = true
 button_group = ExtResource("3_v158k")
 text = "Menu"
 
-[node name="Button4" type="Button" parent="Main Window/Background/Menu/HBoxContainer"]
+[node name="Button4" type="Button" parent="Main Window/Background/VBoxContainer/Menu/HBoxContainer"]
 visible = false
 layout_mode = 2
 theme = ExtResource("2_1l0tm")
@@ -97,7 +102,7 @@ toggle_mode = true
 button_group = ExtResource("3_v158k")
 text = "Menu"
 
-[node name="Settings" type="Button" parent="Main Window/Background/Menu/HBoxContainer"]
+[node name="Settings" type="Button" parent="Main Window/Background/VBoxContainer/Menu/HBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_1l0tm")
 toggle_mode = true
@@ -105,72 +110,80 @@ button_group = ExtResource("3_v158k")
 text = "Settings
 "
 
-[node name="Your Journey" type="Control" parent="Main Window/Background"]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -958.0
-offset_top = -1015.0
-offset_right = 623.0
-grow_horizontal = 2
-grow_vertical = 0
+[node name="HBoxContainer" type="HBoxContainer" parent="Main Window/Background/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
 
-[node name="Locations" type="HBoxContainer" parent="Main Window/Background/Your Journey"]
-layout_mode = 1
-anchors_preset = 9
-anchor_bottom = 1.0
-offset_right = 355.0
-grow_vertical = 2
-alignment = 1
-
-[node name="Control" type="Control" parent="Main Window/Background/Your Journey/Locations"]
+[node name="Control" type="Control" parent="Main Window/Background/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="ColorRect" type="ColorRect" parent="Main Window/Background/Your Journey/Locations"]
-layout_mode = 2
-size_flags_horizontal = 3
-color = Color(0.20400871, 0.08893366, 0.13568288, 1)
-
-[node name="Menu_of_locations" type="VBoxContainer" parent="Main Window/Background/Your Journey/Locations/ColorRect"]
+[node name="Your Journey" type="Control" parent="Main Window/Background/VBoxContainer/HBoxContainer/Control"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 27.0
-offset_right = -22.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Main Window/Background/VBoxContainer/HBoxContainer/Control/Your Journey"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Locations" type="HBoxContainer" parent="Main Window/Background/VBoxContainer/HBoxContainer/Control/Your Journey/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="Control" type="Control" parent="Main Window/Background/VBoxContainer/HBoxContainer/Control/Your Journey/HBoxContainer/Locations"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ColorRect" type="ColorRect" parent="Main Window/Background/VBoxContainer/HBoxContainer/Control/Your Journey/HBoxContainer/Locations"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+color = Color(0.20400871, 0.08893366, 0.13568288, 1)
+
+[node name="Menu_of_locations" type="VBoxContainer" parent="Main Window/Background/VBoxContainer/HBoxContainer/Control/Your Journey/HBoxContainer/Locations/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 10
 
-[node name="Control" type="Control" parent="Main Window/Background/Your Journey/Locations/ColorRect/Menu_of_locations"]
+[node name="Control" type="Control" parent="Main Window/Background/VBoxContainer/HBoxContainer/Control/Your Journey/HBoxContainer/Locations/ColorRect/Menu_of_locations"]
 layout_mode = 2
 
-[node name="Control3" type="Control" parent="Main Window/Background/Your Journey/Locations/ColorRect/Menu_of_locations"]
+[node name="Control3" type="Control" parent="Main Window/Background/VBoxContainer/HBoxContainer/Control/Your Journey/HBoxContainer/Locations/ColorRect/Menu_of_locations"]
 layout_mode = 2
 
-[node name="Control4" type="Control" parent="Main Window/Background/Your Journey/Locations/ColorRect/Menu_of_locations"]
+[node name="Control4" type="Control" parent="Main Window/Background/VBoxContainer/HBoxContainer/Control/Your Journey/HBoxContainer/Locations/ColorRect/Menu_of_locations"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="Main Window/Background/Your Journey/Locations/ColorRect/Menu_of_locations"]
+[node name="Label" type="Label" parent="Main Window/Background/VBoxContainer/HBoxContainer/Control/Your Journey/HBoxContainer/Locations/ColorRect/Menu_of_locations"]
 texture_filter = 1
 layout_mode = 2
 text = "Lokacje"
 horizontal_alignment = 1
 
-[node name="Control6" type="Control" parent="Main Window/Background/Your Journey/Locations/ColorRect/Menu_of_locations"]
+[node name="Control6" type="Control" parent="Main Window/Background/VBoxContainer/HBoxContainer/Control/Your Journey/HBoxContainer/Locations/ColorRect/Menu_of_locations"]
 layout_mode = 2
 
-[node name="Control7" type="Control" parent="Main Window/Background/Your Journey/Locations/ColorRect/Menu_of_locations"]
+[node name="Control7" type="Control" parent="Main Window/Background/VBoxContainer/HBoxContainer/Control/Your Journey/HBoxContainer/Locations/ColorRect/Menu_of_locations"]
 layout_mode = 2
 
-[node name="HSeparator" type="HSeparator" parent="Main Window/Background/Your Journey/Locations/ColorRect/Menu_of_locations"]
+[node name="HSeparator" type="HSeparator" parent="Main Window/Background/VBoxContainer/HBoxContainer/Control/Your Journey/HBoxContainer/Locations/ColorRect/Menu_of_locations"]
 layout_mode = 2
 
-[node name="Loen Kingdom" type="Button" parent="Main Window/Background/Your Journey/Locations/ColorRect/Menu_of_locations"]
+[node name="Loen Kingdom" type="Button" parent="Main Window/Background/VBoxContainer/HBoxContainer/Control/Your Journey/HBoxContainer/Locations/ColorRect/Menu_of_locations"]
 layout_mode = 2
 theme = ExtResource("4_h4fw4")
 disabled = true
@@ -179,30 +192,32 @@ button_pressed = true
 button_group = ExtResource("5_ldgsr")
 text = "Loen kingdom"
 
-[node name="Loen" type="VBoxContainer" parent="Main Window/Background/Your Journey/Locations/ColorRect/Menu_of_locations"]
+[node name="Loen" type="VBoxContainer" parent="Main Window/Background/VBoxContainer/HBoxContainer/Control/Your Journey/HBoxContainer/Locations/ColorRect/Menu_of_locations"]
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 alignment = 1
 
-[node name="ColorRect" type="ColorRect" parent="Main Window/Background/Your Journey/Locations/ColorRect/Menu_of_locations/Loen"]
+[node name="ColorRect" type="ColorRect" parent="Main Window/Background/VBoxContainer/HBoxContainer/Control/Your Journey/HBoxContainer/Locations/ColorRect/Menu_of_locations/Loen"]
 layout_mode = 2
 size_flags_vertical = 3
 color = Color(0.1592056, 0.06465201, 0.10358583, 1)
 
-[node name="ScrollContainer" type="ScrollContainer" parent="Main Window/Background/Your Journey/Locations/ColorRect/Menu_of_locations/Loen/ColorRect"]
-layout_mode = 0
-offset_top = 4.0
-offset_right = 125.0
-offset_bottom = 100.0
+[node name="ScrollContainer" type="ScrollContainer" parent="Main Window/Background/VBoxContainer/HBoxContainer/Control/Your Journey/HBoxContainer/Locations/ColorRect/Menu_of_locations/Loen/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 size_flags_vertical = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Main Window/Background/Your Journey/Locations/ColorRect/Menu_of_locations/Loen/ColorRect/ScrollContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Main Window/Background/VBoxContainer/HBoxContainer/Control/Your Journey/HBoxContainer/Locations/ColorRect/Menu_of_locations/Loen/ColorRect/ScrollContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_constants/separation = 8
 
-[node name="tingen" type="Button" parent="Main Window/Background/Your Journey/Locations/ColorRect/Menu_of_locations/Loen/ColorRect/ScrollContainer/VBoxContainer"]
+[node name="tingen" type="Button" parent="Main Window/Background/VBoxContainer/HBoxContainer/Control/Your Journey/HBoxContainer/Locations/ColorRect/Menu_of_locations/Loen/ColorRect/ScrollContainer/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("6_o5yvi")
 toggle_mode = true
@@ -210,21 +225,21 @@ button_pressed = true
 button_group = ExtResource("7_1l0tm")
 text = "Tingen"
 
-[node name="backlund" type="Button" parent="Main Window/Background/Your Journey/Locations/ColorRect/Menu_of_locations/Loen/ColorRect/ScrollContainer/VBoxContainer"]
+[node name="backlund" type="Button" parent="Main Window/Background/VBoxContainer/HBoxContainer/Control/Your Journey/HBoxContainer/Locations/ColorRect/Menu_of_locations/Loen/ColorRect/ScrollContainer/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("6_o5yvi")
 toggle_mode = true
 button_group = ExtResource("7_1l0tm")
 text = "Backlund"
 
-[node name="trier" type="Button" parent="Main Window/Background/Your Journey/Locations/ColorRect/Menu_of_locations/Loen/ColorRect/ScrollContainer/VBoxContainer"]
+[node name="trier" type="Button" parent="Main Window/Background/VBoxContainer/HBoxContainer/Control/Your Journey/HBoxContainer/Locations/ColorRect/Menu_of_locations/Loen/ColorRect/ScrollContainer/VBoxContainer"]
 visible = false
 layout_mode = 2
 
-[node name="HSeparator2" type="HSeparator" parent="Main Window/Background/Your Journey/Locations/ColorRect/Menu_of_locations"]
+[node name="HSeparator2" type="HSeparator" parent="Main Window/Background/VBoxContainer/HBoxContainer/Control/Your Journey/HBoxContainer/Locations/ColorRect/Menu_of_locations"]
 layout_mode = 2
 
-[node name="Intis" type="Button" parent="Main Window/Background/Your Journey/Locations/ColorRect/Menu_of_locations"]
+[node name="Intis" type="Button" parent="Main Window/Background/VBoxContainer/HBoxContainer/Control/Your Journey/HBoxContainer/Locations/ColorRect/Menu_of_locations"]
 visible = false
 layout_mode = 2
 theme = ExtResource("4_h4fw4")
@@ -232,41 +247,41 @@ toggle_mode = true
 button_group = ExtResource("5_ldgsr")
 text = "Intis Rebulic"
 
-[node name="intis_but" type="VBoxContainer" parent="Main Window/Background/Your Journey/Locations/ColorRect/Menu_of_locations"]
+[node name="intis_but" type="VBoxContainer" parent="Main Window/Background/VBoxContainer/HBoxContainer/Control/Your Journey/HBoxContainer/Locations/ColorRect/Menu_of_locations"]
 visible = false
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 alignment = 1
 
-[node name="ScrollContainer" type="ScrollContainer" parent="Main Window/Background/Your Journey/Locations/ColorRect/Menu_of_locations/intis_but"]
+[node name="ScrollContainer" type="ScrollContainer" parent="Main Window/Background/VBoxContainer/HBoxContainer/Control/Your Journey/HBoxContainer/Locations/ColorRect/Menu_of_locations/intis_but"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Main Window/Background/Your Journey/Locations/ColorRect/Menu_of_locations/intis_but/ScrollContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Main Window/Background/VBoxContainer/HBoxContainer/Control/Your Journey/HBoxContainer/Locations/ColorRect/Menu_of_locations/intis_but/ScrollContainer"]
 layout_mode = 2
 alignment = 1
 
-[node name="Button" type="Button" parent="Main Window/Background/Your Journey/Locations/ColorRect/Menu_of_locations/intis_but/ScrollContainer/VBoxContainer"]
+[node name="Button" type="Button" parent="Main Window/Background/VBoxContainer/HBoxContainer/Control/Your Journey/HBoxContainer/Locations/ColorRect/Menu_of_locations/intis_but/ScrollContainer/VBoxContainer"]
 layout_mode = 2
 text = "Text"
 
-[node name="Button2" type="Button" parent="Main Window/Background/Your Journey/Locations/ColorRect/Menu_of_locations/intis_but/ScrollContainer/VBoxContainer"]
+[node name="Button2" type="Button" parent="Main Window/Background/VBoxContainer/HBoxContainer/Control/Your Journey/HBoxContainer/Locations/ColorRect/Menu_of_locations/intis_but/ScrollContainer/VBoxContainer"]
 layout_mode = 2
 text = "Text"
 
-[node name="Button3" type="Button" parent="Main Window/Background/Your Journey/Locations/ColorRect/Menu_of_locations/intis_but/ScrollContainer/VBoxContainer"]
+[node name="Button3" type="Button" parent="Main Window/Background/VBoxContainer/HBoxContainer/Control/Your Journey/HBoxContainer/Locations/ColorRect/Menu_of_locations/intis_but/ScrollContainer/VBoxContainer"]
 layout_mode = 2
 text = "Text"
 
-[node name="Button4" type="Button" parent="Main Window/Background/Your Journey/Locations/ColorRect/Menu_of_locations/intis_but/ScrollContainer/VBoxContainer"]
+[node name="Button4" type="Button" parent="Main Window/Background/VBoxContainer/HBoxContainer/Control/Your Journey/HBoxContainer/Locations/ColorRect/Menu_of_locations/intis_but/ScrollContainer/VBoxContainer"]
 layout_mode = 2
 text = "Text"
 
-[node name="HSeparator3" type="HSeparator" parent="Main Window/Background/Your Journey/Locations/ColorRect/Menu_of_locations"]
+[node name="HSeparator3" type="HSeparator" parent="Main Window/Background/VBoxContainer/HBoxContainer/Control/Your Journey/HBoxContainer/Locations/ColorRect/Menu_of_locations"]
 visible = false
 layout_mode = 2
 
-[node name="Intis2" type="Button" parent="Main Window/Background/Your Journey/Locations/ColorRect/Menu_of_locations"]
+[node name="Intis2" type="Button" parent="Main Window/Background/VBoxContainer/HBoxContainer/Control/Your Journey/HBoxContainer/Locations/ColorRect/Menu_of_locations"]
 visible = false
 layout_mode = 2
 theme = ExtResource("4_h4fw4")
@@ -274,40 +289,56 @@ toggle_mode = true
 button_group = ExtResource("5_ldgsr")
 text = "Intis Rebulic"
 
-[node name="Tingen" type="MarginContainer" parent="Main Window/Background/Your Journey"]
+[node name="Control" type="Control" parent="Main Window/Background/VBoxContainer/HBoxContainer/Control/Your Journey/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 5.0
+
+[node name="Tingen" type="MarginContainer" parent="Main Window/Background/VBoxContainer/HBoxContainer/Control/Your Journey/HBoxContainer/Control"]
 layout_mode = 1
-anchors_preset = 13
-anchor_left = 0.5
-anchor_right = 0.5
+anchors_preset = 15
+anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -435.5
-offset_right = 790.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Tingen" type="ColorRect" parent="Main Window/Background/Your Journey/Tingen"]
+[node name="Tingen" type="ColorRect" parent="Main Window/Background/VBoxContainer/HBoxContainer/Control/Your Journey/HBoxContainer/Control/Tingen"]
 layout_mode = 2
 color = Color(0.27082172, 0.13016593, 0.18938941, 1)
 
-[node name="House" type="VBoxContainer" parent="Main Window/Background/Your Journey/Tingen/Tingen"]
+[node name="Button" type="Button" parent="Main Window/Background/VBoxContainer/HBoxContainer/Control/Your Journey/HBoxContainer/Control/Tingen/Tingen"]
+layout_mode = 0
+offset_left = 356.0
+offset_top = 551.0
+offset_right = 635.55396
+offset_bottom = 713.1649
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Main Window/Background/VBoxContainer/HBoxContainer/Control/Your Journey/HBoxContainer/Control/Tingen/Tingen"]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.008156607
-anchor_top = 0.008866995
-anchor_right = 0.9910277
-anchor_bottom = 0.1596059
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
-size_flags_vertical = 3
+grow_vertical = 2
+theme_override_constants/separation = 21
+
+[node name="Control" type="Control" parent="Main Window/Background/VBoxContainer/HBoxContainer/Control/Your Journey/HBoxContainer/Control/Tingen/Tingen/VBoxContainer"]
+layout_mode = 2
+
+[node name="House" type="VBoxContainer" parent="Main Window/Background/VBoxContainer/HBoxContainer/Control/Your Journey/HBoxContainer/Control/Tingen/Tingen/VBoxContainer"]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+theme = SubResource("Theme_nb51f")
 theme_override_constants/separation = 0
 metadata/_edit_use_anchors_ = true
 
-[node name="ColorRect" type="ColorRect" parent="Main Window/Background/Your Journey/Tingen/Tingen/House"]
+[node name="ColorRect" type="ColorRect" parent="Main Window/Background/VBoxContainer/HBoxContainer/Control/Your Journey/HBoxContainer/Control/Tingen/Tingen/VBoxContainer/House"]
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.5
 color = Color(0.34382322, 0.171653, 0.24414572, 1)
 
-[node name="Label" type="Label" parent="Main Window/Background/Your Journey/Tingen/Tingen/House/ColorRect"]
+[node name="Label" type="Label" parent="Main Window/Background/VBoxContainer/HBoxContainer/Control/Your Journey/HBoxContainer/Control/Tingen/Tingen/VBoxContainer/House/ColorRect"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -318,12 +349,12 @@ text = "House"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ColorRect2" type="ColorRect" parent="Main Window/Background/Your Journey/Tingen/Tingen/House"]
+[node name="ColorRect2" type="ColorRect" parent="Main Window/Background/VBoxContainer/HBoxContainer/Control/Your Journey/HBoxContainer/Control/Tingen/Tingen/VBoxContainer/House"]
 layout_mode = 2
 size_flags_vertical = 3
 color = Color(0.3107225, 0.15284173, 0.21931782, 1)
 
-[node name="ScrollContainer" type="ScrollContainer" parent="Main Window/Background/Your Journey/Tingen/Tingen/House/ColorRect2"]
+[node name="ScrollContainer" type="ScrollContainer" parent="Main Window/Background/VBoxContainer/HBoxContainer/Control/Your Journey/HBoxContainer/Control/Tingen/Tingen/VBoxContainer/House/ColorRect2"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -331,45 +362,41 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="House" type="HBoxContainer" parent="Main Window/Background/Your Journey/Tingen/Tingen/House/ColorRect2/ScrollContainer" groups=["HouseGroup"]]
+[node name="House" type="HBoxContainer" parent="Main Window/Background/VBoxContainer/HBoxContainer/Control/Your Journey/HBoxContainer/Control/Tingen/Tingen/VBoxContainer/House/ColorRect2/ScrollContainer" groups=["HouseGroup"]]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_constants/separation = 10
 
-[node name="Control" type="Control" parent="Main Window/Background/Your Journey/Tingen/Tingen/House/ColorRect2/ScrollContainer/House"]
+[node name="Control" type="Control" parent="Main Window/Background/VBoxContainer/HBoxContainer/Control/Your Journey/HBoxContainer/Control/Tingen/Tingen/VBoxContainer/House/ColorRect2/ScrollContainer/House"]
 custom_minimum_size = Vector2(7, 0)
 layout_mode = 2
 
-[node name="Bedroom" parent="Main Window/Background/Your Journey/Tingen/Tingen/House/ColorRect2/ScrollContainer/House" instance=ExtResource("9_rku1e")]
+[node name="Bedroom" parent="Main Window/Background/VBoxContainer/HBoxContainer/Control/Your Journey/HBoxContainer/Control/Tingen/Tingen/VBoxContainer/House/ColorRect2/ScrollContainer/House" instance=ExtResource("9_rku1e")]
 show_behind_parent = true
 layout_mode = 2
+size_flags_horizontal = 4
 size_flags_vertical = 6
 
-[node name="Toilet" parent="Main Window/Background/Your Journey/Tingen/Tingen/House/ColorRect2/ScrollContainer/House" instance=ExtResource("9_1phco")]
+[node name="Toilet" parent="Main Window/Background/VBoxContainer/HBoxContainer/Control/Your Journey/HBoxContainer/Control/Tingen/Tingen/VBoxContainer/House/ColorRect2/ScrollContainer/House" instance=ExtResource("9_1phco")]
 layout_mode = 2
+size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="Street" type="VBoxContainer" parent="Main Window/Background/Your Journey/Tingen/Tingen"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.008156607
-anchor_top = 0.18423645
-anchor_right = 0.9910277
-anchor_bottom = 0.3546798
-grow_horizontal = 2
-size_flags_vertical = 3
+[node name="Street" type="VBoxContainer" parent="Main Window/Background/VBoxContainer/HBoxContainer/Control/Your Journey/HBoxContainer/Control/Tingen/Tingen/VBoxContainer"]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
 theme_override_constants/separation = 0
 metadata/_edit_use_anchors_ = true
 
-[node name="ColorRect" type="ColorRect" parent="Main Window/Background/Your Journey/Tingen/Tingen/Street"]
+[node name="ColorRect" type="ColorRect" parent="Main Window/Background/VBoxContainer/HBoxContainer/Control/Your Journey/HBoxContainer/Control/Tingen/Tingen/VBoxContainer/Street"]
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.5
 color = Color(0.34382322, 0.171653, 0.24414572, 1)
 
-[node name="Label" type="Label" parent="Main Window/Background/Your Journey/Tingen/Tingen/Street/ColorRect"]
+[node name="Label" type="Label" parent="Main Window/Background/VBoxContainer/HBoxContainer/Control/Your Journey/HBoxContainer/Control/Tingen/Tingen/VBoxContainer/Street/ColorRect"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -380,12 +407,12 @@ text = "Main Street"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ColorRect2" type="ColorRect" parent="Main Window/Background/Your Journey/Tingen/Tingen/Street"]
+[node name="ColorRect2" type="ColorRect" parent="Main Window/Background/VBoxContainer/HBoxContainer/Control/Your Journey/HBoxContainer/Control/Tingen/Tingen/VBoxContainer/Street"]
 layout_mode = 2
 size_flags_vertical = 3
 color = Color(0.3107225, 0.15284173, 0.21931782, 1)
 
-[node name="ScrollContainer" type="ScrollContainer" parent="Main Window/Background/Your Journey/Tingen/Tingen/Street/ColorRect2"]
+[node name="ScrollContainer" type="ScrollContainer" parent="Main Window/Background/VBoxContainer/HBoxContainer/Control/Your Journey/HBoxContainer/Control/Tingen/Tingen/VBoxContainer/Street/ColorRect2"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -393,45 +420,35 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Street" type="HBoxContainer" parent="Main Window/Background/Your Journey/Tingen/Tingen/Street/ColorRect2/ScrollContainer"]
+[node name="Street" type="HBoxContainer" parent="Main Window/Background/VBoxContainer/HBoxContainer/Control/Your Journey/HBoxContainer/Control/Tingen/Tingen/VBoxContainer/Street/ColorRect2/ScrollContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_constants/separation = 10
 
-[node name="Control" type="Control" parent="Main Window/Background/Your Journey/Tingen/Tingen/Street/ColorRect2/ScrollContainer/Street"]
+[node name="Control" type="Control" parent="Main Window/Background/VBoxContainer/HBoxContainer/Control/Your Journey/HBoxContainer/Control/Tingen/Tingen/VBoxContainer/Street/ColorRect2/ScrollContainer/Street"]
 custom_minimum_size = Vector2(7, 0)
 layout_mode = 2
 
-[node name="Toilet" parent="Main Window/Background/Your Journey/Tingen/Tingen/Street/ColorRect2/ScrollContainer/Street" instance=ExtResource("10_nb51f")]
+[node name="Toilet" parent="Main Window/Background/VBoxContainer/HBoxContainer/Control/Your Journey/HBoxContainer/Control/Tingen/Tingen/VBoxContainer/Street/ColorRect2/ScrollContainer/Street" instance=ExtResource("10_nb51f")]
 layout_mode = 2
 size_flags_vertical = 4
 
-[node name="Button" type="Button" parent="Main Window/Background/Your Journey/Tingen/Tingen"]
-layout_mode = 0
-offset_left = 356.0
-offset_top = 551.0
-offset_right = 635.55396
-offset_bottom = 713.1649
-
-[node name="Backlund" type="MarginContainer" parent="Main Window/Background/Your Journey"]
+[node name="Backlund" type="MarginContainer" parent="Main Window/Background/VBoxContainer/HBoxContainer/Control/Your Journey/HBoxContainer/Control"]
 visible = false
 layout_mode = 1
-anchors_preset = 13
-anchor_left = 0.5
-anchor_right = 0.5
+anchors_preset = 15
+anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -435.5
-offset_right = 790.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ColorRect" type="ColorRect" parent="Main Window/Background/Your Journey/Backlund"]
+[node name="ColorRect" type="ColorRect" parent="Main Window/Background/VBoxContainer/HBoxContainer/Control/Your Journey/HBoxContainer/Control/Backlund"]
 layout_mode = 2
 color = Color(0.1427468, 0.05651602, 0.09250263, 1)
 
-[node name="Main Street" type="VBoxContainer" parent="Main Window/Background/Your Journey/Backlund/ColorRect"]
+[node name="Main Street" type="VBoxContainer" parent="Main Window/Background/VBoxContainer/HBoxContainer/Control/Your Journey/HBoxContainer/Control/Backlund/ColorRect"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -447,129 +464,22 @@ grow_vertical = 2
 size_flags_vertical = 3
 theme_override_constants/separation = 0
 
-[node name="Label" type="Label" parent="Main Window/Background/Your Journey/Backlund/ColorRect/Main Street"]
+[node name="Label" type="Label" parent="Main Window/Background/VBoxContainer/HBoxContainer/Control/Your Journey/HBoxContainer/Control/Backlund/ColorRect/Main Street"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 64
 text = "To Be continued....."
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Main Window/Background"]
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -335.0
-offset_top = -1009.0
-grow_horizontal = 0
-grow_vertical = 0
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Main Window/Background/HBoxContainer"]
-custom_minimum_size = Vector2(300, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="ColorRect" type="ColorRect" parent="Main Window/Background/HBoxContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-color = Color(0.20392157, 0.09019608, 0.13725491, 1)
-
-[node name="Log_box" type="VBoxContainer" parent="Main Window/Background/HBoxContainer/VBoxContainer/ColorRect"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-alignment = 2
-
-[node name="ColorRect" type="ColorRect" parent="Main Window/Background/HBoxContainer/VBoxContainer/ColorRect/Log_box"]
-layout_mode = 2
-size_flags_vertical = 3
-color = Color(0.14899904, 0.058383137, 0.09916029, 1)
-
-[node name="ScrollContainer" type="ScrollContainer" parent="Main Window/Background/HBoxContainer/VBoxContainer/ColorRect/Log_box/ColorRect"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = 3.0
-offset_right = 4.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Label" type="Label" parent="Main Window/Background/HBoxContainer/VBoxContainer/ColorRect/Log_box/ColorRect/ScrollContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 10
-clip_text = true
-
-[node name="show_logs" type="Button" parent="Main Window/Background/HBoxContainer/VBoxContainer/ColorRect/Log_box/ColorRect"]
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -17.0
-offset_top = -31.0
-offset_right = 6.0
-grow_horizontal = 0
-grow_vertical = 0
-theme = SubResource("Theme_v158k")
-toggle_mode = true
-text = "^"
-
-[node name="Items" type="ColorRect" parent="Main Window/Background/HBoxContainer/VBoxContainer/ColorRect"]
-layout_mode = 0
-offset_top = -6.0
-offset_right = 304.0
-offset_bottom = 738.0
-color = Color(0.19473092, 0.08432609, 0.1323282, 1)
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Main Window/Background/HBoxContainer/VBoxContainer/ColorRect/Items"]
-custom_minimum_size = Vector2(0, 300)
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_bottom = -184.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/separation = 0
-
-[node name="You" parent="Main Window/Background/HBoxContainer/VBoxContainer/ColorRect/Items/VBoxContainer" instance=ExtResource("8_h4fw4")]
-z_index = 2
-layout_mode = 2
-size_flags_vertical = 1
-
-[node name="Pouch" parent="Main Window/Background/HBoxContainer/VBoxContainer/ColorRect/Items/VBoxContainer" instance=ExtResource("8_v158k")]
-layout_mode = 2
-size_flags_horizontal = 1
-size_flags_vertical = 1
-
-[node name="Control" type="Control" parent="Main Window/Background/HBoxContainer/VBoxContainer/ColorRect/Items/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-size_flags_stretch_ratio = 10.69
-
-[node name="Control" type="Control" parent="Main Window/Background/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="Settings" type="Control" parent="Main Window/Background"]
+[node name="Settings" type="Control" parent="Main Window/Background/VBoxContainer/HBoxContainer/Control"]
 visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 64.0
-offset_right = -339.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("11_rfjv2")
 
-[node name="ColorRect" type="ColorRect" parent="Main Window/Background/Settings"]
+[node name="ColorRect" type="ColorRect" parent="Main Window/Background/VBoxContainer/HBoxContainer/Control/Settings"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -579,7 +489,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.40069774, 0.40069774, 0.40069768, 1)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Main Window/Background/Settings/ColorRect"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Main Window/Background/VBoxContainer/HBoxContainer/Control/Settings/ColorRect"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -587,25 +497,29 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="Main Window/Background/Settings/ColorRect/VBoxContainer"]
+[node name="Label" type="Label" parent="Main Window/Background/VBoxContainer/HBoxContainer/Control/Settings/ColorRect/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 31
 text = "Settings"
 horizontal_alignment = 1
 
-[node name="OptionButton" type="OptionButton" parent="Main Window/Background/Settings/ColorRect/VBoxContainer"]
+[node name="Resolution" type="OptionButton" parent="Main Window/Background/VBoxContainer/HBoxContainer/Control/Settings/ColorRect/VBoxContainer"]
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 6
-selected = 0
-item_count = 2
-popup/item_0/text = "1920x1080"
+selected = 2
+item_count = 4
+popup/item_0/text = "1600x900"
 popup/item_0/id = 0
-popup/item_1/text = "2678x3056"
+popup/item_1/text = "1680x1050"
 popup/item_1/id = 1
+popup/item_2/text = "1920x1080"
+popup/item_2/id = 2
+popup/item_3/text = "2678x3056"
+popup/item_3/id = 3
 
-[node name="Label" type="Label" parent="Main Window/Background/Settings/ColorRect/VBoxContainer/OptionButton"]
+[node name="Label" type="Label" parent="Main Window/Background/VBoxContainer/HBoxContainer/Control/Settings/ColorRect/VBoxContainer/Resolution"]
 layout_mode = 0
 offset_left = 5.0
 offset_top = -47.0
@@ -613,7 +527,7 @@ offset_right = 198.0
 offset_bottom = -3.0
 text = "Size"
 
-[node name="OptionButton2" type="OptionButton" parent="Main Window/Background/Settings/ColorRect/VBoxContainer"]
+[node name="OptionButton2" type="OptionButton" parent="Main Window/Background/VBoxContainer/HBoxContainer/Control/Settings/ColorRect/VBoxContainer"]
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -629,7 +543,7 @@ popup/item_2/id = 1
 popup/item_3/text = "every 10 minutes"
 popup/item_3/id = 2
 
-[node name="Label" type="Label" parent="Main Window/Background/Settings/ColorRect/VBoxContainer/OptionButton2"]
+[node name="Label" type="Label" parent="Main Window/Background/VBoxContainer/HBoxContainer/Control/Settings/ColorRect/VBoxContainer/OptionButton2"]
 layout_mode = 0
 offset_left = 5.0
 offset_top = -47.0
@@ -638,30 +552,132 @@ offset_bottom = -3.0
 text = "How often do you
  want game to save"
 
-[node name="load_game" type="Button" parent="Main Window/Background/Settings/ColorRect/VBoxContainer"]
+[node name="load_game" type="Button" parent="Main Window/Background/VBoxContainer/HBoxContainer/Control/Settings/ColorRect/VBoxContainer"]
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
 text = "Load last save"
 
-[node name="stop_save_info" type="Button" parent="Main Window/Background/Settings/ColorRect/VBoxContainer"]
+[node name="stop_save_info" type="Button" parent="Main Window/Background/VBoxContainer/HBoxContainer/Control/Settings/ColorRect/VBoxContainer"]
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
 text = "Hide save info"
 
-[node name="Timer" type="Timer" parent="Main Window/Background/Settings"]
+[node name="exit" type="Button" parent="Main Window/Background/VBoxContainer/HBoxContainer/Control/Settings/ColorRect/VBoxContainer"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Exit game"
+
+[node name="Timer" type="Timer" parent="Main Window/Background/VBoxContainer/HBoxContainer/Control/Settings"]
 wait_time = 300.0
 autostart = true
 
-[node name="Button" type="Button" parent="Main Window/Background/Settings"]
+[node name="Button" type="Button" parent="Main Window/Background/VBoxContainer/HBoxContainer/Control/Settings"]
 layout_mode = 0
 offset_left = 321.0
 offset_top = 229.0
 offset_right = 656.0
 offset_bottom = 387.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Main Window/Background/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Main Window/Background/VBoxContainer/HBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ColorRect" type="ColorRect" parent="Main Window/Background/VBoxContainer/HBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(0.20392157, 0.09019608, 0.13725491, 1)
+
+[node name="Log_box" type="VBoxContainer" parent="Main Window/Background/VBoxContainer/HBoxContainer/HBoxContainer/VBoxContainer/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 2
+
+[node name="ColorRect" type="ColorRect" parent="Main Window/Background/VBoxContainer/HBoxContainer/HBoxContainer/VBoxContainer/ColorRect/Log_box"]
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(0.14899904, 0.058383137, 0.09916029, 1)
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Main Window/Background/VBoxContainer/HBoxContainer/HBoxContainer/VBoxContainer/ColorRect/Log_box/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 3.0
+offset_right = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Main Window/Background/VBoxContainer/HBoxContainer/HBoxContainer/VBoxContainer/ColorRect/Log_box/ColorRect/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 10
+clip_text = true
+
+[node name="show_logs" type="Button" parent="Main Window/Background/VBoxContainer/HBoxContainer/HBoxContainer/VBoxContainer/ColorRect/Log_box/ColorRect"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -17.0
+offset_top = -31.0
+offset_right = 6.0
+grow_horizontal = 0
+grow_vertical = 0
+theme = SubResource("Theme_v158k")
+toggle_mode = true
+text = "^"
+
+[node name="Items" type="ColorRect" parent="Main Window/Background/VBoxContainer/HBoxContainer/HBoxContainer/VBoxContainer/ColorRect"]
+layout_mode = 0
+offset_top = -6.0
+offset_right = 304.0
+offset_bottom = 738.0
+color = Color(0.19473092, 0.08432609, 0.1323282, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Main Window/Background/VBoxContainer/HBoxContainer/HBoxContainer/VBoxContainer/ColorRect/Items"]
+custom_minimum_size = Vector2(0, 300)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -184.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+
+[node name="You" parent="Main Window/Background/VBoxContainer/HBoxContainer/HBoxContainer/VBoxContainer/ColorRect/Items/VBoxContainer" instance=ExtResource("8_h4fw4")]
+z_index = 2
+layout_mode = 2
+size_flags_vertical = 1
+
+[node name="Pouch" parent="Main Window/Background/VBoxContainer/HBoxContainer/HBoxContainer/VBoxContainer/ColorRect/Items/VBoxContainer" instance=ExtResource("8_v158k")]
+layout_mode = 2
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="Control" type="Control" parent="Main Window/Background/VBoxContainer/HBoxContainer/HBoxContainer/VBoxContainer/ColorRect/Items/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 10.69
+
+[node name="Control" type="Control" parent="Main Window/Background/VBoxContainer/HBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
 
 [node name="Node" type="Node" parent="."]
 script = ExtResource("11_o5yvi")
@@ -682,10 +698,12 @@ vertical_alignment = 2
 wait_time = 6.0
 one_shot = true
 
-[connection signal="button_down" from="Main Window/Background/Your Journey/Tingen/Tingen/Button" to="." method="_on_button_button_down"]
-[connection signal="item_selected" from="Main Window/Background/Settings/ColorRect/VBoxContainer/OptionButton2" to="Main Window/Background/Settings" method="_on_option_button_2_item_selected"]
-[connection signal="button_down" from="Main Window/Background/Settings/ColorRect/VBoxContainer/load_game" to="Main Window/Background/Settings" method="_on_button_button_down"]
-[connection signal="button_down" from="Main Window/Background/Settings/ColorRect/VBoxContainer/stop_save_info" to="Main Window/Background/Settings" method="_on_stop_save_info_button_down"]
-[connection signal="timeout" from="Main Window/Background/Settings/Timer" to="Main Window/Background/Settings" method="_on_timer_timeout"]
-[connection signal="button_down" from="Main Window/Background/Settings/Button" to="Main Window/Background/Settings" method="aaaa"]
-[connection signal="timeout" from="Save_info/Timer" to="Main Window/Background/Settings" method="_on_timer_timeout2"]
+[connection signal="button_down" from="Main Window/Background/VBoxContainer/HBoxContainer/Control/Your Journey/HBoxContainer/Control/Tingen/Tingen/Button" to="." method="_on_button_button_down"]
+[connection signal="item_selected" from="Main Window/Background/VBoxContainer/HBoxContainer/Control/Settings/ColorRect/VBoxContainer/Resolution" to="." method="_on_resolution_item_selected"]
+[connection signal="item_selected" from="Main Window/Background/VBoxContainer/HBoxContainer/Control/Settings/ColorRect/VBoxContainer/OptionButton2" to="Main Window/Background/VBoxContainer/HBoxContainer/Control/Settings" method="_on_option_button_2_item_selected"]
+[connection signal="button_down" from="Main Window/Background/VBoxContainer/HBoxContainer/Control/Settings/ColorRect/VBoxContainer/load_game" to="Main Window/Background/VBoxContainer/HBoxContainer/Control/Settings" method="_on_button_button_down"]
+[connection signal="button_down" from="Main Window/Background/VBoxContainer/HBoxContainer/Control/Settings/ColorRect/VBoxContainer/stop_save_info" to="Main Window/Background/VBoxContainer/HBoxContainer/Control/Settings" method="_on_stop_save_info_button_down"]
+[connection signal="button_down" from="Main Window/Background/VBoxContainer/HBoxContainer/Control/Settings/ColorRect/VBoxContainer/exit" to="." method="_on_exit_button_down"]
+[connection signal="timeout" from="Main Window/Background/VBoxContainer/HBoxContainer/Control/Settings/Timer" to="Main Window/Background/VBoxContainer/HBoxContainer/Control/Settings" method="_on_timer_timeout"]
+[connection signal="button_down" from="Main Window/Background/VBoxContainer/HBoxContainer/Control/Settings/Button" to="Main Window/Background/VBoxContainer/HBoxContainer/Control/Settings" method="aaaa"]
+[connection signal="timeout" from="Save_info/Timer" to="Main Window/Background/VBoxContainer/HBoxContainer/Control/Settings" method="_on_timer_timeout2"]

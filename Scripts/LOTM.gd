@@ -1,12 +1,15 @@
 extends Control
 
+
+@onready var save : SaveLoader = SaveLoader.new()
+
 #buttons
-@onready var loen_kingdom: Button = $"Main Window/Background/Your Journey/Locations/ColorRect/Menu_of_locations/Loen Kingdom"
-@onready var intis: Button = $"Main Window/Background/Your Journey/Locations/ColorRect/Menu_of_locations/Intis"
-@onready var tingen_button: Button = $"Main Window/Background/Your Journey/Locations/ColorRect/Menu_of_locations/Loen/ColorRect/ScrollContainer/VBoxContainer/tingen"
-@onready var backlund_button: Button = $"Main Window/Background/Your Journey/Locations/ColorRect/Menu_of_locations/Loen/ColorRect/ScrollContainer/VBoxContainer/backlund"
-@onready var trier_button: Button = $"Main Window/Background/Your Journey/Locations/ColorRect/Menu_of_locations/Loen/ColorRect/ScrollContainer/VBoxContainer/trier"
-@onready var show_logs: Button = $"Main Window/Background/HBoxContainer/VBoxContainer/ColorRect/Log_box/ColorRect/show_logs"
+@onready var show_logs: Button = $"Main Window/Background/VBoxContainer/HBoxContainer/HBoxContainer/VBoxContainer/ColorRect/Log_box/ColorRect/show_logs"
+@onready var intis: Button = $"Main Window/Background/VBoxContainer/HBoxContainer/Control/Your Journey/Locations/ColorRect/Menu_of_locations/Intis"
+@onready var loen_kingdom: Button = $"Main Window/Background/VBoxContainer/HBoxContainer/Control/Your Journey/Locations/ColorRect/Menu_of_locations/Loen Kingdom"
+@onready var tingen_button: Button = $"Main Window/Background/VBoxContainer/HBoxContainer/Control/Your Journey/Locations/ColorRect/Menu_of_locations/Loen/ColorRect/ScrollContainer/VBoxContainer/tingen"
+@onready var backlund_button: Button = $"Main Window/Background/VBoxContainer/HBoxContainer/Control/Your Journey/Locations/ColorRect/Menu_of_locations/Loen/ColorRect/ScrollContainer/VBoxContainer/backlund"
+@onready var trier_button: Button = $"Main Window/Background/VBoxContainer/HBoxContainer/Control/Your Journey/Locations/ColorRect/Menu_of_locations/Loen/ColorRect/ScrollContainer/VBoxContainer/trier"
 
 
 @onready var logs_text: Label = $"Main Window/Background/HBoxContainer/VBoxContainer/ColorRect/Log_box/ColorRect/ScrollContainer/Label"
@@ -18,16 +21,16 @@ extends Control
 @onready var backlund: MarginContainer = $"Main Window/Background/Your Journey/Backlund"
 @onready var okno_3: MarginContainer = $"Main Window/Background/Działanie/Okno3"
 @onready var okno_4: MarginContainer = $"Main Window/Background/Działanie/Okno4"
-@onready var settings: Control = $"Main Window/Background/Settings"
-@onready var your_journey: Control = $"Main Window/Background/Your Journey"
+@onready var settings: Control = $"Main Window/Background/VBoxContainer/HBoxContainer/Control/Settings"
+@onready var your_journey: Control = $"Main Window/Background/VBoxContainer/HBoxContainer/Control/Your Journey"
 
 #others
 @onready var loen: VBoxContainer = $"Main Window/Background/Działanie/Locations/ColorRect/Menu_of_locations/Loen"
 @onready var intis_but: VBoxContainer = $"Main Window/Background/Działanie/Locations/ColorRect/Menu_of_locations/intis_but"
-@onready var scroll_container: ScrollContainer = $"Main Window/Background/HBoxContainer/VBoxContainer/ColorRect/Log_box/ColorRect/ScrollContainer"
 @onready var items_window: ColorRect = $"Main Window/Background/HBoxContainer/VBoxContainer/ColorRect/Items"
 @onready var progress_bar: ProgressBar = $"Main Window/Background/Działanie/Tingen/ColorRect/House/ColorRect2/ScrollContainer/Control/ProgressBar"
 @export var menu_group : ButtonGroup
+@onready var scroll_container: ScrollContainer = $"Main Window/Background/VBoxContainer/HBoxContainer/HBoxContainer/VBoxContainer/ColorRect/Log_box/ColorRect/ScrollContainer"
 
 
 #my variable
@@ -44,12 +47,12 @@ func _ready() -> void:
 		i.connect("pressed",show_menu)
 	
 	#państwa
-	loen_kingdom.button_down.connect(loen_show)
-	intis.button_down.connect(intis_show)
+	#loen_kingdom.button_down.connect(loen_show)
+	#intis.button_down.connect(intis_show)
 	#miasta
-	tingen_button.button_down.connect(tingen_show)
-	backlund_button.button_down.connect(backlund_show)
-	trier_button.button_down.connect(trier_show)
+	#tingen_button.button_down.connect(tingen_show)
+	#backlund_button.button_down.connect(backlund_show)
+	#trier_button.button_down.connect(trier_show)
 	
 	GlobalData.log_udpate.connect(change_logs)
 	
@@ -172,3 +175,19 @@ func change_logs():
 
 	
 	
+
+
+func _on_exit_button_down() -> void:
+	save.Save()
+
+
+func _on_resolution_item_selected(index: int) -> void:
+	if index == 2:
+		get_window().content_scale_size = Vector2(1920,1080)
+		print("C")
+	elif index == 1:
+		get_window().content_scale_size = Vector2i(1680,1050)
+		print("B")
+	elif index == 0:
+		get_window().content_scale_size = Vector2(1600,900)
+		print("A")
