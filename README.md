@@ -18,4 +18,4 @@ TODO:
 	* zapisywanie = DONE
 	*place holder dla każdego guzika
 	* lepsze opcje
-	*
+	*Fix my comments in LOTM.gd on buttons, and overall change how to get controls
