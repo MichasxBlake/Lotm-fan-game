@@ -117,6 +117,7 @@ size_flags_vertical = 3
 [node name="Control" type="Control" parent="Main Window/Background/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_stretch_ratio = 29.0
 
 [node name="Your Journey" type="Control" parent="Main Window/Background/VBoxContainer/HBoxContainer/Control"]
 layout_mode = 1
@@ -143,6 +144,7 @@ alignment = 1
 [node name="Control" type="Control" parent="Main Window/Background/VBoxContainer/HBoxContainer/Control/Your Journey/HBoxContainer/Locations"]
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.4
 
 [node name="ColorRect" type="ColorRect" parent="Main Window/Background/VBoxContainer/HBoxContainer/Control/Your Journey/HBoxContainer/Locations"]
 layout_mode = 2
@@ -289,10 +291,15 @@ toggle_mode = true
 button_group = ExtResource("5_ldgsr")
 text = "Intis Rebulic"
 
+[node name="Control2" type="Control" parent="Main Window/Background/VBoxContainer/HBoxContainer/Control/Your Journey/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.07
+
 [node name="Control" type="Control" parent="Main Window/Background/VBoxContainer/HBoxContainer/Control/Your Journey/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_stretch_ratio = 5.0
+size_flags_stretch_ratio = 5.32
 
 [node name="Tingen" type="MarginContainer" parent="Main Window/Background/VBoxContainer/HBoxContainer/Control/Your Journey/HBoxContainer/Control"]
 layout_mode = 1
@@ -583,13 +590,20 @@ offset_top = 229.0
 offset_right = 656.0
 offset_bottom = 387.0
 
+[node name="Control2" type="Control" parent="Main Window/Background/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.2
+
 [node name="HBoxContainer" type="HBoxContainer" parent="Main Window/Background/VBoxContainer/HBoxContainer"]
 layout_mode = 2
+size_flags_stretch_ratio = 2.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Main Window/Background/VBoxContainer/HBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
 
 [node name="ColorRect" type="ColorRect" parent="Main Window/Background/VBoxContainer/HBoxContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
@@ -633,9 +647,10 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -17.0
-offset_top = -31.0
-offset_right = 6.0
+offset_left = -22.0
+offset_top = -36.0
+offset_right = 1.0
+offset_bottom = -5.0
 grow_horizontal = 0
 grow_vertical = 0
 theme = SubResource("Theme_v158k")
@@ -643,10 +658,13 @@ toggle_mode = true
 text = "^"
 
 [node name="Items" type="ColorRect" parent="Main Window/Background/VBoxContainer/HBoxContainer/HBoxContainer/VBoxContainer/ColorRect"]
-layout_mode = 0
-offset_top = -6.0
-offset_right = 304.0
-offset_bottom = 738.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -171.0
+grow_horizontal = 2
+grow_vertical = 2
 color = Color(0.19473092, 0.08432609, 0.1323282, 1)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Main Window/Background/VBoxContainer/HBoxContainer/HBoxContainer/VBoxContainer/ColorRect/Items"]
@@ -676,6 +694,7 @@ size_flags_vertical = 3
 size_flags_stretch_ratio = 10.69
 
 [node name="Control" type="Control" parent="Main Window/Background/VBoxContainer/HBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(30, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 
@@ -699,7 +718,7 @@ wait_time = 6.0
 one_shot = true
 
 [connection signal="button_down" from="Main Window/Background/VBoxContainer/HBoxContainer/Control/Your Journey/HBoxContainer/Control/Tingen/Tingen/Button" to="." method="_on_button_button_down"]
-[connection signal="item_selected" from="Main Window/Background/VBoxContainer/HBoxContainer/Control/Settings/ColorRect/VBoxContainer/Resolution" to="." method="_on_resolution_item_selected"]
+[connection signal="item_selected" from="Main Window/Background/VBoxContainer/HBoxContainer/Control/Settings/ColorRect/VBoxContainer/Resolution" to="Main Window/Background/VBoxContainer/HBoxContainer/Control/Settings" method="_on_resolution_item_selected"]
 [connection signal="item_selected" from="Main Window/Background/VBoxContainer/HBoxContainer/Control/Settings/ColorRect/VBoxContainer/OptionButton2" to="Main Window/Background/VBoxContainer/HBoxContainer/Control/Settings" method="_on_option_button_2_item_selected"]
 [connection signal="button_down" from="Main Window/Background/VBoxContainer/HBoxContainer/Control/Settings/ColorRect/VBoxContainer/load_game" to="Main Window/Background/VBoxContainer/HBoxContainer/Control/Settings" method="_on_button_button_down"]
 [connection signal="button_down" from="Main Window/Background/VBoxContainer/HBoxContainer/Control/Settings/ColorRect/VBoxContainer/stop_save_info" to="Main Window/Background/VBoxContainer/HBoxContainer/Control/Settings" method="_on_stop_save_info_button_down"]
