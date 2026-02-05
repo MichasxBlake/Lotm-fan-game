@@ -1,0 +1,10 @@
+* Apothecary
+* [[Beast Tamer]]
+* [[Vampire]]
+* [[Potions Professor]]
+* [[Scarlet Scholar]]
+* [[Shaman King]]
+* [[High Summoner]]
+* [[Life-Giver]]
+* [[Beauty Goddess]]
+* [[Moon]]

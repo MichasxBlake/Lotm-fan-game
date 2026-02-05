@@ -1,0 +1,10 @@
+* Sailor
+* [[Folk of rage]]
+* [[Seafarer]]
+* [[Windblessed]]
+* [[Ocean songster]]
+* [[Cataclysmic Interrer]]
+* [[Sea king]]
+* [[Calamity]]
+* [[Thunder God]]
+* [[Tyrant]]

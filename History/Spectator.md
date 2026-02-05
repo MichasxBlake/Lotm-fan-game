@@ -1,0 +1,10 @@
+* Spectator
+* [[Telepathist]]
+* [[Psychiatrist]]
+* [[Hypnotist]]
+* [[Dreamwalker]]
+* [[Manipulator]]
+* [[Dream weaver]]
+* [[Discerner]]
+* [[Author]]
+* [[Visionary]]

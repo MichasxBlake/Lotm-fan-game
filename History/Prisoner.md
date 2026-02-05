@@ -1,0 +1,10 @@
+* Prisoner
+* [[Lunatic]]
+* [[Werewolf]]
+* [[Zombie]]
+* [[Wraitch]]
+* [[Puppet]]
+* [[Disciple of silence]]
+* [[Ancient Bane]]
+* [[Abomination]]
+* [[Chained]]

@@ -1,0 +1,10 @@
+* Reader
+* [[Student of Ratiocination]]
+* [[Detective]]
+* [[Polymath]]
+* [[Mysticism Magister]]
+* [[Prophet]]
+* [[Cognizer]]
+* [[Wisdom Angel]]
+* [[Omniscient eye]]
+* [[White Tower]]

@@ -1,0 +1,10 @@
+* Apprentice
+* [[Trickmaster]]
+* [[Astrologer]]
+* [[Scribe]]
+* [[Traveler]]
+* [[Secret Sorcerer]]
+* [[Wanderer]]
+* [[Plansewalker]]
+* [[Key of stars]]
+* [[Door]]

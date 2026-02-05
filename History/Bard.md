@@ -1,0 +1,10 @@
+* Bard
+* [[Light Suppliant]]
+* [[Solar High priest]]
+* [[Notary]]
+* [[Priest of light]]
+* [[Unshadowed]]
+* [[Justice Mentor]]
+* [[Lightseeker]]
+* [[White Angel]]
+* [[Sun]]

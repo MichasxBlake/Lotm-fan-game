@@ -1,0 +1,10 @@
+* Arbiter
+* [[Sheriff]]
+* [[Interroger]]
+* [[Judge]]
+* [[Disciplinary Paladin]]
+* [[Imperative Mage]]
+* [[Chaos Hunter]]
+* [[Balancer]]
+* [[Hand of order]]
+* [[Justiclar]]

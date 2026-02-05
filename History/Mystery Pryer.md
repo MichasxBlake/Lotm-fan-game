@@ -1,0 +1,10 @@
+* Mystery Prayer
+* [[Melee Scholar]]
+* [[Warlock]]
+* [[Scroll Professor]]
+* [[Constellation Master]]
+* [[Mysticologist]]
+* [[Clairvoyant]]
+* [[Sage]]
+* [[Knowlage Emperor]]
+* [[Hermit]]

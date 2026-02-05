@@ -1,0 +1,10 @@
+* Secret Suppliant
+* [[Listener]]
+* [[Shadow Ascetic]]
+* [[Rose Bishop]]
+* [[Shepherd]]
+* [[Black Knight]]
+* [[Trinity Templar]]
+* [[Profane Presbyter]]
+* [[Dark Angel]]
+* [[Hanged Man]]

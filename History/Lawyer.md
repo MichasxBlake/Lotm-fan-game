@@ -1,0 +1,10 @@
+* Lawyer
+* [[Barbarian]]
+* [[Briber]]
+* [[Baron of Corruption]]
+* [[Mentor of Disorder]]
+* [[Earl of the fallen]]
+* [[Franzied Mage]]
+* [[Duke of Entropy]]
+* [[Prince of Abolition]]
+* [[Black emperor]]

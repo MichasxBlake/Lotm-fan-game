@@ -1,0 +1,10 @@
+* Warrior
+* [[Pugilist]]
+* [[Weapon Master]]
+* [[Dawn paladin]]
+* [[Guardian]]
+* [[Demon Hunter]]
+* [[Silver Knight]]
+* [[Glory]]
+* [[Hand of God]]
+* [[Twillight Giant]]

@@ -1,0 +1,10 @@
+* Corpse Collector
+* [[Gravedigger]]
+* [[Spirit Medium]]
+* [[Spirit Guide]]
+* [[Gatekeeper]]
+* [[Undying]]
+* [[Ferryman]]
+* [[Death Council]]
+* [[Pale Emperor]]
+* [[Death]]

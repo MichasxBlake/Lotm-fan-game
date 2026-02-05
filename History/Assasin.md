@@ -1,0 +1,10 @@
+* Assasin
+* [[Instigator]]
+* [[Witch]]
+* [[Pleasure]]
+* [[Affiction]]
+* [[Despair]]
+* [[Unaging]]
+* [[Catastrophe]]
+* [[Apocalpse]]
+* [[Demoness]]

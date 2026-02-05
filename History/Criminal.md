@@ -1,0 +1,10 @@
+* Criminal
+* [[Unwinged Angel]]
+* [[Serial Killer]]
+* [[Devil]]
+* [[Desire Apostole]]
+* [[Demon]]
+* [[Blatherer]]
+* [[Bloody Archduke]]
+* [[Filthy Monarch]]
+* [[Abyss]]

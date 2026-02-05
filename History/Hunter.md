@@ -1,0 +1,10 @@
+* Hunter
+* [[Provoker]]
+* [[Pyromaniac]]
+* [[Conspirer]]
+* [[Reaper]]
+* [[Iron-Blooded Knight]]
+* [[War bishop]]
+* [[Weather Warlock]]
+* [[Conqueror]]
+* [[Red Priest]]

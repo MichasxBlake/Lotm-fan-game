@@ -1,0 +1,10 @@
+* Savant
+* [[Archeologist]]
+* [[Appraiser]]
+* [[Artisian]]
+* [[Astronomer]]
+* [[Alchemist]]
+* [[Arcane Scholar]]
+* [[Knowlage Magister]]
+* [[Illuminator]]
+* [[Paragon]]

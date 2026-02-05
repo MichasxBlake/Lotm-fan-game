@@ -1,0 +1,10 @@
+* Monster
+* [[Robot]]
+* [[Lucky One]]
+* [[Calamity Priest]]
+* [[Winner]]
+* [[Misfortune Mage]]
+* [[Chaoswalker]]
+* [[Soothsayer]]
+* [[Snake of Mercury]]
+* [[Wheel Of Fortune]]

@@ -1,0 +1,10 @@
+* Marauder
+* [[Swindler]]
+* [[Cryptologist]]
+* [[Prometheus]]
+* [[Dream stealer]]
+* [[Parasite]]
+* [[Mentor of deceit]]
+* [[Trojan Horse of destiny]]
+* [[Worm of time]]
+* [[Error]]
