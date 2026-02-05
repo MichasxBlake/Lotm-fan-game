@@ -11,10 +11,17 @@
             "id": "1d5454b9bd272160",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Graph view"
+              "type": "canvas",
+              "state": {
+                "file": "Untitled.canvas",
+                "viewState": {
+                  "x": 0,
+                  "y": 0,
+                  "zoom": 0
+                }
+              },
+              "icon": "lucide-layout-dashboard",
+              "title": "Untitled"
             }
           },
           {
@@ -31,8 +38,7 @@
               "title": "Assasin"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -194,8 +200,10 @@
       "bases:Create new base": false
     }
   },
-  "active": "694760d290759aa1",
+  "active": "1d5454b9bd272160",
   "lastOpenFiles": [
+    "Untitled.canvas",
+    "Assasin.md",
     "Demon of knowlage.md",
     "Arbiter.md",
     "Apprentice.md",
@@ -207,7 +215,6 @@
     "Fool.md",
     "The anarchy.md",
     "LOTM GAME.md",
-    "Untitled.canvas",
     "Lawyer.md",
     "Prisoner.md",
     "father of devils.md",
@@ -221,8 +228,6 @@
     "Mystery Pryer.md",
     "Hunter.md",
     "Iron-Blooded Knight.md",
-    "Calamity of Destruction.md",
-    "Assasin.md",
-    "Warrior.md"
+    "Calamity of Destruction.md"
   ]
 }

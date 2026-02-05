@@ -52,13 +52,13 @@ func _on_stop_save_info_button_down() -> void:
 
 func _on_resolution_item_selected(index: int) -> void:
 	if index == 2:
-		get_window().content_scale_size = Vector2(1920,1080)
+		get_window().size = Vector2(1920,1080)
 		print("C")
 	elif index == 1:
-		get_window().content_scale_size = Vector2i(1680,1050)
+		get_window().size = Vector2i(1680,1050)
 		print("B")
 	elif index == 0:
-		get_window().content_scale_size = Vector2(1600,900)
+		get_window().size = Vector2(1600,900)
 		print("A")
 
 

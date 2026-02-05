@@ -13,6 +13,7 @@ config_version=5
 config/name="Lotm Fan made game"
 run/main_scene="uid://tqxw2u0pr2uo"
 config/features=PackedStringArray("4.5", "GL Compatibility")
+boot_splash/use_filter=false
 config/icon="res://icon.svg"
 
 [autoload]
