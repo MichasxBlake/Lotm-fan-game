@@ -12,7 +12,7 @@ extends Control
 @onready var trier_button: Button = $"Main Window/Background/VBoxContainer/HBoxContainer/Control/Your Journey/Locations/ColorRect/Menu_of_locations/Loen/ColorRect/ScrollContainer/VBoxContainer/trier"
 
 
-@onready var logs_text: Label = $"Main Window/Background/HBoxContainer/VBoxContainer/ColorRect/Log_box/ColorRect/ScrollContainer/Label"
+@onready var logs_text: Label = $"Main Window/Background/VBoxContainer/HBoxContainer/HBoxContainer/VBoxContainer/ColorRect/Log_box/ColorRect/ScrollContainer/Label"
 
 
 
@@ -27,7 +27,7 @@ extends Control
 #others
 @onready var loen: VBoxContainer = $"Main Window/Background/Działanie/Locations/ColorRect/Menu_of_locations/Loen"
 @onready var intis_but: VBoxContainer = $"Main Window/Background/Działanie/Locations/ColorRect/Menu_of_locations/intis_but"
-@onready var items_window: ColorRect = $"Main Window/Background/HBoxContainer/VBoxContainer/ColorRect/Items"
+@onready var items_window: ColorRect = $"Main Window/Background/VBoxContainer/HBoxContainer/HBoxContainer/VBoxContainer/ColorRect/Items"
 @onready var progress_bar: ProgressBar = $"Main Window/Background/Działanie/Tingen/ColorRect/House/ColorRect2/ScrollContainer/Control/ProgressBar"
 @export var menu_group : ButtonGroup
 @onready var scroll_container: ScrollContainer = $"Main Window/Background/VBoxContainer/HBoxContainer/HBoxContainer/VBoxContainer/ColorRect/Log_box/ColorRect/ScrollContainer"

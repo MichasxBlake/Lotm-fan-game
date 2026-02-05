@@ -313,13 +313,6 @@ grow_vertical = 2
 layout_mode = 2
 color = Color(0.27082172, 0.13016593, 0.18938941, 1)
 
-[node name="Button" type="Button" parent="Main Window/Background/VBoxContainer/HBoxContainer/Control/Your Journey/HBoxContainer/Control/Tingen/Tingen"]
-layout_mode = 0
-offset_left = 356.0
-offset_top = 551.0
-offset_right = 635.55396
-offset_bottom = 713.1649
-
 [node name="VBoxContainer" type="VBoxContainer" parent="Main Window/Background/VBoxContainer/HBoxContainer/Control/Your Journey/HBoxContainer/Control/Tingen/Tingen"]
 layout_mode = 1
 anchors_preset = 15
@@ -441,6 +434,13 @@ layout_mode = 2
 [node name="Toilet" parent="Main Window/Background/VBoxContainer/HBoxContainer/Control/Your Journey/HBoxContainer/Control/Tingen/Tingen/VBoxContainer/Street/ColorRect2/ScrollContainer/Street" instance=ExtResource("10_nb51f")]
 layout_mode = 2
 size_flags_vertical = 4
+
+[node name="Button" type="Button" parent="Main Window/Background/VBoxContainer/HBoxContainer/Control/Your Journey/HBoxContainer/Control/Tingen/Tingen"]
+layout_mode = 0
+offset_left = 356.0
+offset_top = 551.0
+offset_right = 635.55396
+offset_bottom = 713.1649
 
 [node name="Backlund" type="MarginContainer" parent="Main Window/Background/VBoxContainer/HBoxContainer/Control/Your Journey/HBoxContainer/Control"]
 visible = false
@@ -698,10 +698,11 @@ custom_minimum_size = Vector2(30, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Node" type="Node" parent="."]
+[node name="Save_node" type="Node" parent="."]
+unique_name_in_owner = true
 script = ExtResource("11_o5yvi")
 
-[node name="Node" type="Node" parent="Node" groups=["Lore_events"]]
+[node name="Node" type="Node" parent="Save_node" groups=["Lore_events"]]
 script = ExtResource("13_rfjv2")
 
 [node name="Save_info" type="Label" parent="."]
