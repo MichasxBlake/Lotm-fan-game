@@ -20,5 +20,7 @@ func action(number, button, max_val, current, inside_number, place):
 		var place_find = get_node("../../%Street")
 		var command = place_find.get_child(number+1)
 		command.show_new_lore(inside_number)
+func infinity():
+	print("kupiłeś obiad")
 
 	

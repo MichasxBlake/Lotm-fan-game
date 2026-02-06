@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://rthgehyc1raj"]
+[gd_scene load_steps=5 format=3 uid="uid://rthgehyc1raj"]
 
-[ext_resource type="Script" uid="uid://cjdutsc3ces21" path="res://Scenes/Lore_blok/bedroom.gd" id="1_qa33l"]
+[ext_resource type="Script" uid="uid://cjdutsc3ces21" path="res://Scenes/Lore_blok/lore_segment.gd" id="1_qa33l"]
 [ext_resource type="PackedScene" uid="uid://7pdjmlajgxjw" path="res://Scenes/Lore_blok/lore_1.tscn" id="2_t12ha"]
 [ext_resource type="PackedScene" uid="uid://d1ir2yvomnlmb" path="res://Scenes/Lore_blok/lore_2.tscn" id="3_t7ul5"]
+[ext_resource type="PackedScene" uid="uid://cdiwbxy7e4u22" path="res://Scenes/Lore_blok/infinity_action.tscn" id="4_t12ha"]
 
 [node name="Toilet" type="HBoxContainer" node_paths=PackedStringArray("label", "color_rect", "bedroom", "body")]
 offset_right = 621.0
@@ -67,12 +68,14 @@ current_max = "3"
 number = 1
 inside_number = 2
 cost = 20
-increase = 1.5
 
 [node name="2" parent="ColorRect/HBoxContainer/Toilet" instance=ExtResource("3_t7ul5")]
 visible = false
 layout_mode = 2
 number = 1
 place = "House"
+
+[node name="Lore1" parent="ColorRect/HBoxContainer/Toilet" instance=ExtResource("4_t12ha")]
+layout_mode = 2
 
 [connection signal="button_down" from="Button" to="." method="_on_button_button_down"]

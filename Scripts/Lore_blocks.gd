@@ -31,15 +31,17 @@ var buying = false
 func _ready() -> void:
 	lore_1.value = 0
 	label.text = button_type
-	label_2.text = str(time_to_done)
+	if time_to_done != 0:
+		label_2.text = str(time_to_done)
+		timer.wait_time = time_to_done
+		lore_1.max_value = time_to_done
 	if current_max != "0":
 		label_4.text = "/" + current_max
-	timer.wait_time = time_to_done
-	lore_1.max_value = time_to_done
 	GlobalData.value_changed.connect(can_buy)
 	if money_type and cost:
 		button_cost.text = money_type + ": "+ str(cost)
 	await get_tree().process_frame
+	#saving
 	if place == "House" and number == 0:
 		if GlobalData.lore_states.has(self.name):
 			var saved_data = GlobalData.lore_states[self.name]
@@ -73,11 +75,7 @@ func _on_button_toggled(toggled_on: bool) -> void:
 			timer.start()
 # Fragment funkcji _on_button_toggled [cite: 8]
 		elif button_type == "Action":
-			if money_type == "Passion" and GlobalData.passion >= cost:
-				GlobalData.passion -= cost
-				cost *= increase
-				buying = true
-			button_cost.text = money_type + ": "+ str(cost)
+			buy()
 			if buying:
 				if current >= int(current_max):
 					var new_id = get_instance_id()
@@ -91,17 +89,30 @@ func _on_button_toggled(toggled_on: bool) -> void:
 				current +=1
 				button.button_pressed = false
 				buying = false
+		elif button_type == "Infinity":
+			buy()
+			if buying:
+				get_tree().call_group("Lore_events", "infinity")
+				button.button_pressed = false
+				buying = false
 	else:
 		timer.start()
 		timer.paused = true
 		
 func can_buy():
-	if button_type == "Action":
-		if money_type == "Passion":
-			if GlobalData.passion >= cost:
-				button.disabled = false
-			else:
-				button.disabled = true
+	if button_type == "Action" or button_type == "Infinity":
+		if GlobalData[money_type] >= cost:
+			button.disabled = false
+		else:
+			button.disabled = true
 	else:
 		button.disabled = false
+		
+func buy():
+	if GlobalData[money_type] >= cost:
+		GlobalData[money_type] -= cost
+		if button_type != "Infinity":
+			cost *= increase
+		buying = true
+		button_cost.text = money_type + ": "+ str(cost)
 	

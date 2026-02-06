@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://ck2do45ydmrgi"]
 
-[ext_resource type="Script" uid="uid://cjdutsc3ces21" path="res://Scenes/Lore_blok/bedroom.gd" id="1_7t0fy"]
+[ext_resource type="Script" uid="uid://cjdutsc3ces21" path="res://Scenes/Lore_blok/lore_segment.gd" id="1_7t0fy"]
 [ext_resource type="PackedScene" uid="uid://7pdjmlajgxjw" path="res://Scenes/Lore_blok/lore_1.tscn" id="2_j6wkg"]
 [ext_resource type="PackedScene" uid="uid://d1ir2yvomnlmb" path="res://Scenes/Lore_blok/lore_2.tscn" id="3_o0e36"]
 

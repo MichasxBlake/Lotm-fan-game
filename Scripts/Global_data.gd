@@ -31,7 +31,7 @@ var madness : int = 5:
 		madness = v
 		value_changed.emit()
 		max_madness()
-var madness_max = 101
+var madness_max = 10
 var spirituality : int = 0:
 	set(v):
 		spirituality = v

@@ -1,6 +1,7 @@
-
-1.  [[Lore]]
-2. [[Sequences]]
-3. [[Game Mechanics]]
-4. [[Overall future ideas]]
-5. [[Visual aspect]]
+1. [[Plan for game.canvas]]
+2.  [[Lore]]
+3. [[Sequences]]
+4. [[Secret organization]]
+5. [[Game Mechanics]]
+6. [[Overall future ideas]]
+7. [[Visual aspect]]
