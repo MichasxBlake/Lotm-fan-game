@@ -23,8 +23,8 @@ var pence : int = 0:
 var passion : int = 0:
 	set(v):
 		passion = v
-		value_changed.emit()
 		max_passion()
+		value_changed.emit()
 var passion_max = 100
 var madness : int = 5:
 	set(v):

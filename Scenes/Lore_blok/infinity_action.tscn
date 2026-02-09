@@ -44,12 +44,12 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_482t8")
 max_value = 4.0
 show_percentage = false
 script = ExtResource("1_0fc2e")
-button_type = "Infinity"
+button_type = "Action"
+Infinity = true
 current_max = "0"
 place = "House"
 money_type = "passion"
 cost = 20
-increase = 1.5
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 1

@@ -1,9 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://d1ir2yvomnlmb"]
+[gd_scene load_steps=13 format=3 uid="uid://ds34t68qal12n"]
 
-[ext_resource type="Script" uid="uid://bflwxfvh1q2mu" path="res://Scripts/Lore_blocks.gd" id="1_tss4b"]
-[ext_resource type="FontFile" uid="uid://cxod2pl2cccwb" path="res://diffusion/woff2/diffusion-regular.woff2" id="2_xx6wv"]
-[ext_resource type="Script" uid="uid://cohkdlr57gq25" path="res://Scenes/hover_info.gd" id="3_xx6wv"]
-[ext_resource type="ButtonGroup" uid="uid://dqe8gdnjjiw" path="res://Button_groups/lore_buttons_loop.tres" id="3_yv8o7"]
+[ext_resource type="Script" uid="uid://bflwxfvh1q2mu" path="res://Scripts/Lore_blocks.gd" id="1_7fbts"]
+[ext_resource type="FontFile" uid="uid://cxod2pl2cccwb" path="res://diffusion/woff2/diffusion-regular.woff2" id="2_r6gqo"]
+[ext_resource type="ButtonGroup" uid="uid://dqe8gdnjjiw" path="res://Button_groups/lore_buttons_loop.tres" id="3_r6gqo"]
+[ext_resource type="Script" uid="uid://cohkdlr57gq25" path="res://Scenes/hover_info.gd" id="3_yvkw0"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wbsvp"]
 
@@ -44,13 +44,16 @@ theme_override_styles/background = SubResource("StyleBoxFlat_wbsvp")
 theme_override_styles/fill = SubResource("StyleBoxFlat_482t8")
 max_value = 4.0
 show_percentage = false
-script = ExtResource("1_tss4b")
+script = ExtResource("1_7fbts")
 button_type = "Loop"
-time_to_done = 1.0
+Infinity = true
+time_to_done = 0.4
 current_max = "0"
-current = 1
+place = "House"
+money_type = "madness"
+cost = 2
 reward = {
-"madness": 5
+"passion": 10
 }
 
 [node name="Button" type="Button" parent="."]
@@ -60,15 +63,16 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("2_xx6wv")
+theme_override_fonts/font = ExtResource("2_r6gqo")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_oo6t7")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_p04ld")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_axmg0")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_hbva3")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_nlmhm")
+disabled = true
 toggle_mode = true
-button_group = ExtResource("3_yv8o7")
-text = "Speak with Priest"
+button_group = ExtResource("3_r6gqo")
+text = "Sleep"
 
 [node name="Label" type="Label" parent="Button"]
 layout_mode = 1
@@ -94,6 +98,17 @@ offset_bottom = 30.0
 grow_horizontal = 0
 grow_vertical = 2
 theme_override_font_sizes/font_size = 10
+
+[node name="Label3" type="Label" parent="Button"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -20.0
+offset_right = 119.0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("2_r6gqo")
+theme_override_font_sizes/font_size = 11
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Button"]
 layout_mode = 1
@@ -125,7 +140,7 @@ offset_bottom = -439.0
 size_flags_horizontal = 4
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_oo6t7")
-script = ExtResource("3_xx6wv")
+script = ExtResource("3_yvkw0")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/PanelContainer2"]
 layout_mode = 2

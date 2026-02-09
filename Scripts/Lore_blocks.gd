@@ -2,7 +2,8 @@ extends ProgressBar
 class_name Lore_blocks
 
 @export var button_type : String
-@export var time_to_done : int
+@export var Infinity : bool = false
+@export var time_to_done : float
 @export var current_max : String
 @export var current : int
 @export var number : int
@@ -11,6 +12,7 @@ class_name Lore_blocks
 @export var money_type : String
 @export var cost : int
 @export var increase : float
+@export var reward : Dictionary
 @onready var label: Label = $Button/Label
 @onready var label_2: Label = $Button/Label2
 @onready var label_3: Label = $Button/HBoxContainer/Label3
@@ -29,9 +31,10 @@ var buying = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	await get_tree().process_frame 
 	lore_1.value = 0
 	label.text = button_type
-	if time_to_done != 0:
+	if time_to_done > 0:
 		label_2.text = str(time_to_done)
 		timer.wait_time = time_to_done
 		lore_1.max_value = time_to_done
@@ -62,25 +65,44 @@ func _process(delta: float) -> void:
 
 
 func _on_timer_timeout() -> void:
-	var new = lore_1.get_instance_id()
-	get_tree().call_group("Lore_events","loop", number,new)
+	if Infinity:
+		get_tree().call_group("Lore_events", "infinity", reward)
+		buy()
+		if !buying:
+			timer.start()
+			timer.paused = true
+	else:
+		var new = lore_1.get_instance_id()
+		get_tree().call_group("Lore_events","loop", number,new, reward)
 
 
 func _on_button_toggled(toggled_on: bool) -> void:
 	if toggled_on:
-		var new = lore_1.get_instance_id()
 		if button_type == "Loop":
-			timer.paused = false
-			do = true
-			timer.start()
+			if Infinity:
+				buy()
+				if buying:
+					timer.paused = false
+					do = true
+					timer.start()
+					buying = false
+			else:
+				timer.paused = false
+				do = true
+				timer.start()
 # Fragment funkcji _on_button_toggled [cite: 8]
 		elif button_type == "Action":
 			buy()
-			if buying:
+			if Infinity:
+				if buying:
+					button.button_pressed = false
+					buying = false
+					return
+			elif buying:
 				if current >= int(current_max):
 					var new_id = get_instance_id()
 					# Wywołujemy grupę, która obsługuje logikę [cite: 8]
-					get_tree().call_group("Lore_events", "action", number, new_id, int(current_max), current, inside_number, place)
+					get_tree().call_group("Lore_events", "action", number, new_id, int(current_max), current, inside_number, place,reward)
 				else:
 					if panel_container_2.get_child_count() > current:
 						panel_container_2.get_child(current-1).hide()
@@ -89,29 +111,26 @@ func _on_button_toggled(toggled_on: bool) -> void:
 				current +=1
 				button.button_pressed = false
 				buying = false
-		elif button_type == "Infinity":
-			buy()
-			if buying:
-				get_tree().call_group("Lore_events", "infinity")
-				button.button_pressed = false
-				buying = false
 	else:
 		timer.start()
 		timer.paused = true
 		
 func can_buy():
-	if button_type == "Action" or button_type == "Infinity":
+	if button_type == "Action" or (button_type == "Loop" and Infinity):
 		if GlobalData[money_type] >= cost:
 			button.disabled = false
 		else:
 			button.disabled = true
+			timer.start()
+			timer.paused = true
+			button.button_pressed = false
 	else:
 		button.disabled = false
 		
 func buy():
 	if GlobalData[money_type] >= cost:
 		GlobalData[money_type] -= cost
-		if button_type != "Infinity":
+		if !Infinity:
 			cost *= increase
 		buying = true
 		button_cost.text = money_type + ": "+ str(cost)

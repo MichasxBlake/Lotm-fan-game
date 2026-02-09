@@ -19,7 +19,6 @@ func _ready() -> void:
 	GlobalData.value_changed.connect(changing)
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func changing():
 	spirituality.text = str(GlobalData.spirituality)
 	spirituality_max.text = "/ "+str(GlobalData.spirituality_max)
