@@ -36,8 +36,9 @@
 		{"id":"791d8afe2b4e2674","type":"text","text":"food loose on some action","x":-375,"y":-276,"width":250,"height":60,"color":"1"},
 		{"id":"3ef58e060be6a9c6","type":"text","text":"Make button pause and not need to buy it again after first time and pause","x":-705,"y":-83,"width":250,"height":108,"color":"1"},
 		{"id":"ead80f170b4dabe4","type":"text","text":"Math: passion = food = sleep","x":-420,"y":-175,"width":250,"height":60,"color":"1"},
-		{"id":"f9a3b78e7815b29e","x":251,"y":-323,"width":250,"height":60,"color":"4","type":"text","text":"Better reward system"},
-		{"id":"6488db313a9432fe","x":-120,"y":540,"width":250,"height":60,"color":"1","type":"text","text":"Debuging for bugs"}
+		{"id":"6488db313a9432fe","x":-120,"y":540,"width":250,"height":60,"color":"1","type":"text","text":"Debuging for bugs"},
+		{"id":"f9a3b78e7815b29e","x":220,"y":-334,"width":250,"height":60,"color":"4","type":"text","text":"Better reward system"},
+		{"id":"38469bc13c189ad5","x":220,"y":-216,"width":250,"height":60,"color":"1","type":"text","text":"reward system change for same block multiple clicks"}
 	],
 	"edges":[
 		{"id":"000f2d4f2617ce4d","fromNode":"3abc3192c5d777b7","fromSide":"top","toNode":"86f07c697bc97856","toSide":"bottom"},
@@ -80,6 +81,7 @@
 		{"id":"539517171dd325ca","fromNode":"ff7f233021397f7c","fromSide":"bottom","toNode":"ead80f170b4dabe4","toSide":"left"},
 		{"id":"0b4e467710e610a7","fromNode":"3462f2084cf9a848","fromSide":"left","toNode":"ff7f233021397f7c","toSide":"top","color":"5"},
 		{"id":"1aebb3aedd5a441a","fromNode":"3462f2084cf9a848","fromSide":"right","toNode":"f9a3b78e7815b29e","toSide":"left","color":"4"},
-		{"id":"e08ac885c7f4d81a","fromNode":"fdf8345ca0443a06","fromSide":"bottom","toNode":"6488db313a9432fe","toSide":"top"}
+		{"id":"e08ac885c7f4d81a","fromNode":"fdf8345ca0443a06","fromSide":"bottom","toNode":"6488db313a9432fe","toSide":"top"},
+		{"id":"8d08d6d4ef733865","fromNode":"f9a3b78e7815b29e","fromSide":"bottom","toNode":"38469bc13c189ad5","toSide":"top"}
 	]
 }

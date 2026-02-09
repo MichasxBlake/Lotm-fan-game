@@ -31,7 +31,9 @@ var buying = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	await get_tree().process_frame 
+	await get_tree().process_frame
+	can_buy()
+	show_reward()
 	lore_1.value = 0
 	label.text = button_type
 	if time_to_done > 0:
@@ -107,6 +109,7 @@ func _on_button_toggled(toggled_on: bool) -> void:
 					if panel_container_2.get_child_count() > current:
 						panel_container_2.get_child(current-1).hide()
 						panel_container_2.get_child(current).show()
+						show_reward(current)
 
 				current +=1
 				button.button_pressed = false
@@ -134,4 +137,10 @@ func buy():
 			cost *= increase
 		buying = true
 		button_cost.text = money_type + ": "+ str(cost)
+
+func show_reward(current_1 = 0):
+	if reward.size():
+		panel_container_2.get_child(current_1).append_text("\n[left] Reward: [/left]")
+		for i in reward:
+			panel_container_2.get_child(current_1).append_text("\n[left] {name_text} + {name_value} [/left]".format({"name_text" : i , "name_value" : reward[i]}))
 	

@@ -146,10 +146,9 @@ script = ExtResource("3_yvkw0")
 layout_mode = 2
 mouse_filter = 2
 bbcode_enabled = true
-text = "[b]Spirituality[/b]
+text = "[b]Sleep[/b]
 
-It's you, your whole soul. Without it you are just a pure vessel of flesh and blood. It's your power in mistycism.
-"
+You go brrrrrr"
 fit_content = true
 horizontal_alignment = 1
 
