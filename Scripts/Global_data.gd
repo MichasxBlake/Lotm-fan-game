@@ -3,6 +3,7 @@ extends Node
 
 signal value_changed
 signal log_udpate
+signal food_changed
 
 
 #money
@@ -44,6 +45,13 @@ var mind_power : int = 0:
 		value_changed.emit()
 		max_mind_power()
 var mind_power_max = 10
+
+#needs:
+		
+var food : Dictionary = {"bread" : 0, "potatoes" : 0, "cheap_meat" : 0}:
+	set(v):
+		food = v
+		food_changed.emit()
 
 var logs : String = "":
 	set(t):

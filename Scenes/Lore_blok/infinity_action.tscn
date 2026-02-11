@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bflwxfvh1q2mu" path="res://Scripts/Lore_blocks.gd" id="1_0fc2e"]
 [ext_resource type="FontFile" uid="uid://cxod2pl2cccwb" path="res://diffusion/woff2/diffusion-regular.woff2" id="2_75n7g"]
-[ext_resource type="Script" uid="uid://cohkdlr57gq25" path="res://Scenes/hover_info.gd" id="3_75n7g"]
+[ext_resource type="Script" uid="uid://cohkdlr57gq25" path="res://Scripts/hover_info.gd" id="3_75n7g"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wbsvp"]
 

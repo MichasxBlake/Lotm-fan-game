@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://bflwxfvh1q2mu" path="res://Scripts/Lore_blocks.gd" id="1_7fbts"]
 [ext_resource type="FontFile" uid="uid://cxod2pl2cccwb" path="res://diffusion/woff2/diffusion-regular.woff2" id="2_r6gqo"]
 [ext_resource type="ButtonGroup" uid="uid://dqe8gdnjjiw" path="res://Button_groups/lore_buttons_loop.tres" id="3_r6gqo"]
-[ext_resource type="Script" uid="uid://cohkdlr57gq25" path="res://Scenes/hover_info.gd" id="3_yvkw0"]
+[ext_resource type="Script" uid="uid://cohkdlr57gq25" path="res://Scripts/hover_info.gd" id="3_yvkw0"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wbsvp"]
 
