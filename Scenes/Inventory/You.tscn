@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://b3ngkp8lvjgo1"]
 
-[ext_resource type="Script" uid="uid://dcuju2kuv3xcu" path="res://Scripts/items_data.gd" id="1_vc67c"]
-[ext_resource type="Script" uid="uid://cet2excd260t3" path="res://Scenes/you.gd" id="2_bxon2"]
-[ext_resource type="Theme" uid="uid://lji2qil8mkcf" path="res://Themes/Items.tres" id="3_ubvwo"]
-[ext_resource type="Script" uid="uid://cohkdlr57gq25" path="res://Scenes/hover_info.gd" id="4_n2sp2"]
+[ext_resource type="Script" uid="uid://dcuju2kuv3xcu" path="res://Scripts/items_data.gd" id="1_v8lvm"]
+[ext_resource type="Script" uid="uid://cet2excd260t3" path="res://Scripts/you.gd" id="2_g1ogb"]
+[ext_resource type="Theme" uid="uid://lji2qil8mkcf" path="res://Themes/Items.tres" id="3_7mshn"]
+[ext_resource type="Script" uid="uid://cohkdlr57gq25" path="res://Scripts/hover_info.gd" id="4_qrlfg"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0p6u2"]
 bg_color = Color(0.30980393, 0.30980393, 0.30980393, 0.9411765)
@@ -32,7 +32,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-script = ExtResource("1_vc67c")
+script = ExtResource("1_v8lvm")
 activate = NodePath("You_Button")
 list = NodePath("You_box")
 text_name = "You"
@@ -49,7 +49,7 @@ alignment = 0
 
 [node name="You_box" type="HBoxContainer" parent="."]
 layout_mode = 2
-script = ExtResource("2_bxon2")
+script = ExtResource("2_g1ogb")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="You_box"]
 layout_mode = 2
@@ -63,17 +63,17 @@ alignment = 1
 [node name="Label" type="Label" parent="You_box/VBoxContainer/Desire_Passion"]
 layout_mode = 2
 size_flags_horizontal = 3
-theme = ExtResource("3_ubvwo")
+theme = ExtResource("3_7mshn")
 text = "Passion:"
 
 [node name="Label2" type="Label" parent="You_box/VBoxContainer/Desire_Passion"]
 layout_mode = 2
-theme = ExtResource("3_ubvwo")
+theme = ExtResource("3_7mshn")
 text = "100"
 
 [node name="Label3" type="Label" parent="You_box/VBoxContainer/Desire_Passion"]
 layout_mode = 2
-theme = ExtResource("3_ubvwo")
+theme = ExtResource("3_7mshn")
 text = "/1000"
 
 [node name="Spirituality" type="HBoxContainer" parent="You_box/VBoxContainer"]
@@ -84,17 +84,17 @@ alignment = 1
 [node name="Label" type="Label" parent="You_box/VBoxContainer/Spirituality"]
 layout_mode = 2
 size_flags_horizontal = 3
-theme = ExtResource("3_ubvwo")
+theme = ExtResource("3_7mshn")
 text = "Spirituality:"
 
 [node name="Label2" type="Label" parent="You_box/VBoxContainer/Spirituality"]
 layout_mode = 2
-theme = ExtResource("3_ubvwo")
+theme = ExtResource("3_7mshn")
 text = "100"
 
 [node name="Label3" type="Label" parent="You_box/VBoxContainer/Spirituality"]
 layout_mode = 2
-theme = ExtResource("3_ubvwo")
+theme = ExtResource("3_7mshn")
 text = "/1000"
 
 [node name="Madness" type="HBoxContainer" parent="You_box/VBoxContainer"]
@@ -105,17 +105,17 @@ alignment = 1
 [node name="Label" type="Label" parent="You_box/VBoxContainer/Madness"]
 layout_mode = 2
 size_flags_horizontal = 3
-theme = ExtResource("3_ubvwo")
+theme = ExtResource("3_7mshn")
 text = "Madness:"
 
 [node name="Label2" type="Label" parent="You_box/VBoxContainer/Madness"]
 layout_mode = 2
-theme = ExtResource("3_ubvwo")
+theme = ExtResource("3_7mshn")
 text = "100"
 
 [node name="Label3" type="Label" parent="You_box/VBoxContainer/Madness"]
 layout_mode = 2
-theme = ExtResource("3_ubvwo")
+theme = ExtResource("3_7mshn")
 text = "/1000"
 
 [node name="Mind_power" type="HBoxContainer" parent="You_box/VBoxContainer"]
@@ -126,20 +126,21 @@ alignment = 1
 [node name="Label" type="Label" parent="You_box/VBoxContainer/Mind_power"]
 layout_mode = 2
 size_flags_horizontal = 3
-theme = ExtResource("3_ubvwo")
+theme = ExtResource("3_7mshn")
 text = "Mind Power:"
 
 [node name="Label2" type="Label" parent="You_box/VBoxContainer/Mind_power"]
 layout_mode = 2
-theme = ExtResource("3_ubvwo")
+theme = ExtResource("3_7mshn")
 text = "100"
 
 [node name="Label3" type="Label" parent="You_box/VBoxContainer/Mind_power"]
 layout_mode = 2
-theme = ExtResource("3_ubvwo")
+theme = ExtResource("3_7mshn")
 text = "/1000"
 
 [node name="Control" type="Control" parent="."]
+top_level = true
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
@@ -153,7 +154,7 @@ offset_bottom = -439.0
 size_flags_horizontal = 4
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_0p6u2")
-script = ExtResource("4_n2sp2")
+script = ExtResource("4_qrlfg")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Control/PanelContainer2"]
 layout_mode = 2
@@ -176,7 +177,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 0
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_0p6u2")
-script = ExtResource("4_n2sp2")
+script = ExtResource("4_qrlfg")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Control/PanelContainer5"]
 custom_minimum_size = Vector2(200, 100)
@@ -213,7 +214,7 @@ offset_bottom = -485.0
 size_flags_horizontal = 8
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_0p6u2")
-script = ExtResource("4_n2sp2")
+script = ExtResource("4_qrlfg")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Control/PanelContainer3"]
 layout_mode = 2
@@ -235,7 +236,7 @@ offset_bottom = 373.0
 size_flags_vertical = 8
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_0p6u2")
-script = ExtResource("4_n2sp2")
+script = ExtResource("4_qrlfg")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Control/PanelContainer4"]
 layout_mode = 2

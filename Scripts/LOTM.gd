@@ -164,6 +164,7 @@ func logs_show() -> void:
 
 
 func _on_button_button_down() -> void:
+	GlobalData.set_food("bread","+",3)
 	GlobalData.pence +=1
 	GlobalData.logs += "\n"+str(test)
 	test +=1

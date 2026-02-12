@@ -48,9 +48,16 @@ var mind_power_max = 10
 
 #needs:
 		
-var food : Dictionary = {"bread" : 0, "potatoes" : 0, "cheap_meat" : 0}:
-	set(v):
-		food = v
+var food : Dictionary = {"bread" : 0, "potatoes" : 0, "cheap_meat" : 0}
+
+func set_food(item_name: String, operator : String, amount: int):
+	if food.has(item_name):
+		if operator == "+":
+			food[item_name] += amount
+		elif operator == "-":
+			food[item_name] -= amount
+		else:
+			food[item_name] = amount
 		food_changed.emit()
 
 var logs : String = "":

@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://dptn8t2yllqyk"]
+[gd_scene load_steps=22 format=3 uid="uid://dptn8t2yllqyk"]
 
 [ext_resource type="Script" uid="uid://b8ra3h3ewiuoq" path="res://Scripts/LOTM.gd" id="1_i6g32"]
 [ext_resource type="Theme" uid="uid://bnlijgvut1fio" path="res://Themes/buttons_menu.tres" id="2_1l0tm"]
@@ -15,6 +15,7 @@
 [ext_resource type="Script" uid="uid://ihxr02abkf2n" path="res://Scripts/SaveLoad.gd" id="11_o5yvi"]
 [ext_resource type="Script" uid="uid://ducpbhhd6c0xl" path="res://Scripts/settings.gd" id="11_rfjv2"]
 [ext_resource type="Script" uid="uid://rnij3xqaomw8" path="res://Scripts/lore_function.gd" id="13_rfjv2"]
+[ext_resource type="PackedScene" uid="uid://cpbaaofk7ky1a" path="res://Scenes/Inventory/Needs.tscn" id="14_nnt18"]
 
 [sub_resource type="Theme" id="Theme_nnt18"]
 
@@ -719,6 +720,9 @@ size_flags_vertical = 1
 layout_mode = 2
 size_flags_horizontal = 1
 size_flags_vertical = 1
+
+[node name="Needs" parent="Main Window/Background/VBoxContainer/HBoxContainer/HBoxContainer/VBoxContainer/ColorRect/Items/VBoxContainer" instance=ExtResource("14_nnt18")]
+layout_mode = 2
 
 [node name="Control" type="Control" parent="Main Window/Background/VBoxContainer/HBoxContainer/HBoxContainer/VBoxContainer/ColorRect/Items/VBoxContainer"]
 layout_mode = 2

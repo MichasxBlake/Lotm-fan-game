@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dcuju2kuv3xcu" path="res://Scripts/items_data.gd" id="1_15k0m"]
 [ext_resource type="Theme" uid="uid://lji2qil8mkcf" path="res://Themes/Items.tres" id="2_t74fa"]
-[ext_resource type="Script" uid="uid://cohkdlr57gq25" path="res://Scenes/hover_info.gd" id="3_qnlfi"]
+[ext_resource type="Script" uid="uid://cohkdlr57gq25" path="res://Scripts/hover_info.gd" id="3_qnlfi"]
 
 [sub_resource type="GDScript" id="GDScript_15k0m"]
 script/source = "extends HBoxContainer
@@ -122,6 +122,7 @@ theme = ExtResource("2_t74fa")
 text = "100"
 
 [node name="Control" type="Control" parent="."]
+top_level = true
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
