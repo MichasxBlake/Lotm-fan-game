@@ -69,6 +69,9 @@ current_max = "3"
 number = 1
 inside_number = 2
 cost = 20
+reward = {
+"Quest": 3
+}
 
 [node name="2" parent="ColorRect/HBoxContainer/Toilet" instance=ExtResource("3_t7ul5")]
 visible = false
@@ -82,5 +85,8 @@ layout_mode = 2
 
 [node name="Lore2" parent="ColorRect/HBoxContainer/Toilet" instance=ExtResource("5_t7ul5")]
 layout_mode = 2
+reward = {
+"Sleep": 0
+}
 
 [connection signal="button_down" from="Button" to="." method="_on_button_button_down"]

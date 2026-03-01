@@ -142,5 +142,10 @@ func show_reward(current_1 = 0):
 	if reward.size():
 		panel_container_2.get_child(current_1).append_text("\n[left] Reward: [/left]")
 		for i in reward:
-			panel_container_2.get_child(current_1).append_text("\n[left] {name_text} + {name_value} [/left]".format({"name_text" : i , "name_value" : reward[i]}))
+			if i == "Sleep":
+				panel_container_2.get_child(current_1).append_text("\n[left]* {name_text} [/left]".format({"name_text" : i}))
+			elif i == "Quest":
+				return
+			else:
+				panel_container_2.get_child(current_1).append_text("\n[left] {name_text} + {name_value} [/left]".format({"name_text" : i , "name_value" : reward[i]}))
 	

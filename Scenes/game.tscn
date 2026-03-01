@@ -164,7 +164,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 10
+theme_override_constants/separation = 0
 
 [node name="Control" type="Control" parent="Main Window/Background/VBoxContainer/HBoxContainer/Control/Your Journey/HBoxContainer/Locations/ColorRect/Menu_of_locations"]
 custom_minimum_size = Vector2(0, 20)
@@ -290,12 +290,12 @@ layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 2.0
 
-[node name="ColorRect" type="ColorRect" parent="Main Window/Background/VBoxContainer/HBoxContainer/Control/Your Journey/HBoxContainer/Locations/ColorRect/Menu_of_locations"]
+[node name="Quests" type="ColorRect" parent="Main Window/Background/VBoxContainer/HBoxContainer/Control/Your Journey/HBoxContainer/Locations/ColorRect/Menu_of_locations"]
 layout_mode = 2
 size_flags_vertical = 3
 color = Color(0.17092773, 0.059800327, 0.09843948, 1)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Main Window/Background/VBoxContainer/HBoxContainer/Control/Your Journey/HBoxContainer/Locations/ColorRect/Menu_of_locations/ColorRect"]
+[node name="Quest_block" type="VBoxContainer" parent="Main Window/Background/VBoxContainer/HBoxContainer/Control/Your Journey/HBoxContainer/Locations/ColorRect/Menu_of_locations/Quests"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -304,18 +304,58 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 3
 theme = SubResource("Theme_nnt18")
+alignment = 2
 
-[node name="Button" type="Button" parent="Main Window/Background/VBoxContainer/HBoxContainer/Control/Your Journey/HBoxContainer/Locations/ColorRect/Menu_of_locations/ColorRect/VBoxContainer"]
+[node name="Control" type="Control" parent="Main Window/Background/VBoxContainer/HBoxContainer/Control/Your Journey/HBoxContainer/Locations/ColorRect/Menu_of_locations/Quests/Quest_block"]
+custom_minimum_size = Vector2(0, 4)
+layout_mode = 2
+
+[node name="Quest_Text" type="RichTextLabel" parent="Main Window/Background/VBoxContainer/HBoxContainer/Control/Your Journey/HBoxContainer/Locations/ColorRect/Menu_of_locations/Quests/Quest_block"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+bbcode_enabled = true
+text = "[center][b]To do list:[/b][/center]"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Main Window/Background/VBoxContainer/HBoxContainer/Control/Your Journey/HBoxContainer/Locations/ColorRect/Menu_of_locations/Quests/Quest_block"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Quest_list" type="VBoxContainer" parent="Main Window/Background/VBoxContainer/HBoxContainer/Control/Your Journey/HBoxContainer/Locations/ColorRect/Menu_of_locations/Quests/Quest_block/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Quest1" type="RichTextLabel" parent="Main Window/Background/VBoxContainer/HBoxContainer/Control/Your Journey/HBoxContainer/Locations/ColorRect/Menu_of_locations/Quests/Quest_block/ScrollContainer/Quest_list"]
+visible = false
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+text = "- First quest to do"
+fit_content = true
+
+[node name="Quest2" type="RichTextLabel" parent="Main Window/Background/VBoxContainer/HBoxContainer/Control/Your Journey/HBoxContainer/Locations/ColorRect/Menu_of_locations/Quests/Quest_block/ScrollContainer/Quest_list"]
+visible = false
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+text = "- Second quest to do"
+fit_content = true
+
+[node name="Quest3" type="RichTextLabel" parent="Main Window/Background/VBoxContainer/HBoxContainer/Control/Your Journey/HBoxContainer/Locations/ColorRect/Menu_of_locations/Quests/Quest_block/ScrollContainer/Quest_list"]
+visible = false
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+text = "- Third quest to do"
+fit_content = true
+
+[node name="Quest_Show" type="Button" parent="Main Window/Background/VBoxContainer/HBoxContainer/Control/Your Journey/HBoxContainer/Locations/ColorRect/Menu_of_locations"]
 custom_minimum_size = Vector2(0, 32)
 layout_mode = 2
 theme = SubResource("Theme_ewbju")
-text = "Things I should do V"
+toggle_mode = true
+text = "V Hide Quests"
 
-[node name="Label" type="Label" parent="Main Window/Background/VBoxContainer/HBoxContainer/Control/Your Journey/HBoxContainer/Locations/ColorRect/Menu_of_locations/ColorRect/VBoxContainer"]
-custom_minimum_size = Vector2(0, 38)
+[node name="Control3" type="Control" parent="Main Window/Background/VBoxContainer/HBoxContainer/Control/Your Journey/HBoxContainer/Locations/ColorRect/Menu_of_locations"]
+custom_minimum_size = Vector2(0, 1.5)
 layout_mode = 2
-text = "* Tutaj jest pierwszy quest"
-autowrap_mode = 2
 
 [node name="Control2" type="Control" parent="Main Window/Background/VBoxContainer/HBoxContainer/Control/Your Journey/HBoxContainer"]
 layout_mode = 2
@@ -754,6 +794,7 @@ vertical_alignment = 2
 wait_time = 6.0
 one_shot = true
 
+[connection signal="toggled" from="Main Window/Background/VBoxContainer/HBoxContainer/Control/Your Journey/HBoxContainer/Locations/ColorRect/Menu_of_locations/Quest_Show" to="." method="_on_quest_show_toggled"]
 [connection signal="button_down" from="Main Window/Background/VBoxContainer/HBoxContainer/Control/Your Journey/HBoxContainer/Control/Tingen/Tingen/Button" to="." method="_on_button_button_down"]
 [connection signal="item_selected" from="Main Window/Background/VBoxContainer/HBoxContainer/Control/Settings/ColorRect/VBoxContainer/Resolution" to="Main Window/Background/VBoxContainer/HBoxContainer/Control/Settings" method="_on_resolution_item_selected"]
 [connection signal="item_selected" from="Main Window/Background/VBoxContainer/HBoxContainer/Control/Settings/ColorRect/VBoxContainer/OptionButton2" to="Main Window/Background/VBoxContainer/HBoxContainer/Control/Settings" method="_on_option_button_2_item_selected"]

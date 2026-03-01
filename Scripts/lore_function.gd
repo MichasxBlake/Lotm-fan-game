@@ -1,6 +1,10 @@
 extends Node
 #to zrobilem z gemini
 signal block_vanished # Nazwa musi być spójna w całym projekcie
+signal new_quest
+
+func _ready() -> void:
+	add_to_group("Blocks_of_Lore")
 
 #reward for loop
 func loop(number : int, button : int, reward):
@@ -36,4 +40,9 @@ func give_reward(reward):
 		return
 	else:
 		for i in reward:
-			GlobalData[i] += reward[i]
+			if i == "Sleep":
+				new_quest.emit()
+			elif i == "Quest":
+				GlobalData.list_of_quest.append(reward[i])
+			else:
+				GlobalData[i] += reward[i]

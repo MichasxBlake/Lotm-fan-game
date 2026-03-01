@@ -10,6 +10,7 @@ extends Control
 @onready var tingen_button: Button = $"Main Window/Background/VBoxContainer/HBoxContainer/Control/Your Journey/Locations/ColorRect/Menu_of_locations/Loen/ColorRect/ScrollContainer/VBoxContainer/tingen"
 @onready var backlund_button: Button = $"Main Window/Background/VBoxContainer/HBoxContainer/Control/Your Journey/Locations/ColorRect/Menu_of_locations/Loen/ColorRect/ScrollContainer/VBoxContainer/backlund"
 @onready var trier_button: Button = $"Main Window/Background/VBoxContainer/HBoxContainer/Control/Your Journey/Locations/ColorRect/Menu_of_locations/Loen/ColorRect/ScrollContainer/VBoxContainer/trier"
+@onready var quest_show: Button = $"Main Window/Background/VBoxContainer/HBoxContainer/Control/Your Journey/HBoxContainer/Locations/ColorRect/Menu_of_locations/Quest_Show"
 
 
 @onready var logs_text: Label = $"Main Window/Background/VBoxContainer/HBoxContainer/HBoxContainer/VBoxContainer/ColorRect/Log_box/ColorRect/ScrollContainer/Label"
@@ -31,6 +32,8 @@ extends Control
 @onready var progress_bar: ProgressBar = $"Main Window/Background/Działanie/Tingen/ColorRect/House/ColorRect2/ScrollContainer/Control/ProgressBar"
 @export var menu_group : ButtonGroup
 @onready var scroll_container: ScrollContainer = $"Main Window/Background/VBoxContainer/HBoxContainer/HBoxContainer/VBoxContainer/ColorRect/Log_box/ColorRect/ScrollContainer"
+@onready var quests: ColorRect = $"Main Window/Background/VBoxContainer/HBoxContainer/Control/Your Journey/HBoxContainer/Locations/ColorRect/Menu_of_locations/Quests"
+@onready var quest_list: VBoxContainer = $"Main Window/Background/VBoxContainer/HBoxContainer/Control/Your Journey/HBoxContainer/Locations/ColorRect/Menu_of_locations/Quests/Quest_block/ScrollContainer/Quest_list"
 
 
 #my variable
@@ -45,6 +48,9 @@ func _ready() -> void:
 	#menu
 	for i in menu_group.get_buttons():
 		i.connect("pressed",show_menu)
+	var the_lore = get_tree().get_first_node_in_group("Blocks_of_Lore")
+	if the_lore:
+		the_lore.new_quest.connect(update_quest)
 	
 	#państwa
 	#loen_kingdom.button_down.connect(loen_show)
@@ -180,3 +186,19 @@ func change_logs():
 
 func _on_exit_button_down() -> void:
 	save.Save()
+
+
+func _on_quest_show_toggled(toggled_on: bool) -> void:
+	if toggled_on:
+		quest_show.text = "^ Show Quests"
+		quests.hide()
+	else:
+		quest_show.text = "V Hide Quests"
+		quests.show()
+
+func update_quest():
+	for i in GlobalData.list_of_quest:
+		print(i)
+		var temp_quest = quest_list.get_child(i-1)
+		print(temp_quest)
+		temp_quest.show()

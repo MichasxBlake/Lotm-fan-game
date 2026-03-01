@@ -84,3 +84,5 @@ func max_mind_power():
 		
 		
 var lore_states = {} # Format: {"NazwaBloku": {"visible": true, "current": 5}}
+
+var list_of_quest = []
