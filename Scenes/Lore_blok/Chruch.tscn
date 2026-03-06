@@ -73,7 +73,7 @@ reward = {
 [node name="2" parent="ColorRect/HBoxContainer/Toilet" instance=ExtResource("3_o0e36")]
 visible = false
 layout_mode = 2
-time_to_done = 1
+time_to_done = 0.0
 number = 1
 place = "Street"
 reward = {

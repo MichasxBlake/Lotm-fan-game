@@ -67,7 +67,10 @@ var logs : String = "":
 		logs = t
 		var number = logs.split("\n")
 		if number.size() >= 62:
+			print("ahoj?")
 			number.remove_at(0)
+			number.remove_at(0)
+			logs = "\n".join(number)
 		logs += "\n"
 		log_udpate.emit()
 
