@@ -1,5 +1,6 @@
 extends ProgressBar
 class_name Lore_blocks
+signal block_vanished
 
 @export var button_type : String
 @export var Infinity : bool = false
@@ -13,6 +14,8 @@ class_name Lore_blocks
 @export var cost : int
 @export var increase : float
 @export var reward : Dictionary
+@export var day_or_night : String
+@onready var used_already = false
 @onready var label: Label = $Button/Label
 @onready var label_2: Label = $Button/Label2
 @onready var label_3: Label = $Button/HBoxContainer/Label3
@@ -32,6 +35,7 @@ var buying = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	await get_tree().process_frame
+	add_to_group("day_or_night")
 	can_buy()
 	show_reward()
 	lore_1.value = 0
@@ -105,6 +109,7 @@ func _on_button_toggled(toggled_on: bool) -> void:
 					var new_id = get_instance_id()
 					# Wywołujemy grupę, która obsługuje logikę [cite: 8]
 					get_tree().call_group("Lore_events", "action", number, new_id, int(current_max), current, inside_number, place,reward)
+					used_already = true
 				else:
 					if panel_container_2.get_child_count() > current:
 						panel_container_2.get_child(current-1).hide()
@@ -149,3 +154,20 @@ func show_reward(current_1 = 0):
 			else:
 				panel_container_2.get_child(current_1).append_text("\n[left] {name_text} + {name_value} [/left]".format({"name_text" : i , "name_value" : reward[i]}))
 	
+func is_night():
+	if day_or_night == "night":
+		if ! used_already:
+			show()
+			get_tree().call_group("lore_segment", "refresh_ui")
+	elif  day_or_night == "day":
+		hide()
+		get_tree().call_group("lore_segment", "refresh_ui")
+		
+func is_day():
+	if day_or_night == "night":
+		hide()
+		get_tree().call_group("lore_segment", "refresh_ui")
+	elif  day_or_night == "day":
+		if ! used_already:
+			show()
+			get_tree().call_group("lore_segment", "refresh_ui")

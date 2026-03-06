@@ -63,8 +63,25 @@ custom_minimum_size = Vector2(5, 0)
 layout_mode = 2
 
 [node name="1" parent="ColorRect/HBoxContainer/Bedroom" instance=ExtResource("2_n2yyt")]
+visible = false
 layout_mode = 2
 inside_number = 2
+reward = {
+"logs": "Bedroom unlocked"
+}
+day_or_night = "night"
+
+[node name="3" parent="ColorRect/HBoxContainer/Bedroom" instance=ExtResource("2_n2yyt")]
+visible = false
+layout_mode = 2
+current_max = "0"
+current = 0
+place = ""
+cost = 2
+reward = {
+"logs": "Bedroom unlocked"
+}
+day_or_night = "night"
 
 [node name="2" parent="ColorRect/HBoxContainer/Bedroom" instance=ExtResource("3_8jb8j")]
 visible = false

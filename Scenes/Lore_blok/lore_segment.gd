@@ -13,7 +13,8 @@ var current_size : Vector2
 var size_tween : Tween
 
 func _ready() -> void:
-	# W Twoim game.tscn ten węzeł jest w grupie "Lore_events" 
+	add_to_group("lore_segment")
+	# W Twoim game.tscn ten węzeł jest w grupie "Lore_events"
 	var event_handler = get_tree().get_first_node_in_group("Lore_events") # nie rozumiem
 	
 	if event_handler and event_handler.has_signal("block_vanished"):
@@ -24,13 +25,14 @@ func _ready() -> void:
 	
 	refresh_ui(true)
 
-func refresh_ui(instant: bool = false, check : bool = false) -> void:
+func refresh_ui(instant: bool = false, check : bool = false) -> void: # jeśli coś nie działa to dlatego że usunąłem check (sprawdz poniżej)
+	var a = 0
 	var visible_count = 0
 	# Liczymy tylko widoczne bloki lore wewnątrz kontenera bedroom [cite: 33]
 	for node in bedroom.get_children():
 		if node is ProgressBar and node.visible:   #super mądre muszę zapamiętać
 			visible_count += 1
-	if check and visible_count == 0:
+	if visible_count == 0: # w tym varunku był jeszcze if check, jak coś nie działa to tutaj zmienić
 		body.hide()
 	else:
 		body.show()

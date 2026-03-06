@@ -4,7 +4,9 @@ extends Node
 signal value_changed
 signal log_udpate
 signal food_changed
+signal time_changed
 
+var is_night = false
 
 #money
 var pounds : int = 0:
@@ -66,7 +68,7 @@ var logs : String = "":
 		var number = logs.split("\n")
 		if number.size() >= 62:
 			number.remove_at(0)
-			logs = "\n".join(number)
+		logs += "\n"
 		log_udpate.emit()
 
 func max_passion():
@@ -82,7 +84,23 @@ func max_mind_power():
 	if mind_power > mind_power_max:
 		mind_power = mind_power_max
 		
-		
 var lore_states = {} # Format: {"NazwaBloku": {"visible": true, "current": 5}}
 
 var list_of_quest = []
+
+var time_of_day : int = 0:
+	set(y):
+		time_of_day = y
+		if time_of_day > 100:
+			time_of_day -=100
+		day()
+
+func day():
+	print(time_of_day)
+	if time_of_day >= 100:
+		if is_night:
+			is_night = false
+			time_changed.emit()
+		else:
+			is_night = true
+			time_changed.emit()

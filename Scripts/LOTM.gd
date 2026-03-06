@@ -40,7 +40,8 @@ extends Control
 @onready var what_okno: int = 0
 @onready var what_but: int = 0
 @onready var test: int = 0
-
+signal night_block
+signal day_block
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -61,6 +62,7 @@ func _ready() -> void:
 	#trier_button.button_down.connect(trier_show)
 	
 	GlobalData.log_udpate.connect(change_logs)
+	GlobalData.time_changed.connect(night_and_day)
 	
 	
 	
@@ -202,3 +204,29 @@ func update_quest():
 		var temp_quest = quest_list.get_child(i-1)
 		print(temp_quest)
 		temp_quest.show()
+
+
+
+
+
+
+
+
+
+
+
+
+# NIGHT AND DAY CYCLE IS HERE, THIS TEXT IS TOTALLY NOT WAY TOO LONG FOR JUST TYPICAL COMMENT
+
+
+func night_and_day():
+	if GlobalData.is_night:
+		get_tree().call_group("day_or_night", "is_night")
+		GlobalData.logs += "night fell"
+	else:
+		get_tree().call_group("day_or_night", "is_day")
+		GlobalData.logs += "day has risen"
+
+
+func day_maybe() -> void:
+	GlobalData.time_of_day += 50
