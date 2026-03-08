@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://du6ck6qui4go5" path="res://Scenes/Inventory/pouch.tscn" id="8_v158k"]
 [ext_resource type="PackedScene" uid="uid://rthgehyc1raj" path="res://Scenes/Lore_blok/toilet.tscn" id="9_1phco"]
 [ext_resource type="PackedScene" uid="uid://vnuc48ty6yen" path="res://Scenes/Lore_blok/bedroom.tscn" id="9_rku1e"]
-[ext_resource type="PackedScene" uid="uid://ck2do45ydmrgi" path="res://Scenes/Lore_blok/Chruch.tscn" id="10_nb51f"]
+[ext_resource type="PackedScene" uid="uid://ck2do45ydmrgi" path="res://Scenes/Lore_blok/Main_Street.tscn" id="10_nb51f"]
 [ext_resource type="Script" uid="uid://ihxr02abkf2n" path="res://Scripts/SaveLoad.gd" id="11_o5yvi"]
 [ext_resource type="Script" uid="uid://ducpbhhd6c0xl" path="res://Scripts/settings.gd" id="11_rfjv2"]
 [ext_resource type="Script" uid="uid://rnij3xqaomw8" path="res://Scripts/lore_function.gd" id="13_rfjv2"]
@@ -469,7 +469,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Main Street"
+text = "Streets"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -497,9 +497,10 @@ theme_override_constants/separation = 10
 custom_minimum_size = Vector2(7, 0)
 layout_mode = 2
 
-[node name="Toilet" parent="Main Window/Background/VBoxContainer/HBoxContainer/Control/Your Journey/HBoxContainer/Control/Tingen/Tingen/VBoxContainer/Street/ColorRect2/ScrollContainer/Street" instance=ExtResource("10_nb51f")]
+[node name="Main Street" parent="Main Window/Background/VBoxContainer/HBoxContainer/Control/Your Journey/HBoxContainer/Control/Tingen/Tingen/VBoxContainer/Street/ColorRect2/ScrollContainer/Street" instance=ExtResource("10_nb51f")]
 layout_mode = 2
 size_flags_vertical = 4
+text = "Main Street"
 
 [node name="Button" type="Button" parent="Main Window/Background/VBoxContainer/HBoxContainer/Control/Your Journey/HBoxContainer/Control/Tingen/Tingen"]
 layout_mode = 0

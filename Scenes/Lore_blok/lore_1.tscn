@@ -47,7 +47,6 @@ script = ExtResource("1_k7ua7")
 button_type = "Action"
 current_max = "5"
 current = 1
-place = "House"
 money_type = "passion"
 cost = 5
 increase = 1.5
@@ -128,10 +127,10 @@ theme_override_font_sizes/font_size = 15
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="PanelContainer2" type="PanelContainer" parent="CanvasLayer"]
-offset_left = -87.0
-offset_top = -583.0
-offset_right = 105.0
-offset_bottom = -439.0
+offset_left = 754.0
+offset_top = 399.0
+offset_right = 946.0
+offset_bottom = 543.0
 size_flags_horizontal = 4
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_oo6t7")

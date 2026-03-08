@@ -28,25 +28,37 @@ var passion : int = 0:
 		passion = v
 		max_passion()
 		value_changed.emit()
-var passion_max = 100
+var passion_max : int = 0:
+	set(v):
+		passion_max = v
+		value_changed.emit()
 var madness : int = 5:
 	set(v):
 		madness = v
 		value_changed.emit()
 		max_madness()
-var madness_max = 10
+var madness_max : int = 0:
+	set(v):
+		madness_max = v
+		value_changed.emit()
 var spirituality : int = 0:
 	set(v):
 		spirituality = v
 		value_changed.emit()
 		max_spirituality()
-var spirituality_max = 40
+var spirituality_max : int = 0:
+	set(v):
+		spirituality_max = v
+		value_changed.emit()
 var mind_power : int = 0:
 	set(v):
 		mind_power = v
 		value_changed.emit()
 		max_mind_power()
-var mind_power_max = 10
+var mind_power_max : int = 0:
+	set(v):
+		mind_power_max = v
+		value_changed.emit()
 
 #needs:
 		
@@ -107,3 +119,6 @@ func day():
 		else:
 			is_night = true
 			time_changed.emit()
+
+
+var new_lore_id = 0

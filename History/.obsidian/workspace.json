@@ -8,6 +8,16 @@
         "type": "tabs",
         "children": [
           {
+            "id": "fe2ee2b232f615c2",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "Nowa karta"
+            }
+          },
+          {
             "id": "1d5454b9bd272160",
             "type": "leaf",
             "state": {
@@ -15,26 +25,17 @@
               "state": {
                 "file": "Plan for game.canvas",
                 "viewState": {
-                  "x": -42.01444007101827,
-                  "y": -86.68051157960963,
-                  "zoom": -0.3333333333333334
+                  "x": 37.10092696353897,
+                  "y": -87.37218609346019,
+                  "zoom": -0.3333333333333332
                 }
               },
               "icon": "lucide-layout-dashboard",
               "title": "Plan for game"
             }
-          },
-          {
-            "id": "694760d290759aa1",
-            "type": "leaf",
-            "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Podgląd grafu"
-            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -57,7 +58,7 @@
                 "autoReveal": false
               },
               "icon": "lucide-folder-closed",
-              "title": "Files"
+              "title": "Przeglądarka plików"
             }
           },
           {
@@ -91,8 +92,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "938ac997f8be08e9",
@@ -108,7 +108,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Plan for game.canvas",
+                "file": "Lore.canvas",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -118,7 +118,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Plan for game"
+              "title": "Linki zwrotne do Lore"
             }
           },
           {
@@ -199,9 +199,18 @@
   },
   "active": "1d5454b9bd272160",
   "lastOpenFiles": [
+    "Lore.canvas",
+    "Ethernal Darkness.md",
     "Plan for game.canvas",
-    "Secret organization.md",
+    "father of devils.md",
+    "Bez nazwy.base",
+    "Key of light.md",
+    "Hunter.md",
+    "Door.md",
+    "Lore.md",
     "LOTM GAME.md",
+    "Bez nazwy.md",
+    "Secret organization.md",
     "Sequences.md",
     "Assasin.md",
     "Warrior.md",
@@ -216,15 +225,8 @@
     "Fool.md",
     "Lawyer.md",
     "Prisoner.md",
-    "father of devils.md",
     "Criminal.md",
     "Untitled",
-    "Goddest of origin.md",
-    "Planter.md",
-    "Monster.md",
-    "Key of light.md",
-    "Savant.md",
-    "Mystery Pryer.md",
-    "Hunter.md"
+    "Goddest of origin.md"
   ]
 }

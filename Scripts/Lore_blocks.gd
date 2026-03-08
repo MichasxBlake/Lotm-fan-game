@@ -5,16 +5,16 @@ signal block_vanished
 @export var button_type : String
 @export var Infinity : bool = false
 @export var time_to_done : float
+@export var button_text : String
+@export var info_text : String
 @export var current_max : String
 @export var current : int
-@export var number : int
-@export var inside_number : int
-@export var place : String
 @export var money_type : String
 @export var cost : int
 @export var increase : float
 @export var reward : Dictionary
 @export var day_or_night : String
+@export var this_id : int
 @onready var used_already = false
 @onready var label: Label = $Button/Label
 @onready var label_2: Label = $Button/Label2
@@ -35,6 +35,16 @@ var buying = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	await get_tree().process_frame
+	
+	button.text = button_text
+	panel_container_2.get_child(0).text = info_text
+	
+	var event_handler = get_tree().get_first_node_in_group("Lore_events") # nie rozumiem
+	
+	if event_handler and event_handler.has_signal("new_lore"):
+		# Łączymy się z sygnałem block_vanished 
+		event_handler.block_vanished.connect(new_lore)
+	
 	add_to_group("day_or_night")
 	can_buy()
 	show_reward()
@@ -51,15 +61,6 @@ func _ready() -> void:
 		button_cost.text = money_type + ": "+ str(cost)
 	await get_tree().process_frame
 	#saving
-	if place == "House" and number == 0:
-		if GlobalData.lore_states.has(self.name):
-			var saved_data = GlobalData.lore_states[self.name]
-			
-			# Przywracamy widoczność
-			self.visible = saved_data["visible"]
-			
-			# Przywracamy postęp (opłacenie)
-			self.current = saved_data["current"]
 	
 func _process(delta: float) -> void:
 	if do:
@@ -79,7 +80,7 @@ func _on_timer_timeout() -> void:
 			timer.paused = true
 	else:
 		var new = lore_1.get_instance_id()
-		get_tree().call_group("Lore_events","loop", number,new, reward)
+		get_tree().call_group("Lore_events","loop", reward)
 
 
 func _on_button_toggled(toggled_on: bool) -> void:
@@ -108,7 +109,7 @@ func _on_button_toggled(toggled_on: bool) -> void:
 				if current >= int(current_max):
 					var new_id = get_instance_id()
 					# Wywołujemy grupę, która obsługuje logikę [cite: 8]
-					get_tree().call_group("Lore_events", "action", number, new_id, int(current_max), current, inside_number, place,reward)
+					get_tree().call_group("Lore_events", "action", new_id, int(current_max), current, reward)
 					used_already = true
 				else:
 					if panel_container_2.get_child_count() > current:
@@ -125,35 +126,47 @@ func _on_button_toggled(toggled_on: bool) -> void:
 		
 func can_buy():
 	if button_type == "Action" or (button_type == "Loop" and Infinity):
-		if GlobalData[money_type] >= cost:
-			button.disabled = false
+		if money_type != "":
+			if GlobalData[money_type] >= cost:
+				button.disabled = false
+			else:
+				button.disabled = true
+				timer.start()
+				timer.paused = true
+				button.button_pressed = false
 		else:
-			button.disabled = true
-			timer.start()
-			timer.paused = true
-			button.button_pressed = false
+			button.disabled = false
 	else:
 		button.disabled = false
 		
 func buy():
-	if GlobalData[money_type] >= cost:
-		GlobalData[money_type] -= cost
-		if !Infinity:
-			cost *= increase
+	if money_type != "":
+		if GlobalData[money_type] >= cost:
+			GlobalData[money_type] -= cost
+			if !Infinity:
+				cost *= increase
+			buying = true
+			button_cost.text = money_type + ": "+ str(cost)
+	else:
 		buying = true
-		button_cost.text = money_type + ": "+ str(cost)
 
 func show_reward(current_1 = 0):
-	if reward.size():
-		panel_container_2.get_child(current_1).append_text("\n[left] Reward: [/left]")
-		for i in reward:
-			if i == "Sleep":
-				panel_container_2.get_child(current_1).append_text("\n[left]* {name_text} [/left]".format({"name_text" : i}))
-			elif i == "Quest":
-				return
-			else:
-				panel_container_2.get_child(current_1).append_text("\n[left] {name_text} + {name_value} [/left]".format({"name_text" : i , "name_value" : reward[i]}))
-	
+	var exist = false
+	var made_text = ""
+	for i in reward:
+		if i == "Sleep":
+			made_text += ("\n[left]* {name_text} [/left]".format({"name_text" : i}))
+		elif i == "Quest" or i == "new_lore_id":
+			print(button_text)
+			exist = true
+		else:
+			made_text += ("\n[left] {name_text} + {name_value} [/left]".format({"name_text" : i , "name_value" : reward[i]}))
+	if exist and made_text == "":
+		return
+	else:
+		panel_container_2.get_child(current_1).append_text("\n\n[left] Reward: [/left]")
+		panel_container_2.get_child(current_1).append_text(made_text)
+
 func is_night():
 	if day_or_night == "night":
 		if ! used_already:
@@ -171,3 +184,8 @@ func is_day():
 		if ! used_already:
 			show()
 			get_tree().call_group("lore_segment", "refresh_ui")
+
+func new_lore():
+	if GlobalData.new_lore_id == this_id:
+		show()
+		get_tree().call_group("lore_segment", "refresh_ui")

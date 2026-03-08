@@ -5,8 +5,8 @@ class_name Lore_slide
 @export var text: String
 @export var label : Label
 @export var color_rect: ColorRect
-@export var bedroom: HBoxContainer
-@export var body : HBoxContainer
+@export var lore_place: HBoxContainer
+@export var top_body : HBoxContainer
 
 var clicked = false
 var current_size : Vector2
@@ -29,13 +29,13 @@ func refresh_ui(instant: bool = false, check : bool = false) -> void: # jeśli c
 	var a = 0
 	var visible_count = 0
 	# Liczymy tylko widoczne bloki lore wewnątrz kontenera bedroom [cite: 33]
-	for node in bedroom.get_children():
+	for node in lore_place.get_children():
 		if node is ProgressBar and node.visible:   #super mądre muszę zapamiętać
 			visible_count += 1
 	if visible_count == 0: # w tym varunku był jeszcze if check, jak coś nie działa to tutaj zmienić
-		body.hide()
+		top_body.hide()
 	else:
-		body.show()
+		top_body.show()
 		var new_width = 220 + (190 * max(0, visible_count - 1))
 		if size_tween:
 			size_tween.kill()
@@ -51,7 +51,7 @@ func refresh_ui(instant: bool = false, check : bool = false) -> void: # jeśli c
 
 
 func show_new_lore(inside_number : int):
-	var node = bedroom.get_node_or_null(str(inside_number))   #GET_NODE_OR_NULL ważne do zapamiętania
+	var node = lore_place.get_node_or_null(str(inside_number))   #GET_NODE_OR_NULL ważne do zapamiętania
 	if node:
 		node.show()
 		refresh_ui()
@@ -66,9 +66,9 @@ func _on_button_button_down() -> void:
 	size_tween.set_ease(Tween.EASE_OUT)
 	
 	if clicked:
-		bedroom.hide()
+		lore_place.hide()
 		size_tween.tween_property(color_rect, "custom_minimum_size", Vector2(0, 80), 0.3)
 	else:
-		bedroom.show()
+		lore_place.show()
 		size_tween.tween_property(color_rect, "custom_minimum_size", Vector2(current_size.x, 80), 0.3)
 		refresh_ui()

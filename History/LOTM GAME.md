@@ -5,3 +5,4 @@
 5. [[Game Mechanics]]
 6. [[Overall future ideas]]
 7. [[Visual aspect]]
+8. [[Plan for game.canvas]]

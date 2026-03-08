@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cdiwbxy7e4u22" path="res://Scenes/Lore_blok/infinity_action.tscn" id="4_t12ha"]
 [ext_resource type="PackedScene" uid="uid://ds34t68qal12n" path="res://Scenes/Lore_blok/infinity_loop.tscn" id="5_t7ul5"]
 
-[node name="Toilet" type="HBoxContainer" node_paths=PackedStringArray("label", "color_rect", "bedroom", "body")]
+[node name="Toilet_segment" type="HBoxContainer" node_paths=PackedStringArray("label", "color_rect", "lore_place", "top_body")]
 offset_right = 621.0
 offset_bottom = 80.0
 theme_override_constants/separation = 1
@@ -14,8 +14,8 @@ script = ExtResource("1_qa33l")
 text = "Toilet"
 label = NodePath("Button/Label")
 color_rect = NodePath("ColorRect")
-bedroom = NodePath("ColorRect/HBoxContainer/Toilet")
-body = NodePath(".")
+lore_place = NodePath("ColorRect/HBoxContainer/Toilet")
+top_body = NodePath(".")
 
 [node name="Button" type="Button" parent="."]
 custom_minimum_size = Vector2(30, 80)
@@ -65,9 +65,9 @@ layout_mode = 2
 
 [node name="1" parent="ColorRect/HBoxContainer/Toilet" instance=ExtResource("2_t12ha")]
 layout_mode = 2
+button_text = "Nig"
+info_text = "Chwilowy test"
 current_max = "3"
-number = 1
-inside_number = 2
 cost = 20
 reward = {
 "Quest": 3
@@ -76,14 +76,18 @@ reward = {
 [node name="2" parent="ColorRect/HBoxContainer/Toilet" instance=ExtResource("3_t7ul5")]
 layout_mode = 2
 time_to_done = 0.0
-number = 1
-place = "House"
+button_text = "Wtf"
+reward = {
+"passion": 3
+}
 
 [node name="Lore1" parent="ColorRect/HBoxContainer/Toilet" instance=ExtResource("4_t12ha")]
 layout_mode = 2
+button_text = "Huh"
 
 [node name="Lore2" parent="ColorRect/HBoxContainer/Toilet" instance=ExtResource("5_t7ul5")]
 layout_mode = 2
+button_text = "Czemu"
 reward = {
 "Sleep": 0
 }
