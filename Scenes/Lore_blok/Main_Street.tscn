@@ -71,7 +71,7 @@ cost = 0
 increase = 0.0
 reward = {
 "new_lore_id": 1,
-"passion_max": 20
+"passion_max": 472
 }
 
 [node name="2" parent="ColorRect/HBoxContainer/Main_Street" instance=ExtResource("2_qu5sb")]

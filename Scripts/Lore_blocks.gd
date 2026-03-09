@@ -47,7 +47,6 @@ func _ready() -> void:
 	
 	add_to_group("day_or_night")
 	can_buy()
-	show_reward()
 	lore_1.value = 0
 	label.text = button_type
 	if time_to_done > 0:
@@ -59,7 +58,7 @@ func _ready() -> void:
 	GlobalData.value_changed.connect(can_buy)
 	if money_type and cost:
 		button_cost.text = money_type + ": "+ str(cost)
-	await get_tree().process_frame
+	show_reward()
 	#saving
 	
 func _process(delta: float) -> void:
@@ -106,18 +105,20 @@ func _on_button_toggled(toggled_on: bool) -> void:
 					buying = false
 					return
 			elif buying:
+				var new_id = get_instance_id()
 				if current >= int(current_max):
-					var new_id = get_instance_id()
-					# Wywołujemy grupę, która obsługuje logikę [cite: 8]
+					
 					get_tree().call_group("Lore_events", "action", new_id, int(current_max), current, reward)
+					print(GlobalData.madness, GlobalData.passion)
 					used_already = true
 				else:
 					if panel_container_2.get_child_count() > current:
 						panel_container_2.get_child(current-1).hide()
 						panel_container_2.get_child(current).show()
-						show_reward(current)
+						get_tree().call_group("Lore_events", "action", new_id, int(current_max), current, reward)
+						current +=1
+						show_reward()
 
-				current +=1
 				button.button_pressed = false
 				buying = false
 	else:
@@ -150,22 +151,36 @@ func buy():
 	else:
 		buying = true
 
-func show_reward(current_1 = 0):
+func show_reward():
 	var exist = false
 	var made_text = ""
 	for i in reward:
 		if i == "Sleep":
 			made_text += ("\n[left]* {name_text} [/left]".format({"name_text" : i}))
-		elif i == "Quest" or i == "new_lore_id":
-			print(button_text)
+		elif i == "Quest" or i == "new_lore_id" or i == "logs":
 			exist = true
 		else:
-			made_text += ("\n[left] {name_text} + {name_value} [/left]".format({"name_text" : i , "name_value" : reward[i]}))
+			if i == "Multiple":
+				var temp_str
+				var temp_name
+				for j in reward[i]:
+						if int(j) == current:
+							for g in reward[i][j]:
+								if g == "Quest" or g == "new_lore_id" or g == "logs":
+									pass
+								else:
+									temp_str = reward[i][j][g]
+									temp_name = g
+				made_text += ("\n[left] {name_text} + {name_value} [/left]".format({"name_text" : temp_name , "name_value" : temp_str }))
+			else:
+				made_text += ("\n[left] {name_text} + {name_value} [/left]".format({"name_text" : i , "name_value" : reward[i]}))
+
 	if exist and made_text == "":
-		return
+		pass
 	else:
-		panel_container_2.get_child(current_1).append_text("\n\n[left] Reward: [/left]")
-		panel_container_2.get_child(current_1).append_text(made_text)
+		panel_container_2.get_child(current-1).append_text("\n\n[left] Reward: [/left]")
+		panel_container_2.get_child(current-1).append_text(made_text)
+
 
 func is_night():
 	if day_or_night == "night":

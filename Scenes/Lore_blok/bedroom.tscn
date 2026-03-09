@@ -66,7 +66,22 @@ layout_mode = 2
 visible = false
 layout_mode = 2
 reward = {
-"logs": "Bedroom unlocked"
+"Multiple": {
+"1": {
+"passion": 5
+},
+"2": {
+"passion": 10
+},
+"3": {
+"passion": 15
+},
+"4": {},
+"5": {
+"logs": "Bedroom unlocked",
+"madness": 10
+}
+}
 }
 day_or_night = "night"
 

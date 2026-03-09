@@ -15,7 +15,7 @@ func loop(reward):
 
 #reward for action + showing new blocks
 func action(button, max_val, current, reward):
-	give_reward(reward)
+	give_reward(reward, max_val, current)
 	if current >= max_val:
 		var new_but = instance_from_id(button) as ProgressBar
 		if new_but:
@@ -26,7 +26,7 @@ func action(button, max_val, current, reward):
 func infinity(reward):
 	give_reward(reward)
 
-func give_reward(reward):
+func give_reward(reward,max_val = 0,  current = 0):
 	if reward.size() == 0:
 		return
 	else:
@@ -38,5 +38,10 @@ func give_reward(reward):
 			elif i == "new_lore_id":
 				GlobalData[i] += reward[i]
 				new_lore.emit()
+			elif i == "Multiple":
+				for j in reward[i]:
+					if int(j) == current:
+						for g in reward[i][j]:
+							GlobalData[g] += reward[i][j][g]
 			else:
 				GlobalData[i] += reward[i]
