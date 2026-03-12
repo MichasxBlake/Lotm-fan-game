@@ -60,33 +60,84 @@ theme_override_constants/separation = 10
 custom_minimum_size = Vector2(5, 0)
 layout_mode = 2
 
-[node name="1" parent="ColorRect/HBoxContainer/Main_Street" instance=ExtResource("2_qu5sb")]
+[node name="4" parent="ColorRect/HBoxContainer/Main_Street" instance=ExtResource("2_qu5sb")]
 layout_mode = 2
 button_text = "Arrival"
-info_text = "You came to unknow town, your dad tell you about"
+info_text = {
+0: "You arrive at the entrance of Tingen. Medium city in Loen Kingdom."
+}
 current_max = "0"
-current = 0
 money_type = ""
 cost = 0
-increase = 0.0
+increase = []
 reward = {
 "new_lore_id": 1,
-"passion_max": 472
+"passion_max": 20
 }
+
+[node name="1" parent="ColorRect/HBoxContainer/Main_Street" instance=ExtResource("2_qu5sb")]
+visible = false
+layout_mode = 2
+button_text = "Arrival"
+info_text = {
+0: "You arrive at the entrance of Tingen. Medium city in Loen Kingdom."
+}
+current_max = "0"
+money_type = ""
+cost = 0
+increase = []
+reward = {
+"new_lore_id": 2,
+"passion_max": 20
+}
+this_id = 1
 
 [node name="2" parent="ColorRect/HBoxContainer/Main_Street" instance=ExtResource("2_qu5sb")]
 visible = false
 layout_mode = 2
 button_text = "Thinking"
-info_text = "At first you need to find your uncle flat, that your father told you about"
-current = 0
-money_type = ""
-cost = 0
-increase = 0.0
-reward = {
-"new_lore_id": 1,
-"passion": 20
+info_text = {
+0: "That was quite a long journey from my village but after all here I have plenty of options how to change my life",
+1: "It's really a blessing my uncle still lives here and didn't move out to our vilage. Or maybe something happend between him and father?",
+2: "But before i head out he was sure uncle will welcome me into his home and he even send him a letter...",
+3: "Nah, now it's no time for dwelv deeper into it. I should find uncle flat.",
+4: "If I remmeber correctly it's shoud be at pomerange street, I hope he already get letter from my father about my arrival"
 }
-this_id = 1
+cost = 0
+increase = [1, 2, 3, 4]
+reward = {
+"Multiple": {
+1: {
+"passion": 4
+},
+2: {
+"passion": 4
+},
+3: {
+"passion": 4
+},
+4: {
+"passion": 4
+},
+5: {
+"passion": 4
+}
+},
+"new_lore_id": 3
+}
+this_id = 2
+
+[node name="5" parent="ColorRect/HBoxContainer/Main_Street" instance=ExtResource("2_qu5sb")]
+visible = false
+layout_mode = 2
+button_text = "Walking throw streets"
+current_max = "3"
+cost = 1
+increase = [2, 3]
+reward = {
+"new_lore_id": 4,
+"passion": 5
+}
+this_id = 3
 
 [connection signal="button_down" from="Button" to="." method="_on_button_button_down"]

@@ -36,7 +36,7 @@ func give_reward(reward,max_val = 0,  current = 0):
 			elif i == "Quest":
 				GlobalData.list_of_quest.append(reward[i])
 			elif i == "new_lore_id":
-				GlobalData[i] += reward[i]
+				GlobalData[i] = reward[i]
 				new_lore.emit()
 			elif i == "Multiple":
 				for j in reward[i]:

@@ -122,3 +122,8 @@ func day():
 
 
 var new_lore_id = 0
+
+var sleepness : int = 0:
+	set(v):
+		sleepness = v
+		value_changed.emit()

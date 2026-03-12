@@ -6,12 +6,12 @@ signal block_vanished
 @export var Infinity : bool = false
 @export var time_to_done : float
 @export var button_text : String
-@export var info_text : String
+@export var info_text : Dictionary
 @export var current_max : String
 @export var current : int
 @export var money_type : String
 @export var cost : int
-@export var increase : float
+@export var increase : Array
 @export var reward : Dictionary
 @export var day_or_night : String
 @export var this_id : int
@@ -37,7 +37,7 @@ func _ready() -> void:
 	await get_tree().process_frame
 	
 	button.text = button_text
-	panel_container_2.get_child(0).text = info_text
+	panel_container_2.get_child(0).text = str(info_text.get(0))
 	
 	var event_handler = get_tree().get_first_node_in_group("Lore_events") # nie rozumiem
 	
@@ -113,6 +113,7 @@ func _on_button_toggled(toggled_on: bool) -> void:
 					used_already = true
 				else:
 					if panel_container_2.get_child_count() > current:
+						panel_container_2.get_child(current).text = str(info_text.get(current))
 						panel_container_2.get_child(current-1).hide()
 						panel_container_2.get_child(current).show()
 						get_tree().call_group("Lore_events", "action", new_id, int(current_max), current, reward)
@@ -144,8 +145,8 @@ func buy():
 	if money_type != "":
 		if GlobalData[money_type] >= cost:
 			GlobalData[money_type] -= cost
-			if !Infinity:
-				cost *= increase
+			if !Infinity and current != int(current_max):
+				cost = increase[current-1]
 			buying = true
 			button_cost.text = money_type + ": "+ str(cost)
 	else:
